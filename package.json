@@ -7,9 +7,13 @@
   "devDependencies": {
     "uglify-js": "^2.6.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cca/koha_snippets.git"
+  },
   "scripts": {
     "build": "npm run js",
-    "js": "uglifyjs js/*.js --compress --mangle --screw-ie8 --enclose > dist/OPACUserJS.js --preamble \"// minified on $(date), see source & documentation at GITHUB REPO TBD\" --name-cache .uglify-name-cache",
+    "js": "uglifyjs js/*.js --compress --mangle --screw-ie8 --enclose > dist/OPACUserJS.js --preamble \"// minified $(date), see https://github.com/cca/koha_snippets\" --name-cache .uglify-name-cache",
     "test": "jshint js/*.js"
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
