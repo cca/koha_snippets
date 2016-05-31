@@ -1,0 +1,17 @@
+{
+  "name": "koha-snippets",
+  "version": "1.0.0",
+  "description": "code to be pasted into Koha's admin side",
+  "main": "OPACUserJS.js",
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "^2.6.2"
+  },
+  "scripts": {
+    "build": "npm run js",
+    "js": "uglifyjs js/*.js --compress --mangle --screw-ie8 --enclose > dist/OPACUserJS.js --preamble \"// minified on $(date), see source & documentation at GITHUB REPO TBD\" --name-cache .uglify-name-cache",
+    "test": "jshint js/*.js"
+  },
+  "author": "phette23 <phette23@gmail.com> (http://phette.net)",
+  "license": "ECL-2.0"
+}
