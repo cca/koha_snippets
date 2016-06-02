@@ -2,8 +2,6 @@
   "name": "koha-snippets",
   "version": "1.0.0",
   "description": "code to be pasted into Koha's admin side",
-  "main": "OPACUserJS.js",
-  "dependencies": {},
   "devDependencies": {
     "uglify-js": "^2.6.2"
   },
