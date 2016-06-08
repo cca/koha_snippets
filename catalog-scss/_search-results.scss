@@ -1,0 +1,7 @@
+// hide misleading/uninformative fields from search results display
+.results_summary.edition,
+.results_format,
+.results_contents_literary,
+.results_audience {
+    display: none;
+}

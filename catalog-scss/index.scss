@@ -1,8 +1,7 @@
 /*! compiled CSS, see: https://github.com/cca/koha_snippets */
 
-$white: #fff;
-$dark-gray: #434646;
-$cca-orange: #ff6c2f;
+@import 'colors';
+@import 'search-results';
 
 body {
     background-color: $white;
