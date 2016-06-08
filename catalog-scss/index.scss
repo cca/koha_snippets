@@ -1,95 +1,83 @@
 /*! compiled CSS, see: https://github.com/cca/koha_snippets */
 
-body {
-  background-color:#ffffff;
+$white: #fff;
+$dark-gray: #434646;
+$cca-orange: #ff6c2f;
 
+body {
+    background-color: $white;
 }
 
 .no-image {
-    background-color: #FFF;
-    border: 1px solid #AAA;
-    color: #979797;
-    display: block;
-    font-size: 86%;
-    font-weight: 700;
-    text-align: center;
-    width: 75px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
     display: none;
 }
 
 #members a.logout {
-    color: #ffffff;
+    color: $white;
     padding: 0 .3em;
 }
 
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
-    border-top-color: #ffffff;
-    border-bottom-color: #ffffff;
+    border-bottom-color: $white;
+    border-top-color: $white;
 }
 
 .hours {
     text-align: center;
-}
 
-.hours ul {
-margin-left:0px;
+    span {
+        margin-bottom: 20px;
+    }
 
+    ul {
+        margin-left: 0;
+    }
 }
 
 .libraryname {
-    text-align: center;
-    color: #434646;
+    color: $dark-gray;
     font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
+    font-size: 18px;
     font-weight: 400;
-    font-size:18px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.hours li, .hours span {
-
-list-style:none;
-font-family: 'Roboto', sans-serif;
-font-size:16px;
-
-
+.hours li,
+.hours span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    list-style: none;
 }
 
 #opacnavbottom section {
-
-margin-bottom:20px;
-
-
+    margin-bottom: 20px;
 }
 
 .btn-primary:hover {
-
- background-color: #434646;
-    background-image: -moz-linear-gradient(top, #434646, #434646);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#434646), to(#434646));
-    background-image: -webkit-linear-gradient(top, #434646, #434646);
-    background-image: -o-linear-gradient(top, #434646, #434646);
-    background-image: linear-gradient(to bottom, #434646, #434646);
+    background-color: $dark-gray;
+    background-image: -moz-linear-gradient(top, $dark-gray, $dark-gray);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($dark-gray), to($dark-gray));
+    background-image: -webkit-linear-gradient(top, $dark-gray, $dark-gray);
+    background-image: -o-linear-gradient(top, $dark-gray, $dark-gray);
+    background-image: linear-gradient(to bottom, $dark-gray, $dark-gray);
 
 
 }
 
 .btn-primary {
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #434646;
-    background-image: -moz-linear-gradient(top, #434646, #434646);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#434646), to(#434646));
-    background-image: -webkit-linear-gradient(top, #434646, #434646);
-    background-image: -o-linear-gradient(top, #434646, #434646);
-    background-image: linear-gradient(to bottom, #434646, #434646);
+    background-color: $dark-gray;
+    background-image: -moz-linear-gradient(top, $dark-gray, $dark-gray);
+    background-image: -o-linear-gradient(top, $dark-gray, $dark-gray);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($dark-gray), to($dark-gray));
+    background-image: -webkit-linear-gradient(top, $dark-gray, $dark-gray);
+    background-image: linear-gradient(to bottom, $dark-gray, $dark-gray);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-    border-color: #434646;
-
+    border-color: $dark-gray;
+    color: $white;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
 }
 
 #opacnavright span a {
@@ -97,107 +85,90 @@ margin-bottom:20px;
 }
 
 #opacnavbottom a {
-color:#FF6C2F;
-font-family: 'Roboto', sans-serif;
-text-transform:uppercase;
-font-size:14px;
-
+    color: $cca-orange;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 #patronregistration a {
-color:#FF6C2F;
-font-family: 'Roboto', sans-serif;
-text-transform:uppercase;
-font-size:16px;
-
-}
-
-.hours span {
- margin-bottom:20px;
-
+    color: $cca-orange;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 .navbar-inverse .navbar-inner {
-    background-color: #FF6C2F;
-    background-image: -moz-linear-gradient(top, #FF6C2F, #FF6C2F);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF6C2F), to(#FF6C2F));
-    background-image: -webkit-linear-gradient(top, #FF6C2F, #FF6C2F);
-    background-image: -o-linear-gradient(top, #FF6C2F, #FF6C2F);
-    background-image: linear-gradient(to bottom, #FF6C2F, #FF6C2F);
+    background-color: $cca-orange;
+    background-image: -moz-linear-gradient(top, $cca-orange, $cca-orange);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($cca-orange), to($cca-orange));
+    background-image: -webkit-linear-gradient(top, $cca-orange, $cca-orange);
+    background-image: -o-linear-gradient(top, $cca-orange, $cca-orange);
+    background-image: linear-gradient(to bottom, $cca-orange, $cca-orange);
     background-repeat: repeat-x;
+    border-color: $cca-orange;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
-    border-color: #FF6C2F;
 }
 
 .navbar-inverse .divider-vertical {
-    border-left-color: #FF6C2F;
-    border-right-color: #FF6C2F;
+    border-left-color: $cca-orange;
+    border-right-color: $cca-orange;
 }
 
 #moresearches {
+    background-color: $dark-gray;
 
-background-color:#434646;
+    li::after {
+        content: ' | ';
+        display: none;
+    }
 
-
-}
-
-#moresearches li::after {
-    content: " | ";
-   display:none;
-}
-
-#moresearches li a {
-  color:#ffffff;
-  padding:10px;
-  text-transform:uppercase;
-  font-family: 'Roboto', sans-serif;
-
+    li a {
+        color: $white;
+        font-family: 'Roboto', sans-serif;
+        padding: 10px;
+        text-transform: uppercase;
+    }
 }
 
 .mastheadsearch {
-    -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
-    border-radius: 7px;
-    padding: .8em;
-    margin: .5em 0;
+    -webkit-border-radius: 7px;
     background: #c7c7c1;
-    background: -moz-linear-gradient(top,#ffffff 38%,#ffffff 100%);
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(38%,#ffffff),color-stop(100%,#ffffff));
-    background: -webkit-linear-gradient(top, #ffffff 38%,#ffffff 100%);
-    background: -o-linear-gradient(top,#ffffff 38%,#ffffff 100%);
-    background: -ms-linear-gradient(top,#ffffff 38%,#ffffff 100%);
-    background: linear-gradient(to bottom,#FFffff 38%,#FFffff 100%);
+    background: -moz-linear-gradient(top, $white 38%, $white 100%);
+    background: -ms-linear-gradient(top, $white 38%, $white 100%);
+    background: -o-linear-gradient(top, $white 38%, $white 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(38%, $white), color-stop(100%, $white));
+    background: -webkit-linear-gradient(top, $white 38%, $white 100%);
+    background: linear-gradient(to bottom, $white 38%, $white 100%);
+    border-radius: 7px;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c7c7c1', endColorstr='#a7a7a2', GradientType=0);
+    margin: .5em 0;
+    padding: .8em;
 }
 
 .breadcrumb {
-    background-color: #F2F2EF;
-    font-size: 85%;
-    margin: 10px 20px;
-    padding: 5px 10px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
-    display:none;
+    display: none;
 }
 
 #opacheader {
-    background-color: #ffffff;
+    background-color: $white;
 }
-.navbar-inverse .brand, .navbar-inverse .nav > li > a {
-    color: #ffffff;
+
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+    color: $white;
     font-weight: 700;
-    text-shadow:none;
+    text-shadow: none;
 }
 
 #opacmainuserblock h1 {
-  text-align:center;
-  color:#434646;
-  font-family: 'Roboto', sans-serif;
-
+    color: $dark-gray;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 #members a {
-    color: #ffffff;
+    color: $white;
     font-weight: 700;
 }
