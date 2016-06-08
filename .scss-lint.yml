@@ -1,0 +1,13 @@
+linters:
+  SelectorFormat:
+    enabled: false
+  Comment:
+      enabled: false
+  IdSelector:
+      enabled: false
+  Indentation:
+    width: 4
+  QualifyingElement:
+      enabled: false
+  VendorPrefix:
+      enabled: false
