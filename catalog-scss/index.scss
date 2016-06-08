@@ -11,9 +11,13 @@ body {
     display: none;
 }
 
-#members a.logout {
+#members a {
     color: $white;
-    padding: 0 .3em;
+    font-weight: 700;
+
+    &.logout {
+        padding: 0 .3em;
+    }
 }
 
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
@@ -60,8 +64,6 @@ body {
     background-image: -webkit-linear-gradient(top, $dark-gray, $dark-gray);
     background-image: -o-linear-gradient(top, $dark-gray, $dark-gray);
     background-image: linear-gradient(to bottom, $dark-gray, $dark-gray);
-
-
 }
 
 .btn-primary {
@@ -74,8 +76,6 @@ body {
     background-repeat: repeat-x;
     border-color: $dark-gray;
     color: $white;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
 }
 
@@ -106,7 +106,6 @@ body {
     background-image: linear-gradient(to bottom, $cca-orange, $cca-orange);
     background-repeat: repeat-x;
     border-color: $cca-orange;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
 }
 
 .navbar-inverse .divider-vertical {
@@ -131,8 +130,6 @@ body {
 }
 
 .mastheadsearch {
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
     background: #c7c7c1;
     background: -moz-linear-gradient(top, $white 38%, $white 100%);
     background: -ms-linear-gradient(top, $white 38%, $white 100%);
@@ -140,8 +137,9 @@ body {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(38%, $white), color-stop(100%, $white));
     background: -webkit-linear-gradient(top, $white 38%, $white 100%);
     background: linear-gradient(to bottom, $white 38%, $white 100%);
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
     border-radius: 7px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c7c7c1', endColorstr='#a7a7a2', GradientType=0);
     margin: .5em 0;
     padding: .8em;
 }
@@ -165,9 +163,4 @@ body {
     color: $dark-gray;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-}
-
-#members a {
-    color: $white;
-    font-weight: 700;
 }
