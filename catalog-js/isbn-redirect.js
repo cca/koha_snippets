@@ -1,5 +1,6 @@
 // redirect old Millennium ISBN queries (e.g. from website, external places)
 // to Koha's new search URL structure
+(function() { // wrap in IIFE
 
 var path = location.pathname
 // Millennium ISBN/ISSN search URLs look like
@@ -15,3 +16,5 @@ if (path.match(/\/search~S\d\/i/)) {
     // index idx=sn doesn't seem to work, so only ISBN redirects will work
     location.pathname = '/cgi-bin/koha/opac-search.pl?idx=nb&q=' + standard_no
 }
+
+})()
