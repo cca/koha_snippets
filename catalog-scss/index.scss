@@ -18,6 +18,7 @@ body {
     font-weight: 700;
 
     &.logout {
+        color: $white;
         padding: 0 .3em;
     }
 }
@@ -55,8 +56,17 @@ body {
     list-style: none;
 }
 
-#opacnavbottom section {
-    margin-bottom: 20px;
+#opacnavbottom {
+    section {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: $cca-orange;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
 }
 
 .btn-primary:hover {
@@ -81,17 +91,6 @@ body {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
 }
 
-#opacnavright span a {
-    display: none;
-}
-
-#opacnavbottom a {
-    color: $cca-orange;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-}
-
 #patronregistration a {
     color: $cca-orange;
     font-family: 'Roboto', sans-serif;
@@ -113,6 +112,12 @@ body {
 .navbar-inverse .divider-vertical {
     border-left-color: $cca-orange;
     border-right-color: $cca-orange;
+}
+
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+    color: $white;
+    text-shadow: none;
 }
 
 #moresearches {
@@ -148,17 +153,6 @@ body {
 
 .breadcrumb {
     display: none;
-}
-
-#opacheader {
-    background-color: $white;
-}
-
-.navbar-inverse .brand,
-.navbar-inverse .nav > li > a {
-    color: $white;
-    font-weight: 700;
-    text-shadow: none;
 }
 
 #opacmainuserblock h1 {
