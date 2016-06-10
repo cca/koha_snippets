@@ -1,0 +1,6 @@
+// long hodings block can overstep its bounds
+// might be a problem with other pieces but I'm being very conservative
+// and _only_ fixing the observed problem
+#holdings {
+    overflow: scroll;
+}
