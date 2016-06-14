@@ -11,7 +11,7 @@
   },
   "scripts": {
     "admin-js": "uglifyjs admin-js/*.js --compress --mangle --screw-ie8 > dist/IntranetUserJS.js --preamble \"// minified $(date), see https://github.com/cca/koha_snippets\"",
-    "build": "npm run admin-js catalog-js catalog-scss",
+    "build": "npm run admin-js; npm run catalog-js; npm run catalog-scss",
     "catalog-js": "uglifyjs catalog-js/*.js --compress --mangle --screw-ie8 > dist/OPACUserJS.js --preamble \"// minified $(date), see https://github.com/cca/koha_snippets\"",
     "catalog-scss": "sass --style=compressed catalog-scss/index.scss > dist/OPACUserCSS.css",
     "test": "jshint js/*.js"
