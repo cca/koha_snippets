@@ -1,22 +1,77 @@
-<div class="alert alert-info">
+<div id="cca-login">
+    <a style="margin-bottom: 1.5em;" class="show-initially btn btn-large" href="https://sso.cca.edu/cas/login?service=http%3A%2F%2Fl5.migrate.bywatersolutions.com%2Fcgi-bin%2Fkoha%2Fopac-user.pl"><b>Login with your CCA Account</b></a>
+
+    <h2 class="show-initially">Trouble logging in?</h2>
+    <!-- using <button> here triggers page refresh on click for some reason -->
+    <div class="btn btn-danger show-initially js-open"><b>Learn More…</b></div>
+
+    <p style="margin-top: 1em;">
+        If we had a CCA email on file for you, we were able to associate it with your library account. However, several accounts did not have CCA emails. <strong>If you have used the library previously but are unable to login with your CCA username, please <a href="http://libraries.cca.edu/contact">contact us</a> so we can fix this.</strong>
+    </p>
+
     <p>
-        We tried to match your library account with your CCA username, but in some instances could not. So, for instance, if your name is "Olivia Jones" and your CCA email "ojones2@cca.edu", then try the following login:
+        Some library users do not have CCA accounts. You might not have a library account if you are a:
     </p>
     <ul>
-        <li>
-            Your CCA username, e.g. "<b>ojones2</b>"
-            <ul>
-                <li>...in which case your CCA password will work</li>
-            </ul>
-        </li>
-        <li>
-            Your surname followed by a period followed by your given name, e.g. "<b>jones.olivia</b>"
-            <ul>
-                <li>...in which case your password is your surname, e.g. "Jones", and <strong>you should <a href="mailto:ephetteplace@cca.edu" target="_blank">contact us</a></strong> so we can fix your login</li>
-            </ul>
-        </li>
+        <li>Pre-college student</li>
+        <li>Special program faculty member who does not regularly teach at CCA</li>
+        <li>Visiting researcher sponsored by a CCA affiliate</li>
+        <li>Alumnus who graduated over ten years ago</li>
     </ul>
     <p>
-        <strong>If your CCA username is not working, please <a href="mailto:ephetteplace@cca.edu" target="_blank">contact us</a></strong> so we can fix it. Thank you for your patience as we transition to a new library catalog!
+        If you fall into one of the above categories, you'll need to use the form below. Your login is of form "surname.givenname" (e.g. "jones.olivia" for someone named "Olivia Jones") and your password is your library barcode (should look something like "PCAC1234512345X"). As always, <a href="http://libraries.cca.edu/contact"> contact us</a> if you experience any problems.
     </p>
+
+    <h4>Local Login</h4>
+    <!-- we can't just put a form-within-a-form here so we comment it out
+    initially & then, once other form has been removed, uncomment with JS -->
+    <div id="uncomment"><!--<form action="/cgi-bin/koha/opac-user.pl" name="auth" id="auth" method="post">
+        <input type="hidden" name="koha_login_context" value="opac">
+        <fieldset class="brief">
+            <label for="userid">Login</label>
+            <input type="text" size="25" id="userid" name="userid">
+            <label for="password">Password</label>
+            <input type="password" size="25" id="password" name="password">
+        </fieldset>
+        <input type="submit" value="Log in" class="btn">
+    </form>--></div>
 </div>
+
+<style>
+.main {
+    padding: 1em;
+}
+</style>
+
+<script>
+// execute on document load, no jQuery yet
+(function() {
+    // ensure if existing onload event was modified we retain that
+    var onload = window.onload
+    var uncomment = function ($el) {
+        var html = $el.html()
+        html = html.replace('<!--', '').replace('-->', '')
+        $el.html(html)
+    }
+    var newonload = function(event) {
+        if (typeof onload === 'function') onload(event)
+
+        $(function(){
+            var login = $('#cca-login')
+            // wipe out everything, replace with our custom HTML
+            login.remove()
+            $('#opac-auth').html('').append(login)
+
+            // hide everything except elements with class=show-initially
+            var noshow = login.children(':not(.show-initially)')
+            noshow.hide()
+            // when js-open btn is clicked, reveal hidden elements
+            $('.js-open').click(function() {
+                noshow.show('slow')
+                uncomment($('#uncomment'))
+            })
+        })
+    }
+    window.onload = newonload
+})()
+</script>
