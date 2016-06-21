@@ -8,3 +8,7 @@
 .item-status.notforloan {
     color: $black-font;
 }
+// hide "show analytics" link, useless
+.results_summary.analytics {
+    display: none;
+}
