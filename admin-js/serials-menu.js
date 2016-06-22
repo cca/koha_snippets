@@ -1,6 +1,6 @@
 // modify the links listed in the main menu of the Serials module
-// at path /cgi-bin/koha/serials/serials-home.pl
-if (location.pathname.match('/cgi-bin/koha/serials/serials-home.pl')) {
+// on all pages beginning with path /cgi-bin/koha/serials/
+if (location.pathname.match('/cgi-bin/koha/serials/')) {
     // no convenient style hooks here
     var menu_list = $('#bd > .yui-b ul')
     var links = [
