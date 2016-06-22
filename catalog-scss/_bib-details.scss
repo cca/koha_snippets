@@ -9,6 +9,8 @@
     color: $black-font;
 }
 // hide "show analytics" link, useless
-.results_summary.analytics {
+.results_summary.analytics,
+// hide "show volumes" link
+.results_summary.volumes {
     display: none;
 }
