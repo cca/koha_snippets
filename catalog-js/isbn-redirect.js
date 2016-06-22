@@ -1,12 +1,11 @@
 // redirect old Millennium ISBN queries (e.g. from website, external places)
 // to Koha's new search URL structure
-(function() { // wrap in IIFE
+(function() {
 
-var path = location.pathname
 // Millennium ISBN/ISSN search URLs look like
 // http://library.cca.edu/search~S2/i?SEARCH=9781118903339
 // so we check the path for similar
-if (path.match(/\/search~S\d\/i/)) {
+if (location.pathname.match(/\/search~S\d\/i/)) {
     var standard_no = location.search.split('=')[1]
     // put up a notice otherwise 404 page displays, a bit confusing
     document.body.innerHTML = '<h1>Redirecting your request...</h1>'
