@@ -10,9 +10,11 @@
     "url": "https://github.com/cca/koha_snippets.git"
   },
   "scripts": {
+    "build": "npm run admin-js; npm run admin-scss; npm run catalog-js; npm run catalog-scss",
+
     "admin-js": "uglifyjs admin-js/*.js --compress --mangle --screw-ie8 > dist/IntranetUserJS.js --preamble \"// minified $(date), see https://github.com/cca/koha_snippets\"",
     "admin-scss": "sass --style=compressed admin-scss/index.scss > dist/IntranetUserCSS.css",
-    "build": "npm run admin-js; npm run catalog-js; npm run catalog-scss",
+    
     "catalog-js": "uglifyjs catalog-js/*.js --compress --mangle --screw-ie8 > dist/OPACUserJS.js --preamble \"// minified $(date), see https://github.com/cca/koha_snippets\"",
     "catalog-scss": "sass --style=compressed catalog-scss/index.scss > dist/OPACUserCSS.css",
     "test": "jshint js/*.js"

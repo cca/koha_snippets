@@ -7,8 +7,9 @@ Snippets of code to be inserted into the administrative settings of Koha.
 I'm using npm scripts to automate development tasks. Run `npm install` to get the necessary dependencies. Then, from inside this project, you'll have these `npm run` scripts available:
 
 - `build` - run all the compilation scripts listed here, meta-task
+- `admin-js` - minify all staff-side JavaScript
 - `catalog-js` - minify all public catalog JavaScript
-- `admin-js` - minify all staff-facing JavaScript
+- `admin-scss` - compile & minify staff-side styles
 - `catalog-scss` - compile & minify public catalog styles
 
 All output goes in the "dist" directory unless otherwise noted.
