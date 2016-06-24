@@ -1,0 +1,33 @@
+.hours {
+    text-align: center;
+
+    span {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        margin-left: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+#opacmainuserblock {
+    h1 {
+        color: $dark-gray;
+        text-align: center;
+    }
+
+    .resources li {
+        margin: 5px;
+    }
+}
+
+// these are both <h1>s so above also applies
+.libraryname {
+    font-weight: normal;
+    text-transform: uppercase;
+}

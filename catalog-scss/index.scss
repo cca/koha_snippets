@@ -2,6 +2,7 @@
 
 @import 'colors';
 @import 'header';
+@import 'home';
 @import 'search-results';
 @import 'bib-details';
 
@@ -26,34 +27,6 @@ body {
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
     border-bottom-color: $white;
     border-top-color: $white;
-}
-
-.hours {
-    text-align: center;
-
-    span {
-        margin-bottom: 20px;
-    }
-
-    ul {
-        margin-left: 0;
-    }
-}
-
-.libraryname {
-    color: $dark-gray;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.hours li,
-.hours span {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    list-style: none;
 }
 
 #opacnavbottom {
@@ -153,10 +126,4 @@ body {
 
 .breadcrumb {
     display: none;
-}
-
-#opacmainuserblock h1 {
-    color: $dark-gray;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
 }
