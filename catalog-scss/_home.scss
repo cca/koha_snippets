@@ -1,3 +1,8 @@
+// don't need lengthy "NoLogin" HTML on home page
+#nologininstructions-main {
+    display: none;
+}
+
 .hours {
     text-align: center;
 
