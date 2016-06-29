@@ -1,5 +1,6 @@
 /*! compiled CSS, see: https://github.com/cca/koha_snippets */
 
+@import 'vars';
 @import 'colors';
 @import 'header';
 @import 'home';
@@ -36,7 +37,7 @@ body {
 
     a {
         color: $cca-orange;
-        font-family: 'Roboto', sans-serif;
+        font-family: $font-fam;
         font-size: 14px;
         text-transform: uppercase;
     }
@@ -66,7 +67,7 @@ body {
 
 #patronregistration a {
     color: $cca-orange;
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-fam;
     font-size: 16px;
     text-transform: uppercase;
 }
@@ -103,7 +104,7 @@ body {
 
     li a {
         color: $white;
-        font-family: 'Roboto', sans-serif;
+        font-family: $font-fam;
         padding: 10px;
         text-transform: uppercase;
     }
