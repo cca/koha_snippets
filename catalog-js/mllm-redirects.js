@@ -62,6 +62,10 @@ if (location.pathname.match(/\/search(~S\d\??)?\/i/)) {
     var title = getQuery()
     // redirect to Koha title search, looks like q=(ti:{Title of Work})
     title && redir('/cgi-bin/koha/opac-search.pl?q=(ti:%7B' + title + '%7D)')
+
+    // Millennium patron login page
+} else if (location.pathname.match('/patroninfo')) {
+    redir('/cgi-bin/koha/opac-user.pl')
 }
 
 })()
