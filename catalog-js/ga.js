@@ -29,7 +29,7 @@ ga('send', 'pageview');
         // actual facet being used, e.g. a name, location, place
         var value = $target.text()
         ga('send', 'event', {
-          eventCategory: 'TEST Search Facet',
+          eventCategory: 'Search Facet',
           eventAction: category,
           eventLabel: value,
           transport: 'beacon'
