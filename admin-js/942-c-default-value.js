@@ -12,11 +12,17 @@ if (location.pathname.match('/cgi-bin/koha/cataloguing/editor.pl')) {
                 // GetTagInfo signature is (framework code, tag)
                 // where empty string => default framework
                 var value = kohaBackend.GetTagInfo('', 942).subfields.c.defaultvalue
+                // check if the option list has loaded every 500ms
+                var interval = setInterval(function(){
+                    var subf = $('.subfield-widget option[value="' + value + '"]')
+                    if (subf.length > 0) {
+                        subf.prop('selected', true)
+                        // stop checking
+                        clearInterval(interval)
+                    }
+                }, 500)
             } catch (e) {
                 console.error('error trying to get 942$c default value', e)
-            }
-            if (value) {
-                $('.subfield-widget option[value="' + value + '"]').prop('selected', true)
             }
         })
     })
