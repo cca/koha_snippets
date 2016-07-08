@@ -1,4 +1,5 @@
 // monky-patch a bug in opac-shelves.pl by overwriting this function
+// must be in GLOBAL SCOPE, no IIFE
 if (location.pathname.match('/cgi-bin/koha/opac-shelves.pl')) {
     function holdSelections() {
         var checkedBoxes = $("input:checkbox:checked");
