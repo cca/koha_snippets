@@ -12,7 +12,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl') &&
     newLabel('.subjects', 'Composition, Properties, & Applications')
 
     // "material type" & ISBN aren't useful for Mat Lib items
-    $('.results_summary.type').add('.results_summary.isbn').remove()
+    $('.results_summary.type, .results_summary.isbn').remove()
 
     // swap author field label
     var $auth = $('h5.author')
