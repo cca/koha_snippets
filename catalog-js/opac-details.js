@@ -30,7 +30,12 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         // or pull from unapi tag if that's not present (e.g. no prior search)
         var biblionumber =  arrPagination[1].biblionumber || $('.unapi-id').attr('title').split(':')[2]
         var permalink = location.pathname + '?biblionumber=' + biblionumber
-        $('#action').append('<li><a style="padding-left:35px" href="' + permalink + '">Permanent Link</a></li>')
+        $('#action').append('<li><a id="permalink" href="' + permalink + '">Permanent Link</a></li>')
+        // icon
+        $('#permalink').css({
+            'background': 'transparent url(/opac-tmpl/lib/famfamfam/silk/link.png) no-repeat 11px',
+            'padding-left': '35px'
+        })
 
         // 2) cite this page
         // can't get OCLC number from the page so we use ISBN
@@ -41,7 +46,12 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             var citeThisUrl = 'https://www.worldcat.org/isbn/' + isbn + '?page=citation'
 
             // add the "cite this" link to the actions menu
-            $('#action').append('<li><a id="citethis" style="padding-left:35px" href="' + citeThisUrl + '">Cite this work</a></li>')
+            $('#action').append('<li><a id="citethis" href="' + citeThisUrl + '">Cite this work</a></li>')
+            // icon
+            $('#citethis').css({
+                'background': 'transparent url(/opac-tmpl/bootstrap/images/sprite.png) no-repeat 5px -921px',
+                'padding-left': '35px'
+            })
 
 // add "cite this" modal wrapping Worldcat iframe to the DOM
 // ew gross, gotta be a better way (template literals & screw older browsers?)
