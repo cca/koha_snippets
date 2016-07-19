@@ -14,3 +14,10 @@
 .results_summary.volumes {
     display: none;
 }
+
+// the "more searches" dropdown has class pull-right
+// when it really should be pull-left (see on large screen for instance)
+#moresearches_menu .dropdown-menu.pull-right {
+    left: 0;
+    right: auto;
+}
