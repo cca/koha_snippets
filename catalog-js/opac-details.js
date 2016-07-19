@@ -26,9 +26,8 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         $('#export').parent('li').remove()
 
         // add 2 links to the right hand #action list
-        // 1) permalink - can get biblionumber from object in pagination array
-        // or pull from unapi tag if that's not present (e.g. no prior search)
-        var biblionumber =  (window.arrPagination && arrPagination[1].biblionumber) || $('.unapi-id').attr('title').split(':')[2]
+        // 1) permalink - pull biblionumber from unapi tag
+        var biblionumber =  $('.unapi-id').attr('title').split(':')[2]
         var permalink = location.pathname + '?biblionumber=' + biblionumber
         $('#action').append('<li><a id="permalink" href="' + permalink + '">Permanent Link</a></li>')
         // icon
