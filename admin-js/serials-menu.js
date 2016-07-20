@@ -5,20 +5,20 @@ if (location.pathname.match('/cgi-bin/koha/serials/')) {
     // execute only once document has loaded
     $(function(){
         // no convenient style hooks here
-        var menu_list = $('#bd > .yui-b ul')
+        var menu_list = $('#bd > .yui-b ul').eq(0)
         var links = [
             ['EBSCONET',
             'https://ebsconet.com']
             , ['Serials Solutions',
             'https://clientcenter.serialssolutions.com/CC/Login/Default.aspx']
             , ['SF Late for Claiming',
-            '/cgi-bin/koha/reports/guided_reports.pl?reports=64&phase=Show%20SQL']
+            '/cgi-bin/koha/reports/guided_reports.pl?reports=64&phase=Run%20this%20report']
             , ['OAK Late for Claiming',
-            '/cgi-bin/koha/reports/guided_reports.pl?reports=63&phase=Show%20SQL']
+            '/cgi-bin/koha/reports/guided_reports.pl?reports=63&phase=Run%20this%20report']
             , ['SF at bindery',
-            '/cgi-bin/koha/reports/guided_reports.pl?reports=68&phase=Show%20SQL']
+            '/cgi-bin/koha/reports/guided_reports.pl?reports=68&phase=Run%20this%20report']
             , ['OAK at bindery',
-            '/cgi-bin/koha/reports/guided_reports.pl?reports=69']
+            '/cgi-bin/koha/reports/guided_reports.pl?reports=69&phase=Run%20this%20report']
         ]
         var len = links.length
         for (var i = 0; i < len; i++) {
