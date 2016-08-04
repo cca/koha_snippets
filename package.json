@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "code to be pasted into Koha's admin side",
   "devDependencies": {
-    "uglify-js": "^2.6.2"
+    "uglify-js": "^2.7.0"
   },
   "repository": {
     "type": "git",
@@ -11,10 +11,8 @@
   },
   "scripts": {
     "build": "npm run admin-js; npm run admin-scss; npm run catalog-js; npm run catalog-scss",
-
     "admin-js": "uglifyjs admin-js/*.js --compress --mangle --screw-ie8 > dist/IntranetUserJS.js --preamble \"// minified $(date), see https://github.com/cca/koha_snippets\"",
     "admin-scss": "sass --style=compressed admin-scss/index.scss > dist/IntranetUserCSS.css",
-    
     "catalog-js": "uglifyjs catalog-js/*.js --compress --mangle --screw-ie8 > dist/OPACUserJS.js --preamble \"// minified $(date), see https://github.com/cca/koha_snippets\"",
     "catalog-scss": "sass --style=compressed catalog-scss/index.scss > dist/OPACUserCSS.css",
     "test": "jshint js/*.js"
