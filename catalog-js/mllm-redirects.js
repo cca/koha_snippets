@@ -32,13 +32,17 @@ function redir (path) {
 // /search~S2/i?SEARCH=9781118903339
 // so we check the path for similar
 if (location.pathname.match(/\/search(~S\d\??)?\/i/)) {
-    var standard_no = location.search.split('=')[1]
+    var standard_no = getQuery()
     // Redirect to Koha's equivalent URL
     // Koha ISBN search, idx=nb -> ISBN index, q is query param
     // NOTE: ISSN index is different (idx=ns) & the combined "standard number"
-    // index idx=sn doesn't seem to work, so only ISBN redirects will work
-    redir('/cgi-bin/koha/opac-search.pl?idx=nb&q=' + standard_no)
-
+    // index idx=sn doesn't seem to work, so we fork based on number length
+    if (standard_no.length === 9) {
+        // ISSN
+        redir('/cgi-bin/koha/opac-search.pl?idx=ns&q=' + standard_no)
+    } else { // default to ISBN
+        redir('/cgi-bin/koha/opac-search.pl?idx=nb&q=' + standard_no)
+    }
     // Millennium keyword type searches
 } else if (location.toString().match(/\/search(~S\d\??)?\/(Y|X|w)/)) {
     var kw = getQuery()
