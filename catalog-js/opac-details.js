@@ -3,6 +3,13 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     // run on page load in own scope
     $(function(){
 
+        // fix 830$a series links ending in semicolons, see bug #14716
+        $('.results_summary.series a').each(function(){
+            // URI-encoded semicolon
+            var href = $(this).attr('href').replace(/;/g, '%3B')
+            $(this).attr('href', href)
+        })
+
         // idreambooks link should go to specific page for the title, not home pg
         var $idb = $('.idreambookssummary a')
         if ($('.idreambookssummary a').length == 2) {
