@@ -100,32 +100,15 @@ body {
 #moresearches {
     background-color: $dark-gray;
 
-    li::after {
-        content: ' | ';
-        display: none;
-    }
-
     li a {
         color: $white;
-        font-family: $font-fam;
         padding: 10px;
         text-transform: uppercase;
     }
 }
 
 .mastheadsearch {
-    background: #c7c7c1;
-    background: -moz-linear-gradient(top, $white 38%, $white 100%);
-    background: -ms-linear-gradient(top, $white 38%, $white 100%);
-    background: -o-linear-gradient(top, $white 38%, $white 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(38%, $white), color-stop(100%, $white));
-    background: -webkit-linear-gradient(top, $white 38%, $white 100%);
-    background: linear-gradient(to bottom, $white 38%, $white 100%);
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px;
-    margin: .5em 0;
-    padding: .8em;
+    background: $white;
 }
 
 .breadcrumb {
