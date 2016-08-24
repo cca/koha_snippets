@@ -28,6 +28,9 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             $idb.eq(1).attr('href', link)
         }
 
+        // hide "subscription from:" text, confusing, overlaps with "library has"
+        $('#subscriptions p:contains("Subscription from:")').hide()
+
         // remove "print" & "save record" links from right hand #action list
         $('.print-large').parent('li').remove()
         $('#export').parent('li').remove()
