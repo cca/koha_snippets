@@ -18,6 +18,21 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             return '<span class="relatorcode">' + $(this).text().replace(/,,/g, ',') + '</span>'
         })
 
+        // fix dual semicolons in publisher fields
+        // like two MARC 260 fields:
+        // 260 ‡aNew York, NY : ‡bNew Museum ;
+        // 260 ‡aLondon : ‡bPhaidon, ‡c2016.
+        // => New York, NY : New Museum ; ; London : Phaidon, 2016
+        var pub = $('.results_summary.publisher')
+        // if there are two consecutive semicolons separated by 2 or more spaces
+        if (pub.text().match(/;\s*;/)) {
+            pub.find('span[property="name"] a').each(function(){
+                var el = $(this)
+                var fixedText = el.text().replace(/\s*;/, '')
+                el.text(fixedText)
+            })
+        }
+
         // idreambooks link should go to specific page for the title, not home pg
         var $idb = $('.idreambookssummary a')
         if ($('.idreambookssummary a').length == 2) {
