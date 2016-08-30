@@ -10,6 +10,14 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             $(this).attr('href', href)
         })
 
+        // extra commas in 700 "contributor" field display
+        // like MARC of 700 __ ‡a Brundige, James, ‡e director, ‡e editor.
+        // => "Brundige, James [director,, editor.]"
+        $('h5.author .relatorcode').replaceWith(function(){
+            // jQuery expects HTML string here, not just a text node
+            return '<span class="relatorcode">' + $(this).text().replace(/,,/g, ',') + '</span>'
+        })
+
         // idreambooks link should go to specific page for the title, not home pg
         var $idb = $('.idreambookssummary a')
         if ($('.idreambookssummary a').length == 2) {
