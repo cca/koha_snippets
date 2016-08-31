@@ -7,17 +7,6 @@ if (location.pathname === '/cgi-bin/koha/opac-detail.pl' && $('.holdingst tr').l
     $(function(){
         // "aoColumns" passage copied from details page source
         $(".holdingst").dataTable($.extend(true, {}, dataTablesDefaults, {
-            "aoColumns": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                { "sType": "title-string" },
-                null
-            ],
             // dataTables throws an error if you overwrite an existing table
             // "destroy" tells it to delete & recreate table
             "destroy": true,
