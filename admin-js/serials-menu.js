@@ -6,8 +6,13 @@ if (location.pathname.match('/cgi-bin/koha/serials/')) {
         // no convenient style hooks here
         var menu_list = $('#bd > .yui-b ul').eq(0)
         // format is: [ link text, URL ]
+        // they'll appear in inverse order
         var links = [
-            ['EBSCONET',
+            ['SF Serials Fund',
+            '/cgi-bin/koha/acqui/ordered.pl?fund=2&fund_code=SER-SF']
+            , ['OAK Serials Fund',
+            '/cgi-bin/koha/acqui/ordered.pl?fund=3&fund_code=SER-OAK']
+            , ['EBSCONET',
             'https://ebsconet.com']
             , ['Serials Solutions',
             'https://clientcenter.serialssolutions.com/CC/Login/Default.aspx']
