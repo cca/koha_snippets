@@ -2,8 +2,7 @@
 if (location.pathname.match('/cgi-bin/koha/serials/serials-edit.pl')) {
     // run on document load
     $(function(){
-        // when a new issue is about to be received, fill in values
-        $('a:contains("Click to add item")').on('click', function(){
+        var fixForm = function() {
             var item = $(this).next('fieldset')
             // g - Cost, normal purchased price &
             // v - Cost, replacement price both default to "15.00"
@@ -22,6 +21,14 @@ if (location.pathname.match('/cgi-bin/koha/serials/serials-edit.pl')) {
                 .next('input').css('box-shadow', '0px 0px 3px 3px #41ff3e')
                 // remove the useless "..." link
                 .next('a').hide()
-        })  
+        }
+
+        // when a new issue is about to be received, fill in values
+        $('a:contains("Click to add item")').on('click', fixForm)
+        // staff tend to use "Status" <select> menu, not "add item" link
+        $('select[name="status"]').on('change', function() {
+            var context = $(this).closest('tr').next().find('a')[0]
+            fixForm.apply(context)
+        })
     })
 }
