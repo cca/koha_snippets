@@ -4,6 +4,8 @@ if (location.pathname.match('/cgi-bin/koha/serials/serials-edit.pl')) {
     $(function(){
         var fixForm = function() {
             var item = $(this).next('fieldset')
+            // c - Shelving location defaults to "CURRPER" (Current Periodical)
+            item.find('option[value="CURRPER"]').prop('selected', true)
             // g - Cost, normal purchased price &
             // v - Cost, replacement price both default to "15.00"
             item.find('input[id^="tag_952_subfield_g"]').val('15.00')
