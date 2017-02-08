@@ -21,3 +21,11 @@
     content: 'Only date applies, ignore hour.';
     font-weight: bold;
 }
+
+// side-by-side layout when we have multiple (local & Amazon) book covers
+#local-thumbnail-preview {
+    float: left;
+}
+#amazon-bookcoverimg {
+    float: right;
+}
