@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "code to be pasted into Koha's admin side",
   "devDependencies": {
-    "uglify-js": "^2.7.0"
+    "uglify-js": "^2.7.5"
   },
   "repository": {
     "type": "git",
