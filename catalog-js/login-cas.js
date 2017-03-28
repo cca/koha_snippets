@@ -12,6 +12,12 @@ $(function() {
             $el.html(html)
         }
 
+        // see Koha bug #16818 - Plack broke CAS login link
+        // https://bugs.koha-community.org/bugzilla3/show_bug.cgi?id=16818
+        login.find('a[href*="sso.cca.edu"]').attr('href', function(pos, val) {
+            return val.replace('library.cca.edu%2Fopac', 'library.cca.edu%2Fcgi-bin%2Fkoha')
+        });
+
         // noAccount tests if it looks like an unsuccessful CAS login
         // have to do this _before_ emptying out #opac-auth HTML
         var noAccount = !!location.search.match('ticket=') && !!$('#opac-auth').find('p:contains("Sorry, the CAS login failed.")').length
