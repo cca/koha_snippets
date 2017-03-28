@@ -1,4 +1,6 @@
 <div id="cca-login">
+    <p class="alert alert-error show-initially no-account"><b>There is no library account matched to your CCA username. You can create a library account by asking at the libraries' circulation desk.</b></p>
+
     <a style="margin-bottom: 1.5em;" class="show-initially btn btn-large" href="https://sso.cca.edu/cas/login?service=https%3A%2F%2Flibrary.cca.edu%2Fcgi-bin%2Fkoha%2Fopac-user.pl"><b>Login with your CCA Account</b></a>
 
     <h2 class="show-initially">Trouble logging in?</h2>
@@ -42,36 +44,3 @@
     padding: 1em;
 }
 </style>
-
-<script>
-// execute on document load, no jQuery yet
-(function() {
-    // ensure if existing onload event was modified we retain that
-    var onload = window.onload
-    var uncomment = function ($el) {
-        var html = $el.html()
-        html = html.replace('<!--', '').replace('-->', '')
-        $el.html(html)
-    }
-    var newonload = function(event) {
-        if (typeof onload === 'function') onload(event)
-
-        $(function(){
-            var login = $('#cca-login')
-            // wipe out everything, replace with our custom HTML
-            login.remove()
-            $('#opac-auth').html('').append(login)
-
-            // hide everything except elements with class=show-initially
-            var noshow = login.children(':not(.show-initially)')
-            noshow.hide()
-            // when js-open btn is clicked, reveal hidden elements
-            $('.js-open').click(function() {
-                noshow.show('slow')
-                uncomment($('#uncomment'))
-            })
-        })
-    }
-    window.onload = newonload
-})()
-</script>
