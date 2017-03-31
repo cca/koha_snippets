@@ -9,6 +9,8 @@
 @import 'bib-details';
 @import 'patron-details';
 @import 'holds';
+// April Fools!
+@import "fools";
 
 body {
     background-color: $white;
@@ -47,11 +49,11 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: $dark-gray;
+    background: $dark-gray;
 }
 
 .btn-primary {
-    background-color: $dark-gray;
+    background: $dark-gray;
     background-repeat: repeat-x;
     border-color: $dark-gray;
     color: $white;
@@ -66,7 +68,7 @@ body {
 }
 
 .navbar-inverse .navbar-inner {
-    background-color: $cca-orange;
+    background: $cca-orange;
     background-repeat: repeat-x;
     border-color: $cca-orange;
 }
