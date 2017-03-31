@@ -48,20 +48,10 @@ body {
 
 .btn-primary:hover {
     background-color: $dark-gray;
-    background-image: -moz-linear-gradient(top, $dark-gray, $dark-gray);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($dark-gray), to($dark-gray));
-    background-image: -webkit-linear-gradient(top, $dark-gray, $dark-gray);
-    background-image: -o-linear-gradient(top, $dark-gray, $dark-gray);
-    background-image: linear-gradient(to bottom, $dark-gray, $dark-gray);
 }
 
 .btn-primary {
     background-color: $dark-gray;
-    background-image: -moz-linear-gradient(top, $dark-gray, $dark-gray);
-    background-image: -o-linear-gradient(top, $dark-gray, $dark-gray);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($dark-gray), to($dark-gray));
-    background-image: -webkit-linear-gradient(top, $dark-gray, $dark-gray);
-    background-image: linear-gradient(to bottom, $dark-gray, $dark-gray);
     background-repeat: repeat-x;
     border-color: $dark-gray;
     color: $white;
@@ -77,11 +67,6 @@ body {
 
 .navbar-inverse .navbar-inner {
     background-color: $cca-orange;
-    background-image: -moz-linear-gradient(top, $cca-orange, $cca-orange);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($cca-orange), to($cca-orange));
-    background-image: -webkit-linear-gradient(top, $cca-orange, $cca-orange);
-    background-image: -o-linear-gradient(top, $cca-orange, $cca-orange);
-    background-image: linear-gradient(to bottom, $cca-orange, $cca-orange);
     background-repeat: repeat-x;
     border-color: $cca-orange;
 }
