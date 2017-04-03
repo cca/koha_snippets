@@ -113,6 +113,21 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             'padding-left': '35px'
         })
 
+        // course reserves: separate course name & semester with a pipe
+        if ($('#item_coursereserves').length) {
+            // course reserves cell is always last in row
+            $('tbody td:last-child').each(function (index, element){
+                var cr = $(element).find('a')
+                if (cr.length) {
+                    // looks like: ${course name} <!-- ${section code} --> ${term}
+                    // so we use ol' school DOM navigation & edit 3rd (text) node
+                    var node = cr[0].childNodes[2]
+                    var text = node.textContent.trim()
+                    node.textContent = "| " + text
+                }
+            })
+        }
+
         // 2) cite this page
         // can't get OCLC number from the page so we use ISBN
         var isbn = $('.isbn:last').text().split(' ')[1];
