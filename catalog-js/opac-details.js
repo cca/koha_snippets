@@ -98,21 +98,6 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         // hide "subscription from:" text, confusing, overlaps with "library has"
         $('#subscriptions p:contains("Subscription from:")').hide()
 
-        // remove "print" & "save record" links from right hand #action list
-        $('.print-large').parent('li').remove()
-        $('#export').parent('li').remove()
-
-        // add 2 links to the right hand #action list
-        // 1) permalink - pull biblionumber from unapi tag
-        var biblionumber =  $('.unapi-id').attr('title').split(':')[2]
-        var permalink = location.pathname + '?biblionumber=' + biblionumber
-        $('#action').append('<li><a id="permalink" href="' + permalink + '">Permanent Link</a></li>')
-        // icon
-        $('#permalink').css({
-            'background': 'transparent url(/opac-tmpl/lib/famfamfam/silk/link.png) no-repeat 11px',
-            'padding-left': '35px'
-        })
-
         // course reserves: separate course name & semester with a pipe
         if ($('#item_coursereserves').length) {
             // course reserves cell is always last in row
@@ -127,6 +112,21 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                 }
             })
         }
+
+        // remove "print" & "save record" links from right hand #action list
+        $('.print-large').parent('li').remove()
+        $('#export').parent('li').remove()
+
+        // add 2 links to the right hand #action list
+        // 1) permalink - pull biblionumber from unapi tag
+        var biblionumber =  $('.unapi-id').attr('title').split(':')[2]
+        var permalink = location.pathname + '?biblionumber=' + biblionumber
+        $('#action').append('<li><a id="permalink" href="' + permalink + '">Permanent Link</a></li>')
+        // icon
+        $('#permalink').css({
+            'background': 'transparent url(/opac-tmpl/lib/famfamfam/silk/link.png) no-repeat 11px',
+            'padding-left': '35px'
+        })
 
         // 2) cite this page
         // can't get OCLC number from the page so we use ISBN
