@@ -21,14 +21,14 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                     '/cgi-bin/koha/opac-image.pl?thumbnail=1&biblionumber=' + $(mydiv).attr("class"))
                     .load(function () {
                         this.setAttribute("class", "thumbnail");
-                        if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+                        if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
                             //IE HACK
                             try {
                                 $(mydiv).append(img);
                                 $(mydiv).children('.no-image').remove();
                             }
                             catch (err) {
-                            };
+                            }
                         } else if (this.width > 1) { // don't show the silly 1px "no image" img
                             if (uselink) {
                                 var a = $("<a />").attr('href', '/cgi-bin/koha/opac-imageviewer.pl?biblionumber=' + $(mydiv).attr("class"));
