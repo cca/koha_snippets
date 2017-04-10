@@ -13,15 +13,6 @@
     margin-top: 1em;
 }
 
-// bug with onsite checkout/"specify due date" AM/PM hours
-// https://bugs.koha-community.org/bugzilla3/show_bug.cgi?id=16780
-// we add a warning for staff
-#specify-due-date .hint::after {
-    color: $bs-text-error;
-    content: 'Only date applies, ignore hour.';
-    font-weight: bold;
-}
-
 // side-by-side layout when we have multiple (local & Amazon) book covers
 #local-thumbnail-preview {
     float: left;
