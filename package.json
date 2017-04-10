@@ -16,7 +16,7 @@
 
     "acss": "npm run admin-scss; cat dist/IntranetUserCSS.js | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=IntranetUserCSS'",
 
-    "cjs": "npm run catalog-js; cat dist/OPACUserJS.css | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserJS'",
+    "cjs": "npm run catalog-js; cat dist/OPACUserJS.js | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserJS'",
 
     "ccss": "npm run catalog-scss; cat dist/OPACUserCSS.css | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserCSS'",
 
