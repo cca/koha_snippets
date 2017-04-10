@@ -15,7 +15,7 @@
     "admin-scss": "sass --style=compressed admin-scss/index.scss > dist/IntranetUserCSS.css",
     "catalog-js": "uglifyjs catalog-js/*.js --comments --compress --mangle --screw-ie8 > dist/OPACUserJS.js --preamble \"// minified $(date), see https://github.com/cca/koha_snippets\"",
     "catalog-scss": "sass --style=compressed catalog-scss/index.scss > dist/OPACUserCSS.css",
-    "test": "jshint js/*.js"
+    "test": "jshint admin-js/*.js; jshint catalog-js/*.js; scss-lint admin-scss/*.scss; scss-lint catalog-scss/*.scss; "
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
   "license": "ECL-2.0"
