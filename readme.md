@@ -14,7 +14,9 @@ I'm using npm scripts to automate development tasks. Run `npm install` to get th
 
 All output goes in the "dist" directory unless otherwise noted.
 
-The tasks above let me write many, small snippets of code which accomplish one thing and then combine them all together into a single optimized file.
+These tasks let me write many small snippets of code which accomplish one thing and then combine them all together into a single optimized file.
+
+There are also a series of meta-tasks which run a specific compile/minify task, copy the output to the Mac OS clipboard, and open the appropriate setting URL in Koha's administration module. They are `ajs`, `acss`, `cjs`, and `ccss` where the first letter stands for either "admin" or "catalog". CCA's intranet domain is hard-coded into them.
 
 ## License
 
