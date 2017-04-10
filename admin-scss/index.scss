@@ -6,6 +6,11 @@
     display: none;
 }
 
+// input not long enough to show full date/time
+#duedatespec {
+    width: 10em;
+}
+
 // avoid confusion with "checkin" column new to renewal column on circ pages
 #issues-table input.checkin::after {
     content: 'check in';
