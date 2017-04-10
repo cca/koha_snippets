@@ -21,7 +21,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                 var htmlist = []
 
                 // function takes an entry under linkGroup & adds it to htmllist
-                function formatEntry(item) {
+                var formatEntry = function (item) {
                     var source = item.holdingData
                     // skip our library catalog holdings
                     if (source.databaseName !== 'CCA Print Holdings') {

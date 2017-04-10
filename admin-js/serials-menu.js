@@ -29,9 +29,9 @@ if (location.pathname.match('/cgi-bin/koha/serials/')) {
         ]
         var len = links.length
         for (var i = 0; i < len; i++) {
-            var html = '<li><a href="' + links[i][1]
-                + '" target="_blank">' + links[i][0]
-                + '</a></li>'
+            var html = '<li><a href="' + links[i][1] +
+                '" target="_blank">' + links[i][0] +
+                '</a></li>'
             menu_list.prepend(html)
         }
     })

@@ -147,6 +147,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 // add "cite this" modal wrapping Worldcat iframe to the DOM
 // ew gross, gotta be a better way (template literals & screw older browsers?)
 // NOTE: do _not_ wrap iframe in div.modal-body as it causes double scrollbars
+/* jshint ignore:start */
             $('body').prepend(
 '<div id="citeModal" class="modal hide" role="dialog">\
 	<div class="modal-header">\
@@ -159,6 +160,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 	</div>\
 </div>'
             )
+/* jshint ignore:end */
 
             // setup Bootstrap modal
             $('#citethis').click(function(event){
