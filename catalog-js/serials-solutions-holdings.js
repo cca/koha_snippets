@@ -42,7 +42,10 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                 // because an ISSN search should yield a single result
                 // 2 scenarios: linkGroup can be object (1 result) or array (multiple)
                 var lg = data.results.result.linkGroups.linkGroup
+                // shut up jshint, this is elegant
+                /* jshint ignore:start */
                 Array.isArray(lg) ? lg.forEach(formatEntry) : formatEntry(lg);
+                /* jshint ignore:end */
 
                 // if .online_resources exists, add to it, otherwise create it
                 var orspan = $('.results_summary.online_resources')
