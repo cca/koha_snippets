@@ -1,14 +1,14 @@
 // hide misleading/uninformative fields from search results display
 // scope to search results, fixes accidentally hiding .edition on bib details
 .searchresults {
-	.results_summary.edition,
+    .results_summary.edition,
 	.results_format,
 	.results_contents_literary,
 	.results_audience {
-	    display: none;
+        display: none;
 	}
 
-	.main {
-	    border: 0;
+    .main {
+        border: 0;
 	}
 }
