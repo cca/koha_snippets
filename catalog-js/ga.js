@@ -37,4 +37,19 @@ ga('send', 'pageview');
           transport: 'beacon'
         });
     })
+
+    // right-side actions menu on bib detail pages
+    $('#action a').click(function (ev) {
+        // classes/IDs of <a>s are slightly more generic than their text
+        // so we prefer ID for category but take 1st class otherwise
+        var category = ev.target.id || ev.target.classList[0]
+        // text of action is also informative
+        var value = ev.target.textContent
+        ga('send', 'event', {
+          eventCategory: 'Action',
+          eventAction: category,
+          eventLabel: value,
+          transport: 'beacon'
+        });
+    })
 })()
