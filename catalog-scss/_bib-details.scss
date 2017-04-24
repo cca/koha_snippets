@@ -17,8 +17,14 @@
 #social_networks #linkedin,
 // hide "views" tabs like MARC, ISBD
 // end users don't need to see these
-#views {
+#catalogue_detail_biblio #views {
     display: none;
+}
+
+// fix subscription issues icon positioning
+#Briefhistory,
+#Fullhistory {
+    background-position: -8px 3px;
 }
 
 // the "more searches" dropdown has class pull-right
