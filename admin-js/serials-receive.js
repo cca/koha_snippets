@@ -9,8 +9,9 @@ if (location.pathname.match('/cgi-bin/koha/serials/serials-edit.pl')) {
             // g - Cost, normal purchased price &
             // v - Cost, replacement price both default to "15.00"
             item.find('input[id^="tag_952_subfield_g"]').val('15.00')
-            // yes, this is insane, I couldn't find a better way to isolate the subfield
-            item.find('div[id$="v"]').filter('div[id^="subfield"]').find('input').val('15.00')
+            // yes, this is silly, couldn't find a better way to isolate the subfield
+            item.find('div[id$="v"]').filter('div[id^="subfield"]')
+                .find('input[type="text"]').val('15.00')
             // hide: 8 - collection code, j - shelving control no., t - copy number
             item.find('input[name="subfield"]')
                 .filter('[value="8"], [value="j"], [value="t"]')
