@@ -54,6 +54,15 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             $(this).attr('href', href)
         })
 
+        // all manner of links with "&" in the text are broken
+        // e.g. /cgi-bin/koha/opac-detail.pl?biblionumber=25683
+        $('#catalogue_detail_biblio a[href*="&"]').each(function(){
+            $(this).attr('href', function (i, href) {
+                // URI-encode ampersands
+                return href.replace(/&(amp;)?/g, '%26')
+            })
+        })
+
         // extra commas in 700 "contributor" field display
         // like MARC of 700 __ ‡a Brundige, James, ‡e director, ‡e editor.
         // => "Brundige, James [director,, editor.]"
