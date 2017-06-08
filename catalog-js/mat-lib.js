@@ -14,10 +14,14 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl') &&
     // "material type" & ISBN aren't useful for Mat Lib items
     $('.results_summary.type, .results_summary.isbn').remove()
 
-    // swap author field label
-    var $auth = $('h5.author')
-    var html = $auth.html().replace('By:', 'Company Name:')
-    $auth.html(html)
+    // swap author field labels
+    var $authors = $('h5.author')
+    $authors.each(function(index, element){
+        var html = $(element).html()
+                        .replace('By:', 'Company Name:')
+                        .replace('Contributor(s):', 'Company Name:')
+        $(element).html(html)
+    })
 
     // Mat Lib subject/genre links should be limited to their branch only
     $('.results_summary.subjects a, .results_summary.genre a').each(function(){
