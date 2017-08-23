@@ -3,6 +3,12 @@
 // and _only_ fixing the observed problem
 #holdings {
     overflow: scroll;
+
+    // hide copy number as it's never useful
+    // this hides both column header & <td>
+    .copynumber {
+        display: none;
+    }
 }
 
 .item-status.notforloan {
