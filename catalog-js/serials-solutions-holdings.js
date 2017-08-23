@@ -32,7 +32,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                             start + ' to ' + end +
                             ' in <a property="url" href="' +
                             // want the _last_ item in url array
-                            item.url[item.url.length - 1] + '">' +
+                            item.url[item.url.length - 1]['#text'] + '">' +
                             source.databaseName + '</a>'
                         )
                     }
