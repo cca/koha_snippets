@@ -1,8 +1,9 @@
 #opacheader {
     background-color: $white;
+    margin-top: 1.3em; // = .mastheadsearch margin-top + padding-top
     text-align: center;
 }
 
 .main-logo img {
-    width: 800px;
+    max-width: 400px;
 }
