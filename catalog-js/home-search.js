@@ -9,10 +9,10 @@ if (location.pathname.match('cgi-bin/koha/opac-main.pl') || location.pathname ==
     $('#searchform').addClass('form-search')
     // therea re 3 columns on the home page:
     // - span2 with #opacnavbottom (hours)
-    // - span7 with #opacmainuserblock (coverflow on top, databases below)
+    // - span7 with #opacmainuserblock (coverflow)
     // - span3 that's empty
     // we want the 1st to be larger & to remove the last
-    var $row = $('#notloggedin .row-fluid')
+    var $row = $('#notloggedin .row-fluid, #loggedin .row-fluid')
     $row.find('> .span3').remove()
     $row.find('> .span2').removeClass('span2').addClass('span3')
 }
