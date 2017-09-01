@@ -56,11 +56,14 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 
         // all manner of links with "&" in the text are broken
         // e.g. /cgi-bin/koha/opac-detail.pl?biblionumber=25683
-        $('#catalogue_detail_biblio a[href*="&"]').each(function(){
-            $(this).attr('href', function (i, href) {
-                // URI-encode ampersands
-                return href.replace(/&(amp;)?/g, '%26')
-            })
+        $('#catalogue_detail_biblio a[href*="&"]')
+            // but 856 links shouldn't be URL-encoded
+            .not('.results_summary.online_resources a')
+            .each(function(){
+                $(this).attr('href', function (i, href) {
+                    // URI-encode ampersands
+                    return href.replace(/&(amp;)?/g, '%26')
+                })
         })
 
         // extra commas in 700 "contributor" field display
