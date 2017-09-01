@@ -38,13 +38,20 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                     }
                 }
 
-                // data.results.result will (hopefully) always be an object
-                // because an ISSN search should yield a single result
-                // 2 scenarios: linkGroup can be object (1 result) or array (multiple)
-                var lg = data.results.result.linkGroups.linkGroup
-                // shut up jshint, this is elegant
-                /* jshint ignore:start */
-                Array.isArray(lg) ? lg.forEach(formatEntry) : formatEntry(lg);
+                var formatLinkGroup = function (result) {
+                    if (result.linkGroups && result.linkGroups.linkGroup) {
+                        // linkGroup can be an object or array
+                        var lg = result.linkGroups.linkGroup
+
+                        // shut up jshint, this is elegant
+                        /* jshint ignore:start */
+                        Array.isArray(lg) ? lg.forEach(formatEntry) : formatEntry(lg);
+                    }
+                }
+
+                // data.results.result can be an object or array
+                var result = data.results.result
+                Array.isArray(result) ? result.forEach(formatLinkGroup) : formatLinkGroup(result);
                 /* jshint ignore:end */
 
                 // if .online_resources exists, add to it, otherwise create it
