@@ -55,10 +55,11 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         })
 
         // all manner of links with "&" in the text are broken
-        // e.g. /cgi-bin/koha/opac-detail.pl?biblionumber=25683
+        // e.g. https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=25683
         $('#catalogue_detail_biblio a[href*="&"]')
-            // but 856 links shouldn't be URL-encoded
+            // but 856 & public list links shouldn't be URL-encoded
             .not('.results_summary.online_resources a')
+            .not('.results_summary.lists a')
             .each(function(){
                 $(this).attr('href', function (i, href) {
                     // URI-encode ampersands
