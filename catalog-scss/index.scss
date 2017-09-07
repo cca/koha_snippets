@@ -29,17 +29,8 @@ body {
     }
 }
 
-#opacnavbottom {
-    section {
+#opacnavbottom section {
         margin-bottom: 20px;
-    }
-
-    a {
-        color: $cca-orange;
-        font-family: $font-fam;
-        font-size: 14px;
-        text-transform: uppercase;
-    }
 }
 
 .btn-primary:hover {
@@ -52,13 +43,6 @@ body {
     border-color: $dark-gray;
     color: $white;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
-}
-
-#patronregistration a {
-    color: $cca-orange;
-    font-family: $font-fam;
-    font-size: 16px;
-    text-transform: uppercase;
 }
 
 #moresearches {

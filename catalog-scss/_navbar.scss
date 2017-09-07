@@ -5,14 +5,14 @@
 }
 
 .navbar-inverse .navbar-inner {
-    background: $cca-orange;
+    background: $cca-teal;
     background-repeat: repeat-x;
-    border-color: $cca-orange;
+    border-color: darken($cca-teal, 5%);
 }
 
 .navbar-inverse .divider-vertical {
-    border-left-color: $cca-orange;
-    border-right-color: $cca-orange;
+    border-left-color: $cca-teal;
+    border-right-color: $cca-teal;
 }
 
 .navbar-inverse .brand,
