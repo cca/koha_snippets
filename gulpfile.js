@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const concat = require('gulp-concat');
+const iife = require('gulp-iife');
 const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
 const insert = require('gulp-insert');
@@ -9,6 +10,7 @@ const insert = require('gulp-insert');
 gulp.task('admin-js', () => {
     return gulp.src('admin-js/*.js')
         .pipe(concat('IntranetUserJS.js'))
+        .pipe(iife())
         .pipe(babel({ presets: ['env'] }))
         .pipe(uglify())
         .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
@@ -18,6 +20,7 @@ gulp.task('admin-js', () => {
 gulp.task('catalog-js', () => {
     return gulp.src('catalog-js/*.js')
         .pipe(concat('OPACUserJS.js'))
+        .pipe(iife())
         .pipe(babel({ presets: ['env'] }))
         .pipe(uglify())
         .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
