@@ -2,8 +2,6 @@
 // to Koha's new search URL structure
 // for details on Millennium search URL structure, see
 // http://csdirect.iii.com/manual_2009b/rmil_command_links.html
-(function() {
-
 function getQuery () {
     var url = location.toString()
 
@@ -71,5 +69,3 @@ if (location.pathname.match(/\/search(~S\d\??)?\/i/)) {
 } else if (location.pathname.match('/patroninfo')) {
     redir('/cgi-bin/koha/opac-user.pl')
 }
-
-})()

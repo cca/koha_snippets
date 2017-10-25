@@ -4,9 +4,6 @@
 // 1) back to opac-reserve.pl?biblionumber=N when placing hold
 // 2) back to opac-suggestions.pl?op=add when making purchase suggestion
 
-// iife
-(function() {
-
 // this is a little weird: we assume we're on the login screen if we see the
 // <!-- TEMPLATE FILE: opac-auth.tt --> comment which is a child only of the
 // document (not even <html> element)
@@ -53,5 +50,3 @@ if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.cca_article_reque
     sessionStorage.removeItem('cca_article_request')
     location = '/cgi-bin/koha/opac-request-article.pl?biblionumber=' + bib
 }
-
-})()

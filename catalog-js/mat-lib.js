@@ -1,6 +1,4 @@
 // custom display for Materials Library samples
-(function() {
-
 if (location.pathname.match('/cgi-bin/koha/opac-detail.pl') &&
     $('td.itype').eq(0).text().trim() === 'Material Sample') {
     // mat lib labels
@@ -30,5 +28,3 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl') &&
         $(this).attr('href', href)
     })
 }
-
-})()
