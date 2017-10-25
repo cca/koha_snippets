@@ -1,18 +1,38 @@
 <h1>Hours</h1>
-<h1 class="libraryname">Simpson Library (SF)</h1>
 
-<p><em>May 7-Sept 5 (Summer 2016)</em></p>
-<ul>
-    <li>Monday-Friday 9-5</li>
-    <li>Saturday-Sunday CLOSED</li>
-</ul>
+<h2 class="libraryname">Simpson Library (SF)</h2>
+<ul class="Simpson-hrs">Loading hours data...</ul>
 
-<h1 class="libraryname">Meyer Library (Oakland)</h1>
+<h2 class="libraryname">Meyer Library (Oakland)</h2>
+<ul class="Meyer-hrs"><li>Loading hours data...</li></ul>
 
-<p><em>May 7 - Sep 5 (Summer 2016)</em></p>
-<ul>
-    <li>Monday-Friday 9-5</li>
-    <li>Saturday-Sunday CLOSED</li>
-</ul>
+<h2 class="libraryname">Materials Library (SF)</h2>
+<ul class="Materials-hrs"><li>Loading hours data...</li></ul>
 
-<p><b>Upcoming Closures:<br>Aug 23, Sept 5</b></p>
+<script>
+let today = Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(new Date())
+let week = [['mon', 'Monday'], ['tue', 'Tuesday'], ['wed', 'Wednesday'], ['thu', 'Thursday'], ['fri', 'Friday'], ['sat', 'Saturday'], ['sun', 'Sunday']]
+let format = (day, hrs) => {
+    // highlight current weekday in bold
+    if (day === today) {
+        return `<li><b>${day} ${hrs}</b>`
+    }
+    return `<li>${day} ${hrs}`
+}
+let gethrs = (library) => {
+    let root = 'https://libraries.cca.edu/hours/?format=json'
+    fetch(`${root}&library=${library}`)
+        .then(r => r.json())
+        .then(data => {
+            let list = document.querySelector(`.${library}-hrs`)
+            // empty out current hrs list
+            let html = ''
+            for (let day of week) {
+                html += format(day[1], data['hours'][day[0]])
+            }
+            list.innerHTML = html
+        })
+}
+
+['Meyer', 'Simpson', 'Materials'].forEach(gethrs)
+</script>
