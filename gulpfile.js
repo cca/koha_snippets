@@ -11,7 +11,7 @@ gulp.task('admin-js', () => {
         .pipe(concat('IntranetUserJS.js'))
         .pipe(babel({ presets: ['env'] }))
         .pipe(uglify())
-        .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets`))
+        .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
         .pipe(gulp.dest('dist'))
 })
 
@@ -20,7 +20,7 @@ gulp.task('catalog-js', () => {
         .pipe(concat('OPACUserJS.js'))
         .pipe(babel({ presets: ['env'] }))
         .pipe(uglify())
-        .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets`))
+        .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
         .pipe(gulp.dest('dist'))
 })
 
