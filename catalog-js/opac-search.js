@@ -10,4 +10,15 @@ if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
         var html = '<div class="alert alert-error">View previews of the Artists\' Books Collection <a href="https://vault.cca.edu/logon.do?.page=/hierarchy.do?topic=a7b976d5-5316-44da-b06e-7374cd100075">in VAULT</a> (signin required).</div>'
         $('#numresults').before(html)
     }
+
+    // hide the "sorry no suggestions" warning from recommendation service
+    // recommendations are loaded async so we just keep checking if they're present
+    let id = setInterval(() => {
+        let ns = $('.nosuggestions')
+        if (ns.length || $('.searchsuggestion').length) {
+            ns.parent('#didyoumean').remove()
+            clearInterval(id)
+        }
+    }, 400)
+
 }
