@@ -21,4 +21,16 @@ if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
         }
     }, 400)
 
+    // customize Materials Library results
+    $('.results_summary.availability .available:contains("Materials Library")').each((idx, el) => {
+        let item = $(el).parent().parent('.bibliocol')
+        let mattype = item.find('.results_material_type')
+        // label material type as "material sample" with our custom icon
+        mattype.html(mattype.html().replace(/visual material/ig, 'Material sample'))
+        mattype.find('img').attr('src', 'https://libraries.cca.edu/media/images/material-40.original.png')
+        // remove the empty "type of visual" span
+        item.find('.results_typeofvisual').remove()
+        // no need to offer article request action
+        item.find('.article_request').parent('.actions').remove()
+    })
 }
