@@ -2,7 +2,7 @@
 if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
     let icon_map = {
         'book': 'book.svg',
-        'other materials': 'other-40',
+        'other materials': 'other.svg',
         'reserve': 'reserved-book.svg',
         'serial': 'periodical.svg',
         'periodicals': 'periodical.svg',
@@ -19,6 +19,5 @@ if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
     }
 
     Array.from(document.querySelectorAll('.results_material_type img')).forEach(replaceIcon)
-    // @TODO: icons are too fuzzy right now
-    // Array.from(document.querySelectorAll('label img')).forEach(replaceIcon)
+    Array.from(document.querySelectorAll('label img')).forEach(replaceIcon)
 }

@@ -5,9 +5,15 @@
 if (location.pathname.match('cgi-bin/koha/opac-main.pl') || location.pathname === '/') {
     $('#searchsubmit').remove()
     // padding is magic number to make text input match large input-append btn height
-    $('#translControl1').replaceWith('<div class="input-append"><input type="text" title="Type search term" class="input-xxlarge search-query" style="padding:.78em;" id="translControl1" placeholder="search for books, videos, materials..." name="q"><button type="submit" class="btn btn-primary btn-large">Search</button></div>')
+    $('#translControl1').replaceWith(
+        `<div class="input-append">
+            <input type="text" title="Type search term" class="input-xxlarge search-query"
+                style="padding:.78em;" id="translControl1"
+                placeholder="search for books, videos, materials..." name="q">
+                <button type="submit" class="btn btn-primary btn-large">Search</button>
+        </div>`)
     $('#searchform').addClass('form-search')
-    // therea re 3 columns on the home page:
+    // there are 3 columns on the home page:
     // - span2 with #opacnavbottom (hours)
     // - span7 with #opacmainuserblock (coverflow)
     // - span3 that's empty

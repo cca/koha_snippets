@@ -158,20 +158,19 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             })
 
 // add "cite this" modal wrapping Worldcat iframe to the DOM
-// ew gross, gotta be a better way (template literals & screw older browsers?)
 // NOTE: do _not_ wrap iframe in div.modal-body as it causes double scrollbars
 /* jshint ignore:start */
             $('body').prepend(
-'<div id="citeModal" class="modal hide" role="dialog">\
-	<div class="modal-header">\
-		<button type="button" class="closebtn" data-dismiss="modal" aria-hidden="true">×</button>\
-        <h3>Cite this work</h3>\
-	</div>\
-	<iframe height="400" frameborder="0" src="' + citeThisUrl + '" style="width:100%;"></iframe>\
-	<div class="modal-footer">\
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\
-	</div>\
-</div>'
+`<div id="citeModal" class="modal hide" role="dialog">
+	<div class="modal-header">
+		<button type="button" class="closebtn" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Cite this work</h3>
+	</div>
+	<iframe height="400" frameborder="0" src="'${citeThisUrl}'" style="width:100%;"></iframe>
+	<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	</div>
+</div>`
             )
 /* jshint ignore:end */
 
