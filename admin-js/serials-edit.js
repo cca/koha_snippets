@@ -1,9 +1,9 @@
 // serials receive default values & form simplification
 if (location.pathname.match('/cgi-bin/koha/serials/serials-edit.pl')) {
     // run on document load
-    $(function(){
-        var fixForm = function() {
-            var item = $(this).next('fieldset')
+    $(() => {
+        function fixForm() {
+            let item = $(this).next('fieldset')
             // c - Shelving location defaults to "CURRPER" (Current Periodical)
             item.find('option[value="CURRPER"]').prop('selected', true)
             // g - Cost, normal purchased price &
@@ -29,8 +29,8 @@ if (location.pathname.match('/cgi-bin/koha/serials/serials-edit.pl')) {
         // when a new issue is about to be received, fill in values
         $('a:contains("Click to add item")').on('click', fixForm)
         // staff tend to use "Status" <select> menu, not "add item" link
-        $('select[name="status"]').on('change', function() {
-            var context = $(this).closest('tr').next().find('a')[0]
+        $('select[name="status"]').on('change', () => {
+            let context = $(this).closest('tr').next().find('a')[0]
             fixForm.apply(context)
         })
     })

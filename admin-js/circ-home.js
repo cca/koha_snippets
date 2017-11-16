@@ -2,10 +2,15 @@
 if (location.pathname.match('/cgi-bin/koha/circ/circulation-home.pl')) {
     $(function(){
         // build list HTML
-        var html = '<h3>CCA Circulation Reports</h3>'
-        html += '<ul><li>'
-        html += '<a href="/cgi-bin/koha/reports/guided_reports.pl?reports=124&phase=Run%20this%20report"><em>Improved</em> Holds to Pull</a>'
-        html += '</li></ul><br>'
+        var html = `<h3>CCA Circulation Reports</h3>
+            <ul>
+                <li>
+                    <a href="/cgi-bin/koha/reports/guided_reports.pl?reports=124&phase=Run%20this%20report">
+                        <em>Improved</em> Holds to Pull
+                    </a>
+                </li>
+            </ul>
+        <br>`
 
         // few good selector hooks on the page, there's three columns like
         // div.yui-u.first, div.yui-u, div.yui-u
