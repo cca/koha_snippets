@@ -5,7 +5,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 
         // if there are two cover images present, hide the second one
         // lets us "fix" blurry/bad cover images by uploading our own
-        // we have to overwrite KOHA.LocalCover to accomplis this since
+        // we have to overwrite KOHA.LocalCover to accomplish this since
         // images load dynamically & CSS has no "nth-descendent" type selector
         if (typeof KOHA == "undefined" || !KOHA) window.KOHA = {}
         // this function copied from /opac-tmpl/bootstrap/js/localcovers.js
@@ -126,9 +126,15 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             })
         }
 
-        // remove "print" & "save record" links from right hand #action list
+        // Customizations to the right-side "Actions" menu
+        // remove "print" & "save record" links
         $('.print-large').parent('li').remove()
         $('#export').parent('li').remove()
+        // remove "Request article" link for non-periodical item types
+        var itypes = Array.from($('.holdingst .itype img').map((i, el) => $(el).attr('title')))
+        if (!itypes.includes('Current Periodical') && !itypes.includes('Library Use Periodical')) {
+            $('.article_request').parent('li').remove()
+        }
 
         // add 2 links to the right hand #action list
         // 1) permalink - pull biblionumber from unapi tag
@@ -159,7 +165,6 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 
 // add "cite this" modal wrapping Worldcat iframe to the DOM
 // NOTE: do _not_ wrap iframe in div.modal-body as it causes double scrollbars
-/* jshint ignore:start */
             $('body').prepend(
 `<div id="citeModal" class="modal hide" role="dialog">
 	<div class="modal-header">
@@ -170,9 +175,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 	<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	</div>
-</div>`
-            )
-/* jshint ignore:end */
+</div>`)
 
             // setup Bootstrap modal
             $('#citethis').click(function(event){
