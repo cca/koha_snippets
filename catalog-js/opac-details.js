@@ -50,7 +50,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         // fix 830$a series links ending in semicolons, see bug #14716
         $('.results_summary.series a').each(function(){
             // URI-encoded semicolon
-            var href = $(this).attr('href').replace(/;/g, '%3B')
+            let href = $(this).attr('href').replace(/;/g, '%3B')
             $(this).attr('href', href)
         })
 
@@ -80,18 +80,18 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         // 260 ‡aNew York, NY : ‡bNew Museum ;
         // 260 ‡aLondon : ‡bPhaidon, ‡c2016.
         // => New York, NY : New Museum ; ; London : Phaidon, 2016
-        var pub = $('.results_summary.publisher')
+        let pub = $('.results_summary.publisher')
         // if there are two consecutive semicolons separated by 2 or more spaces
         if (pub.text().match(/;\s*;/)) {
             pub.find('span[property="name"] a').each(function(){
-                var el = $(this)
-                var fixedText = el.text().replace(/\s*;/, '')
+                let el = $(this)
+                let fixedText = el.text().replace(/\s*;/, '')
                 el.text(fixedText)
             })
         }
 
         // idreambooks link should go to specific page for the title, not home pg
-        var $idb = $('.idreambookssummary a')
+        let $idb = $('.idreambookssummary a')
         if ($('.idreambookssummary a').length == 2) {
             // HTML looks like:
             /*
@@ -104,7 +104,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             </span>
             */
             // we want to replace 2nd <a> href with 1st <a> href
-            var link = $idb.eq(0).attr('href')
+            let link = $idb.eq(0).attr('href')
             $idb.eq(1).attr('href', link)
         }
 
@@ -115,12 +115,12 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         if ($('#item_coursereserves').length) {
             // course reserves cell is always last in row
             $('tbody td:last-child').each(function (index, element){
-                var cr = $(element).find('a')
+                let cr = $(element).find('a')
                 if (cr.length) {
                     // looks like: ${course name} <!-- ${section code} --> ${term}
                     // so we use ol' school DOM navigation & edit 3rd (text) node
-                    var node = cr[0].childNodes[2]
-                    var text = node.textContent.trim()
+                    let node = cr[0].childNodes[2]
+                    let text = node.textContent.trim()
                     node.textContent = "| " + text
                 }
             })
@@ -131,15 +131,15 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         $('.print-large').parent('li').remove()
         $('#export').parent('li').remove()
         // remove "Request article" link for non-periodical item types
-        var itypes = Array.from($('.holdingst .itype img').map((i, el) => $(el).attr('title')))
+        let itypes = Array.from($('.holdingst .itype img').map((i, el) => $(el).attr('title')))
         if (!itypes.includes('Current Periodical') && !itypes.includes('Library Use Periodical')) {
             $('.article_request').parent('li').remove()
         }
 
         // add 2 links to the right hand #action list
         // 1) permalink - pull biblionumber from unapi tag
-        var biblionumber =  $('.unapi-id').attr('title').split(':')[2]
-        var permalink = location.pathname + '?biblionumber=' + biblionumber
+        let biblionumber =  $('.unapi-id').attr('title').split(':')[2]
+        let permalink = location.pathname + '?biblionumber=' + biblionumber
         $('#action').append('<li><a id="permalink" href="' + permalink + '">Permanent Link</a></li>')
         // icon
         $('#permalink').css({
@@ -149,11 +149,11 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 
         // 2) cite this page
         // can't get OCLC number from the page so we use ISBN
-        var isbn = $('.isbn:last').text().split(' ')[1];
+        let isbn = $('.isbn:last').text().split(' ')[1];
         if (isbn) {
             isbn = isbn.replace(/\W*$/, '').replace(/-/, '')
             // construct Worldcat URL we'll embed
-            var citeThisUrl = 'https://www.worldcat.org/isbn/' + isbn + '?page=citation'
+            let citeThisUrl = 'https://www.worldcat.org/isbn/' + isbn + '?page=citation'
 
             // add the "cite this" link to the actions menu
             $('#action').append('<li><a id="citethis" href="' + citeThisUrl + '">Cite this work</a></li>')
