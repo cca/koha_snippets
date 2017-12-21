@@ -25,12 +25,17 @@ let gethrs = (library) => {
         .then(r => r.json())
         .then(data => {
             let list = document.querySelector(`.${library}-hrs`)
-            // empty out current hrs list
-            let html = ''
-            for (let day of week) {
-                html += format(day[1], data['hours'][day[0]])
+
+            if (!data.error) {
+                // empty out current hrs list
+                let html = ''
+                for (let day of week) {
+                    html += format(day[1], data['hours'][day[0]])
+                }
+                list.innerHTML = html
+            } else {
+                list.outerHTML = `<p class="${library}-hrs">This library is currently closed.</p>`
             }
-            list.innerHTML = html
         })
 }
 
