@@ -15,9 +15,11 @@ if (location.pathname.match('/cgi-bin/koha/opac-main.pl') || location.pathname =
                         function() {
                             if (this.naturalHeight == 1) {
                                 $(this).attr("src",
-                                    "http://media.bywatersolutions.com/Model/NoImage.png"
+                                    "https://media.bywatersolutions.com/Model/NoImage.png"
                                 );
                             }
+                            // fix all the HTTP Amazon images
+                            $(this).attr('src', (idx, val) => val.replace('://images.', 's://images-na.ssl-images-'));
                         });
                     var opt = {
                         'items': '.item',
