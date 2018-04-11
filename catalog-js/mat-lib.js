@@ -20,11 +20,4 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl') &&
                         .replace('Contributor(s):', 'Company Name:')
         $(element).html(html)
     })
-
-    // Mat Lib subject/genre links should be limited to their branch only
-    $('.results_summary.subjects a, .results_summary.genre a').each(function(){
-        var $el = $(this)
-        var href = $el.attr('href') + '&limit=holdingbranch:MATLIB'
-        $(this).attr('href', href)
-    })
 }
