@@ -9,7 +9,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     var issn = $('.results_summary.issn').find('span[property="issn"]')
 
     if (issn.length > 0) {
-        // remove period at end of ISSN text]
+        // remove period at end of ISSN text
         issn = issn.text().replace('.', '')
         // base of 360 Link XML API proxy
         var ss_url = 'https://libraries.cca.edu/sersol/?issn=' + issn
@@ -24,7 +24,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                 var formatEntry = function (item) {
                     var source = item.holdingData
                     // skip our library catalog holdings
-                    if (source.databaseName !== 'CCA Print Holdings') {
+                    if (!source.databaseName.match('CCA Print Holdings')) {
                         var start = source.normalizedData.startDate.substr(0, 4)
                         var end = (source.normalizedData.endDate && source.normalizedData.endDate.substr(0, 4)) || 'present'
 
