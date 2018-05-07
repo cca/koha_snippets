@@ -6,6 +6,7 @@
 
     // hide copy number as it's never useful
     // this hides both column header & <td>
+    // @TODO we can use OPAC table system settings to accomplish this in 17.11
     .copynumber {
         display: none;
     }
