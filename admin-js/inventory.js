@@ -13,7 +13,7 @@ if (location.pathname === '/cgi-bin/koha/tools/inventory.pl') {
 		let loc = new locCallClass()
 		let it = $('#inventoryt')
 		it.find('tr').each( (idx, el) => {
-			var lccn = $(el).find('td').eq(2)
+			let lccn = $(el).find('td').eq(2)
 			lccn.attr( 'data-order', loc.returnNormLcCall( lccn.text() ) )
 		})
 		// now that we have data-order values in HTML, destroy & redraw dataTable
@@ -21,16 +21,11 @@ if (location.pathname === '/cgi-bin/koha/tools/inventory.pl') {
 		// copied from Koha page source, overwrite global inventorydt var
 		inventorydt = it.dataTable($.extend(true, {}, dataTablesDefaults, {
 		    'sPaginationType': 'full_numbers',
-
-		        // first column contains checkboxes
-		        "aoColumnDefs": [
+	        "aoColumnDefs": [
 		            { "bSortable": false, "bSearchable": false, "aTargets": [ 0 ] },
 		        ],
-		        // 3rd column is callnumber
-		        "aaSorting": [[ 2, "asc" ]],
-
+	        "aaSorting": [[ 2, "asc" ]],
 		    'fnDrawCallback': function() {
-		        //bind the click handler script to the newly created elements held in the table
 		        $('.openWin').bind('click',function(e){
 		            e.preventDefault();
 		            openWindow(this.href,'marcview',800,600);
