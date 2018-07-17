@@ -32,6 +32,6 @@ if (location.pathname.match('/cgi-bin/koha/mainpage.pl')) {
                 </a>
             </li>`
         }
-        $('#area-list-right .biglinks-list').append(html)
+        $('.biglinks-list').eq(1).append(html)
     })
 }
