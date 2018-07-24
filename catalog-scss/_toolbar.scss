@@ -1,0 +1,63 @@
+// these first 3 rules pull results up a bit
+// less useless space at the top of page
+.toolbar {
+    background: 0;
+    border: 0;
+    padding: 0 0 5px;
+
+    .highlight_controls {
+        display: none;
+    }
+}
+
+.pagination {
+    float: left;
+    margin: 1em 0 0;
+}
+
+#numresults {
+    display: none;
+}
+
+#toolbar select,
+#opac-main-search select,
+.toolbar select {
+    -webkit-appearance: none;
+    appearance: none;
+    background: $white;
+    border-radius: 0;
+    border: 1px solid #E5E5E4;
+    color: #333333;
+    font-family: inherit;
+    font-size: 14px;
+    height: 44px;
+    outline: 0;
+    padding: 8px 18px;
+    width: 100%;
+}
+
+#toolbar select,
+#opac-main-search select,
+.toolbar select,
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(255, 255, 255);
+    background: #FFF;
+    border-radius: 0;
+    border: 1px solid #E5E5E4;
+    border: 1px solid rgb(229, 229, 228);
+    box-sizing: border-box;
+    color: #333333;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    height: 44px;
+    margin-bottom: 0;
+    outline: 0;
+    outline: none;
+    padding: 8px 18px;
+    text-indent: .01px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 100%;
+}

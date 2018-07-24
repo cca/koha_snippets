@@ -1,19 +1,53 @@
 // hide misleading/uninformative fields from search results display
 // scope to search results, fixes accidentally hiding .edition on bib details
-.searchresults {
-    .results_summary.edition,
+.bibliocol {
+	.edition,
+	.publisher,
 	.results_format,
 	.results_contents_literary,
 	.results_audience {
         display: none;
 	}
+	// this is the only way to hide the author line
+	> p {
+		display: nonel
+	}
 
-    .main {
-        border: 0;
+	.label {
+		font: 18px/1.53 Raleway;
 	}
 }
 
 .results_material_type img.materialtype {
     height: 16px;
     width: 16px;
+}
+
+.available {
+	text-transform: uppercase;
+}
+
+.actions-menu {
+	margin-top: 1em;
+}
+
+.coverimages {
+    left: 0;
+    float: left;
+	min-width: 168px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    top: 0;
+}
+
+#didyoumean {
+	display: none;
+
+	&.dym-loaded {
+		display: inherit;
+	}
+}
+
+.no-image {
+	display: none;
 }

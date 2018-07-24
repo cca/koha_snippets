@@ -21,3 +21,17 @@
     text-shadow: none;
 }
 // scss-lint:enable SelectorDepth
+
+// login link on the right-side of navbar
+#members a {
+    color: $white;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &.logout {
+        color: $white;
+        padding: 0 .3em;
+    }
+}

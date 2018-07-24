@@ -1,0 +1,35 @@
+.mastheadsearch {
+    background: $white;
+
+    input[type="text"] {
+        -moz-transition: none;
+        -o-transition: border linear .2s, box-shadow linear .2s;
+        -webkit-transition: none;
+        background-color: $white;
+        border-bottom: 1px solid #E5E5E4;
+        border-radius: 0 !important;
+        border-top: 1px solid #E5E5E4;
+        box-shadow: inset none;
+        height: 22px;
+        margin: 0px;
+        padding: 10px;
+        transition: border linear .2s, box-shadow linear .2s;
+    }
+}
+
+#searchsubmit,
+.btn {
+    border-radius: 4px;
+    box-shadow: none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    line-height: normal;
+    margin-bottom: 0;
+    margin-left: 5px;
+    padding: 12px 32px;
+    position: relative;
+    text-align: center;
+    text-shadow: none;
+    text-transform: uppercase;
+}

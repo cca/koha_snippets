@@ -1,0 +1,29 @@
+#moresearches {
+    margin: 0;
+    padding: 0 .8em;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border-radius: 0px;
+    }
+
+    ul li {
+        float: left;
+        height: 55px;
+        display: inline-block;
+
+        &:after {
+            content: "";
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    }
+}
