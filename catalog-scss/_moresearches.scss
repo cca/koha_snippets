@@ -11,17 +11,22 @@
     }
 
     ul li {
-        float: left;
-        height: 55px;
+        border-bottom: 3px solid transparent;
         display: inline-block;
+        float: left;
+        font-weight: 700;
+        height: 55px;
 
         &:after {
             content: "";
         }
 
+        &:hover {
+            border-bottom-color: $dark-blue;
+        }
+
         a {
             display: block;
-            text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
