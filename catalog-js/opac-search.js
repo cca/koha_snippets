@@ -11,16 +11,6 @@ if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
         $('#numresults').before(html)
     }
 
-    // hide the "sorry no suggestions" warning from recommendation service
-    // recommendations are loaded async so we just keep checking if they're present
-    let id = setInterval(() => {
-        let ns = $('.nosuggestions')
-        if (ns.length || $('.searchsuggestion').length) {
-            ns.parent('#didyoumean').remove()
-            clearInterval(id)
-        }
-    }, 400)
-
     // no "article request" link for non-periodical item types
     $('.bibliocol').each((idx, el) => {
         let type = $(el).find('.results_material_type img').attr('title')
