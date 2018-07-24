@@ -34,11 +34,14 @@
     right: auto;
 }
 
-#catalogue_detail_biblio,
-#bibliodescriptions {
+#catalogue_detail_biblio {
     font-size: 18px;
 
     .label {
         font-size: 18px;
     }
+}
+
+#bibliodescriptions {
+    font-size: 16px;
 }
