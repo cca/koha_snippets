@@ -1,3 +1,15 @@
+#opac-main-search {
+    // align main search with .main content area
+    margin-left: 20px
+}
+
+// phone screen, make search input full width
+@media only screen and (max-width: 608px) {
+    #opac-main-search .librarypulldown .transl1 {
+        width: 100%;
+    }
+}
+
 .mastheadsearch {
     background: $white;
 
