@@ -41,6 +41,7 @@
 .actions-menu {
 	margin-top: 1em;
 
+	// need to do each of these separate for specificity
 	a.addtocart {
 		background-position: -5px -265px;
 		padding-left: 35px;
@@ -50,8 +51,13 @@
 		}
 	}
 
-	a.addtocart {
+	a.hold {
 		background-position: -2px -453px;
+		padding-left: 35px;
+	}
+
+	a.article_request {
+		background-position: -5px -183px;
 		padding-left: 35px;
 	}
 }
