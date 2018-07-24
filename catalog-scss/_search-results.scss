@@ -3,6 +3,7 @@
 .bibliocol {
 	.edition,
 	.publisher,
+	.other_title,
 	.results_format,
 	.results_contents_literary,
 	.results_audience {
@@ -10,11 +11,21 @@
 	}
 	// this is the only way to hide the author line
 	> p {
-		display: nonel
+		display: none;
 	}
 
 	.label {
-		font: 18px/1.53 Raleway;
+		font: 400 18px/1.53 Raleway;
+	}
+}
+
+#results {
+	.results_summary {
+		font-size: 18px;
+	}
+	a.title {
+		display: block;
+		margin-bottom: .5em;
 	}
 }
 
@@ -29,14 +40,30 @@
 
 .actions-menu {
 	margin-top: 1em;
+
+	a.addtocart {
+		background-position: -5px -265px;
+		padding-left: 35px;
+
+		&:hover {
+			color: #005580;
+		}
+	}
+
+	a.addtocart {
+		background-position: -2px -453px;
+		padding-left: 35px;
+	}
 }
+
+// @TODO checkbox on left side is tiny, easy to miss
 
 .coverimages {
     left: 0;
     float: left;
 	min-width: 168px;
-    padding-right: 50px;
-    padding-bottom: 40px;
+    padding-right: 30px;
+    padding-bottom: 20px;
     top: 0;
 }
 
