@@ -51,3 +51,29 @@ $('#action a').click(function (ev) {
       transport: 'beacon'
     });
 })
+
+// social sharing icons beneath actions
+// if people don't use these we should remove them
+$('#social_networks div').click(function (ev) {
+    var item = $(this).children().first()
+    var category = item.target.id
+    var value = item.target.title
+    ga('send', 'event', {
+      eventCategory: 'Social Network',
+      eventAction: category,
+      eventLabel: value,
+      transport: 'beacon'
+    });
+})
+
+// interactions with the "toolbar" above search results, below pagination
+$('#selections-toolbar a, #selections-toolbar input').click(function (ev) {
+    var category = ev.id || ev.parentElement.id
+    var value = ev.textContent || ev.value
+    ga('send', 'event', {
+      eventCategory: 'Toolbar',
+      eventAction: category,
+      eventLabel: value,
+      transport: 'beacon'
+    });
+})
