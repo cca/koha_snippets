@@ -3,25 +3,25 @@
     padding: 0 .8em;
 
     ul {
+        border-radius: 0;
         list-style-type: none;
         margin: 0;
-        padding: 0;
         overflow: hidden;
-        border-radius: 0px;
-    }
+        padding: 0;
 
-    ul li {
-        border-bottom: 3px solid transparent;
-        display: inline-block;
-        float: left;
-        font-weight: 700;
-        height: 55px;
-
-        &:after {
-            content: "";
+        li {
+            border-bottom: 3px solid transparent;
+            display: inline-block;
+            float: left;
+            font-weight: 700;
+            height: 55px;
         }
 
-        &:hover {
+        li:after {
+            content: '';
+        }
+
+        li:hover {
             border-bottom-color: $dark-blue;
         }
 

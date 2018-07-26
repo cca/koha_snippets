@@ -1,32 +1,33 @@
 // hide misleading/uninformative fields from search results display
 // scope to search results, fixes accidentally hiding .edition on bib details
 .bibliocol {
-	.edition,
-	.publisher,
-	.other_title,
-	.results_format,
-	.results_contents_literary,
-	.results_audience {
+    .edition,
+    .publisher,
+    .other_title,
+    .results_format,
+    .results_contents_literary,
+    .results_audience {
         display: none;
-	}
-	// this is the only way to hide the author line
-	> p {
-		display: none;
-	}
+    }
+    // this is the only way to hide the author line
+    > p {
+        display: none;
+    }
 
-	.label {
-		font: 400 18px/1.53 Raleway;
-	}
+    .label {
+        font: 400 18px/1.53 Raleway;
+    }
 }
 
 #results {
-	.results_summary {
-		font-size: 18px;
-	}
-	a.title {
-		display: block;
-		margin-bottom: .5em;
-	}
+    .results_summary {
+        font-size: 18px;
+    }
+
+    a.title {
+        display: block;
+        margin-bottom: .5em;
+    }
 }
 
 .results_material_type img.materialtype {
@@ -35,52 +36,52 @@
 }
 
 .available {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .actions-menu {
-	margin-top: 1em;
+    margin-top: 1em;
 
-	// need to do each of these separate for specificity
-	a.addtocart {
-		background-position: -5px -265px;
-		padding-left: 35px;
+    // need to do each of these separate for specificity
+    a.addtocart {
+        background-position: -5px -265px;
+        padding-left: 35px;
 
-		&:hover {
-			color: #005580;
-		}
-	}
+        &:hover {
+            color: $dark-blue;
+        }
+    }
 
-	a.hold {
-		background-position: -2px -453px;
-		padding-left: 35px;
-	}
+    a.hold {
+        background-position: -2px -453px;
+        padding-left: 35px;
+    }
 
-	a.article_request {
-		background-position: -5px -183px;
-		padding-left: 35px;
-	}
+    a.article_request {
+        background-position: -5px -183px;
+        padding-left: 35px;
+    }
 }
 
 // @TODO checkbox on left side is tiny, easy to miss
 
 .coverimages {
-    left: 0;
     float: left;
-	min-width: 168px;
-    padding-right: 30px;
+    left: 0;
+    min-width: 168px;
     padding-bottom: 20px;
+    padding-right: 30px;
     top: 0;
 }
 
 #didyoumean {
-	display: none;
+    display: none;
 
-	&.dym-loaded {
-		display: inherit;
-	}
+    &.dym-loaded {
+        display: inherit;
+    }
 }
 
 .no-image {
-	display: none;
+    display: none;
 }

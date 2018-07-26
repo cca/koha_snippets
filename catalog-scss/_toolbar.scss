@@ -25,9 +25,9 @@
     -webkit-appearance: none;
     appearance: none;
     background: $white;
+    border: 1px solid $input-light-gray;
     border-radius: 0;
-    border: 1px solid #E5E5E4;
-    color: #333333;
+    color: $black-font;
     font-family: inherit;
     font-size: 14px;
     height: 44px;
@@ -42,22 +42,17 @@
 select {
     -webkit-appearance: none;
     appearance: none;
-    background-color: rgb(255, 255, 255);
-    background: #FFF;
+    background: $white;
+    border: 1px solid $input-light-gray;
     border-radius: 0;
-    border: 1px solid #E5E5E4;
-    border: 1px solid rgb(229, 229, 228);
     box-sizing: border-box;
-    color: #333333;
-    color: rgb(0, 0, 0);
+    color: $black-font;
     font-size: 14px;
     height: 44px;
     margin-bottom: 0;
     outline: 0;
-    outline: none;
     padding: 8px 18px;
     text-indent: .01px;
-    text-indent: 0.01px;
     text-overflow: '';
     width: 100%;
 }
