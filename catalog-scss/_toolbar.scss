@@ -27,27 +27,9 @@
     background: $white;
     border: 1px solid $input-light-gray;
     border-radius: 0;
-    color: $black-font;
-    font-family: inherit;
-    font-size: 14px;
-    height: 44px;
-    outline: 0;
-    padding: 8px 18px;
-    width: 100%;
-}
-
-#toolbar select,
-#opac-main-search select,
-.toolbar select,
-select {
-    -webkit-appearance: none;
-    appearance: none;
-    background: $white;
-    border: 1px solid $input-light-gray;
-    border-radius: 0;
     box-sizing: border-box;
     color: $black-font;
-    font-size: 14px;
+    font: 14px inherit;
     height: 44px;
     margin-bottom: 0;
     outline: 0;
