@@ -21,7 +21,8 @@ $selector: ();
 // use our selector & hide "gender" radio button list plus 2 full form sections
 #{$selector},
 #memberentry_identity .lradio, // "gender" radio button list
-#memberentry_identity a, // "clear date" DoB link
+#memberentry_identity .cleardate,
+#memberentry_identity .ui-datepicker-trigger,
 #memberentry_alternateaddress,
 #memberentry_alternatecontact {
     display: none;
