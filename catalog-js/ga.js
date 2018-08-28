@@ -68,7 +68,7 @@ $('#social_networks div').click(function (ev) {
 
 // interactions with the "toolbar" above search results, below pagination
 $('#selections-toolbar a, #selections-toolbar input').click(function (ev) {
-    var category = ev.id || ev.parentElement.id
+    var category = ev.target.id || ev.parentElement.id
     var value = ev.textContent || ev.value
     ga('send', 'event', {
       eventCategory: 'Toolbar',
