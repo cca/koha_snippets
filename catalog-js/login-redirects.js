@@ -3,7 +3,7 @@
 // users back to the appropriate place for these actions:
 // 1) back to opac-reserve.pl?biblionumber=N when placing hold
 // 2) back to opac-suggestionstorage.pl?op=add when making purchase suggestion
-// 3) back to opac-request-article.pl?biblionumber=N when requesting an article
+// 3) back to opac-request-article.pl?biblionumber(s)=N when requesting an article
 
 // this is a little weird: we assume we're on the login screen if we see the
 // <!-- TEMPLATE FILE: opac-auth.tt --> comment which is a child only of the
