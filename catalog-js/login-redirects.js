@@ -4,6 +4,7 @@
 // 1) back to opac-reserve.pl?biblionumber=N when placing hold
 // 2) back to opac-suggestionstorage.pl?op=add when making purchase suggestion
 // 3) back to opac-request-article.pl?biblionumber(s)=N when requesting an article
+// 4) back to opac-restrictedpage.pl (which doesn't require any parameter passing)
 
 // this is a little weird: we assume we're on the login screen if we see the
 // <!-- TEMPLATE FILE: opac-auth.tt --> comment which is a child only of the
@@ -60,4 +61,15 @@ else if (path.match('/cgi-bin/koha/opac-user.pl') && storage.cca_article_request
     // clear storage, go to appropriate article requests page
     storage.removeItem('cca_article_request')
     location = '/cgi-bin/koha/opac-request-article.pl?biblionumber=' + bib
+}
+
+// 4) we're trying to access the resticted page
+if (onLoginScreen && path.match('/cgi-bin/koha/opac-restrictedpage.pl')) {
+    storage.clear()
+    storage.setItem('cca_restricted_page', true)
+}
+else if (path.match('/cgi-bin/koha/opac-user.pl') && storage.cca_restricted_page) {
+    // clear storage, return to restricted page
+    storage.clear()
+    location = '/cgi-bin/koha/opac-restrictedpage.pl'
 }
