@@ -2,7 +2,7 @@
 // this script uses session storage to remember what's going on & redirect
 // users back to the appropriate place for these actions:
 // 1) back to opac-reserve.pl?biblionumber=N when placing hold
-// 2) back to opac-suggestionstorage.pl?op=add when making purchase suggestion
+// 2) back to opac-suggestions.pl?op=add when making purchase suggestion
 // 3) back to opac-request-article.pl?biblionumber(s)=N when requesting an article
 // 4) back to opac-restrictedpage.pl (which doesn't require any parameter passing)
 
@@ -40,14 +40,14 @@ else if (path.match('/cgi-bin/koha/opac-user.pl') && (storage.cca_bib_hold || st
 
 // 2) we're trying to make a purchase suggestion but we're not logged in
 // note we need to use location.href because we want to match query string too
-if (onLoginScreen && location.href.match(/\/cgi-bin\/koha\/opac-suggestionstorage.pl\?op=add/)) {
+if (onLoginScreen && location.href.match(/\/cgi-bin\/koha\/opac-suggestions.pl\?op=add/)) {
     storage.clear()
     storage.setItem('cca_suggestion', true)
 }
 else if (path.match('/cgi-bin/koha/opac-user.pl') && storage.cca_suggestion) {
     // clear storage, go to purchase suggestions form
     storage.removeItem('cca_suggestion')
-    location = '/cgi-bin/koha/opac-suggestionstorage.pl?op=add'
+    location = '/cgi-bin/koha/opac-suggestions.pl?op=add'
 }
 
 // 3) we're trying to make an article request but we're not logged in
