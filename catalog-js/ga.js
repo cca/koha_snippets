@@ -22,13 +22,13 @@ $('a[href^=http]').click(function (ev) {
 
 // search facet usage
 $('#search-facets .menu-collapse a').click(function (ev) {
-    var $target = $(ev.target)
+    let $target = $(ev.target)
     // go up a couple lists to facet-level list item with ID like "au_id"
-    var id = $target.parents('li[id]').attr('id')
+    let id = $target.parents('li[id]').attr('id')
     // get the _topic_ of the facet like au, location, su-geo
-    var category = id.replace('_id', '').replace('_facet', '')
+    let category = id.replace('_id', '').replace('_facet', '')
     // actual facet being used, e.g. a name, location, place
-    var value = $target.text()
+    let value = $target.text()
     ga('send', 'event', {
       eventCategory: 'Search Facet',
       eventAction: category,
@@ -41,9 +41,9 @@ $('#search-facets .menu-collapse a').click(function (ev) {
 $('#action a').click(function (ev) {
     // classes/IDs of <a>s are slightly more generic than their text
     // so we prefer ID for category but take 1st class otherwise
-    var category = ev.target.id || ev.target.classList[0]
+    let category = ev.target.id || ev.target.classList[0]
     // text of action is also informative
-    var value = ev.target.textContent
+    let value = ev.target.textContent
     ga('send', 'event', {
       eventCategory: 'Action',
       eventAction: category,
@@ -55,9 +55,9 @@ $('#action a').click(function (ev) {
 // social sharing icons beneath actions
 // if people don't use these we should remove them
 $('#social_networks div').click(function (ev) {
-    var item = $(this).children().first()
-    var category = item.target.id
-    var value = item.target.title
+    let item = $(this).children().first()
+    let category = item.target.id
+    let value = item.target.title
     ga('send', 'event', {
       eventCategory: 'Social Network',
       eventAction: category,
@@ -68,8 +68,8 @@ $('#social_networks div').click(function (ev) {
 
 // interactions with the "toolbar" above search results, below pagination
 $('#selections-toolbar a, #selections-toolbar input').click(function (ev) {
-    var category = ev.target.id || ev.target.className || (ev.parentElement ? ev.parentElement.id : 'none')
-    var value = ev.textContent || ev.value
+    let category = ev.target.id || ev.target.className || (ev.parentElement ? ev.parentElement.id : 'none')
+    let value = ev.textContent || ev.value
     ga('send', 'event', {
       eventCategory: 'Toolbar',
       eventAction: category,

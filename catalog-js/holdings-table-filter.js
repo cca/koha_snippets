@@ -4,7 +4,7 @@
 // we're on a details page & there are more than 4 rows of holdings (not counting header row)
 if (location.pathname === '/cgi-bin/koha/opac-detail.pl' && $('.holdingst tr').length > 5) {
     // run on document load
-    $(function(){
+    $(() => {
         // "aoColumns" passage copied from details page source
         $(".holdingst").dataTable($.extend(true, {}, dataTablesDefaults, {
             // dataTables throws an error if you overwrite an existing table

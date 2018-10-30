@@ -30,7 +30,7 @@ function redir (path) {
 // /search~S2/i?SEARCH=9781118903339
 // so we check the path for similar
 if (location.pathname.match(/\/search(~S\d\??)?\/i/)) {
-    var standard_no = getQuery()
+    let standard_no = getQuery()
     // Redirect to Koha's equivalent URL
     // Koha ISBN search, idx=nb -> ISBN index, q is query param
     // NOTE: ISSN index is different (idx=ns) & the combined "standard number"
@@ -43,25 +43,25 @@ if (location.pathname.match(/\/search(~S\d\??)?\/i/)) {
     }
     // Millennium keyword type searches
 } else if (location.toString().match(/\/search(~S\d\??)?\/(Y|X|w)/)) {
-    var kw = getQuery()
+    let kw = getQuery()
     if (kw) redir('/cgi-bin/koha/opac-search.pl?q=' + kw)
 
     // Millennium subject searches
     // URL like /search~S1?/dteaching/dteaching/1%2C8%2C11%2CB/exact&FF=dteaching&1%2C4%2C
 } else if (location.toString().match(/\/search(~S\d\??)?\/d/)) {
-    var subj = getQuery()
+    let subj = getQuery()
     // redirect to Koha subject search, looks like q=(su:{Subject Term})
     if (subj) redir('/cgi-bin/koha/opac-search.pl?q=(su:%7B' + subj + '%7D)')
 
     // Millennium author searches
 } else if (location.toString().match(/\/search(~S\d\??)?\/a/)) {
-    var author = getQuery()
+    let author = getQuery()
     // redirect to Koha author search, looks like q=(au:{Author Name})
     if (author) redir('/cgi-bin/koha/opac-search.pl?q=(au:%7B' + author + '%7D)')
 
     // Millennium title searches
 } else if (location.toString().match(/\/search(~S\d\??)?\/t/)) {
-    var title = getQuery()
+    let title = getQuery()
     // redirect to Koha title search, looks like q=(ti:{Title of Work})
     if (title) redir('/cgi-bin/koha/opac-search.pl?q=(ti:%7B' + title + '%7D)')
 

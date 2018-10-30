@@ -3,7 +3,7 @@
 // in a separate file
 if (location.pathname === '/cgi-bin/koha/tools/inventory.pl') {
 
-	function fixLCCNsort() {
+	var fixLCCNsort = function() {
 		let pagination = $('select[name="inventoryt_length"]').val()
 		if (pagination !== "-1") {
 			alert('You must set "Show ____ entries" to "All" before clicking this.')
