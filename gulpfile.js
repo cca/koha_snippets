@@ -1,4 +1,4 @@
-const gulp = require('gulp')
+const { src, dest, parallel, watch } = require('gulp')
 const concat = require('gulp-concat');
 const iife = require('gulp-iife');
 const babel = require('gulp-babel')
@@ -7,25 +7,27 @@ const insert = require('gulp-insert');
 
 // @TODO: similar tasks for CSS
 
-gulp.task('admin-js', () => {
-    return gulp.src('admin-js/*.js')
+function adminJS () {
+    return src('admin-js/*.js')
         .pipe(concat('IntranetUserJS.js'))
         .pipe(iife())
-        .pipe(babel({ presets: ['env'] }))
+        .pipe(babel({ presets: ['@babel/preset-env'] }))
         .pipe(uglify())
         .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
-        .pipe(gulp.dest('dist'))
-})
+        .pipe(dest('dist'))
+}
 
-gulp.task('catalog-js', () => {
-    return gulp.src('catalog-js/*.js')
+function catalogJS () {
+    return src('catalog-js/*.js')
         .pipe(concat('OPACUserJS.js'))
         .pipe(iife())
-        .pipe(babel({ presets: ['env'] }))
+        .pipe(babel({ presets: ['@babel/preset-env'] }))
         .pipe(uglify())
         .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
-        .pipe(gulp.dest('dist'))
-})
+        .pipe(dest('dist'))
+}
 
-gulp.task('js', [ 'admin-js', 'catalog-js' ]);
-gulp.task('default', [ 'js' ]);
+exports['admin-js'] = adminJS
+exports['catalog-js'] = catalogJS
+exports.js = parallel(adminJS, catalogJS)
+exports.default = parallel(adminJS, catalogJS)
