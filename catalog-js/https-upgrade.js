@@ -19,7 +19,7 @@ $(()=>{
             })
         }
 
-        // run a second after page load, hopefully we have COCE data by now
-        setTimeout(swap, 1000)
+        // run a half second after page load, hopefully we have COCE data by now
+        setTimeout(swap, 500)
     }
 })
