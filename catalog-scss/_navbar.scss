@@ -1,7 +1,29 @@
 // scss-lint:disable SelectorDepth
-.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
-    border-bottom-color: $white;
-    border-top-color: $white;
+
+// https://bywatersolutions.com/education/opac-changes-coming-in-18-11
+// these first 3 selectors override 18.11 theme changes
+#logo {
+    background-image: url('/opac-tmpl/bootstrap/images/koha-logo-navbar.png');
+}
+
+#carticon,
+#listsmenu .fa,
+.cartlabel,
+.listslabel,
+.loggedinusername,
+.listslabel:hover,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .nav li.dropdown.open >.dropdown-toggle,
+.navbar-inverse .nav > li > a:focus,
+.navbar-inverse .nav > li > a:hover {
+    color: $white;
+}
+
+.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown > a:focus .caret,
+.navbar-inverse .nav li.dropdown > a:hover .caret {
+    border-bottom-color: $white !important;
+    border-top-color: $white !important;
 }
 
 .navbar-inverse .navbar-inner {
