@@ -3,8 +3,8 @@
 if (location.pathname.match('/cgi-bin/koha/serials/')) {
     // execute once document has loaded
     $(() => {
-        // no convenient style hooks here
-        var menu_list = $('#bd > .yui-b ul').eq(0)
+        // no good style hooks, 18.11 update broke this selector
+        var menu_list = $('.main aside ul').eq(0)
         // format is: [ link text, URL ]
         var links = [
             ['OAK at bindery',
@@ -31,6 +31,6 @@ if (location.pathname.match('/cgi-bin/koha/serials/')) {
             return html + `<li><a href="${link[1]}" target="_blank">${link[0]}</a></li>`
         }, '')
 
-        menu_list.prepend(html)
+        menu_list.prepend(html + '<br>')
     })
 }
