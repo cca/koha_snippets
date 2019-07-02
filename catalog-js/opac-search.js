@@ -21,14 +21,6 @@ if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
         }
     }, 400)
 
-    // no "article request" link for non-periodical item types
-    $('.bibliocol').each((idx, el) => {
-        let type = $(el).find('.results_material_type img').attr('title')
-        if (type !== 'serial') {
-            $(el).find('.article_request').parent().remove()
-        }
-    })
-
     // customize Materials Library results
     $('.results_summary.availability .available:contains("Materials Library")').each((idx, el) => {
         let item = $(el).parent().parent('.bibliocol')
