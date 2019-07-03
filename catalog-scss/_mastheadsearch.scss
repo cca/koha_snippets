@@ -37,6 +37,11 @@ input[type="text"]:focus {
     }
 }
 
+// override search bar height on home page where it's larger
+#opac-main .mastheadsearch input[type="text"] {
+    height: 28px;
+}
+
 #searchsubmit,
 .btn {
     border-radius: 4px;
