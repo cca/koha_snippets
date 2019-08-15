@@ -1,0 +1,22 @@
+// display of a single list
+// /cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=###
+#usershelves {
+    position: relative;
+
+    h3 {
+        left: 1em;
+        position: absolute;
+        top: 1em;
+    }
+
+    #toolbar {
+        background: 0;
+        border: 0;
+        position: relative;
+
+        .list-actions {
+            bottom: 0;
+            position: absolute;
+        }
+    }
+}
