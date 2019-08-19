@@ -33,6 +33,13 @@
     right: auto;
 }
 
+// icon & position for our added "permalink" #action link
+#permalink {
+    background: url('/opac-tmpl/bootstrap/images/sprite.png') no-repeat;
+    background-position: 5px -1143px;
+    padding-left: 35px;
+}
+
 // for "more searches" dropdown specifically but also fixes "Lists" etc. too
 .dropdown-menu > li > a {
     &:hover,

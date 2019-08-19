@@ -134,11 +134,6 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         let biblionumber =  $('.unapi-id').attr('title').split(':')[2]
         let permalink = location.pathname + '?biblionumber=' + biblionumber
         $('#action').append('<li><a id="permalink" href="' + permalink + '">Permanent Link</a></li>')
-        // icon
-        $('#permalink').css({
-            'background': 'transparent url(/opac-tmpl/lib/famfamfam/silk/link.png) no-repeat 11px',
-            'padding-left': '35px'
-        })
 
         // 2) cite this page
         // can't get OCLC number from the page so we use ISBN
