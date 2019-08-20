@@ -5,8 +5,9 @@ if (location.pathname.match('/cgi-bin/koha/members/memberentry.pl')) {
         let types = ['FACULTY', 'GRAD', 'STAFF', 'UNDERGRAD']
         let type = new URLSearchParams(location.search).get('categorycode')
         if (types.includes(type)) {
-            $('label[for="patron_attr_3"]').addClass('required')
-            $('#patron_attr_3').prop('required', true)
+            var $li = $('input[value="UNIVID"]').parent()
+            $li.find('label').addClass('required')
+            $li.find('textarea').prop('required', true)
                 .addClass('noEnterSubmit')
                 .after('<span class="required">Required</span>')
         }
