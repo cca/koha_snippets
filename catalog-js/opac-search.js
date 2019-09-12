@@ -2,10 +2,11 @@
 // previews in VAULT
 if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
     let qs = new URLSearchParams(location.search)
-    let q = qs.get('q').toLowerCase()
+    let q = qs.get('q') && qs.get('q').toLowerCase()
+    let limit = qs.get('limit')
 
-    // we have direct links that match these queries
-    if (q && q.match(/artists?'? book/)) {
+    // there's a link on the main Libraries site that matches this query
+    if (q && q.match(/artists?'? book/) || limit && limit.match('ARTIST')) {
         // insert an alert about the artists' books in VAULT
         let html = '<div class="alert alert-error">View previews of the Artists\' Books Collection <a href="https://vault.cca.edu/logon.do?.page=/hierarchy.do?topic=a7b976d5-5316-44da-b06e-7374cd100075">in VAULT</a> (signin required).</div>'
         $('#numresults').before(html)
