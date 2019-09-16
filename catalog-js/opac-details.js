@@ -124,7 +124,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         $('.print-large').parent('li').hide()
         $('#export').parent('li').hide()
         // remove "Request article" link for non-periodical item types
-        let itypes = Array.from($('.holdingst .itype img').map((i, el) => $(el).attr('title')))
+        let itypes = Array.from($('#holdingst .itype img').map((i, el) => $(el).attr('title')))
         if (!itypes.includes('Current Periodical') && !itypes.includes('Library Use Periodical')) {
             $('.article_request').parent('li').remove()
         }
