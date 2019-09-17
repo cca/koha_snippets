@@ -1,26 +1,28 @@
 // all our customizations to the bib details display in one place
 if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
-    $(function(){
-        // all manner of links with "&" in the text are broken
-        // e.g. https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=25683
-        $('#catalogue_detail_biblio a[href*="&"]')
-            // but 856 & public list links shouldn't be URL-encoded
+    $(()=>{
+        // fix links that are broken due to poor URI encoding
+        $('#catalogue_detail_biblio a')
+            // skip MARCH 856$u & public list links, they should be OK
             .not('.results_summary.online_resources a')
             .not('.results_summary.lists a')
-            // some series links are like q=se,phr"..."&q=au:"..."
-            // and we don't want to accidentally encode that middle &
-            .not('.results_summary.series a')
             .each(function(){
                 $(this).attr('href', function (i, href) {
-                    // URI-encode ampersands
-                    return href.replace(/&(amp;)?/g, '%26')
+                    // '&' in series link examples:
+                    // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=70359
+                    // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=4947
+                    // '&' in subject link example:
+                    // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=25683
+                    // trailing semicolon breaks link
+                    // example: https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=43354
+                    return href.replace(/%20&(amp;)?%20/g, '%20%26%20').replace(/%20;%22/g, '%22')
                 })
         })
 
         // extra commas in 700 "contributor" field display
         // like MARC of 700 __ ‡a Brundige, James, ‡e director, ‡e editor.
         // => "Brundige, James [director,, editor.]"
-        $('h5.author .relatorcode').replaceWith(function(){
+        $('h5.author .relatorcode').replaceWith(()=>{
             // jQuery expects HTML string here, not just a text node
             return '<span class="relatorcode">' + $(this).text().replace(/,,/g, ',') + '</span>'
         })
@@ -64,7 +66,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         // course reserves: separate course name & semester with a pipe
         if ($('#item_coursereserves').length) {
             // course reserves cell is always last in row
-            $('tbody td:last-child').each(function (index, element){
+            $('tbody td:last-child').each((index, element) => {
                 let cr = $(element).find('a')
                 if (cr.length) {
                     // looks like: ${course name} <!-- ${section code} --> ${term}
@@ -101,7 +103,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             let citeThisUrl = 'https://www.worldcat.org/isbn/' + isbn + '?page=citation'
 
             // add the "cite this" link to the actions menu
-            $('#action').append('<li><a data-toggle="modal" data-target="#citeModal" id="citethis">Cite this work</a></li>')
+            $('#action').append('<li><a href="#" data-toggle="modal" data-target="#citeModal" id="citethis">Cite this work</a></li>')
             // icon
             $('#citethis').css({
                 'background': 'transparent url(/opac-tmpl/bootstrap/images/sprite.png) no-repeat 5px -921px',
