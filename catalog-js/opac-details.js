@@ -53,6 +53,9 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             // but 856 & public list links shouldn't be URL-encoded
             .not('.results_summary.online_resources a')
             .not('.results_summary.lists a')
+            // some series links are like q=se,phr"..."&q=au:"..."
+            // and we don't want to accidentally encode that middle &
+            .not('.results_summary.series a')
             .each(function(){
                 $(this).attr('href', function (i, href) {
                     // URI-encode ampersands
