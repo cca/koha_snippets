@@ -147,7 +147,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             let citeThisUrl = 'https://www.worldcat.org/isbn/' + isbn + '?page=citation'
 
             // add the "cite this" link to the actions menu
-            $('#action').append('<li><a id="citethis" href="' + citeThisUrl + '">Cite this work</a></li>')
+            $('#action').append('<li><a data-toggle="modal" data-target="#citeModal" id="citethis">Cite this work</a></li>')
             // icon
             $('#citethis').css({
                 'background': 'transparent url(/opac-tmpl/bootstrap/images/sprite.png) no-repeat 5px -921px',
@@ -157,22 +157,16 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 // add "cite this" modal wrapping Worldcat iframe to the DOM
 // NOTE: do _not_ wrap iframe in div.modal-body as it causes double scrollbars
             $('body').prepend(
-`<div id="citeModal" class="modal hide" role="dialog">
+`<div id="citeModal" aria-modal="true" aria-labelledby="citethis_label" class="modal hide" role="dialog">
 	<div class="modal-header">
 		<button type="button" class="closebtn" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3>Cite this work</h3>
+        <h3 id="citethis_label">Cite this work</h3>
 	</div>
 	<iframe height="400" frameborder="0" src="${citeThisUrl}" style="width:100%;"></iframe>
 	<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	</div>
 </div>`)
-
-            // setup Bootstrap modal
-            $('#citethis').click(function(event){
-                event.preventDefault()
-                $('#citeModal').modal('show')
-            })
         }
-    })
+    }) // close $(fn(){})
 }
