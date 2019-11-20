@@ -1,5 +1,5 @@
 // use our custom-made icons instead of default theme Koha ones
-if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
+if (path.match('/cgi-bin/koha/opac-search.pl')) {
     let icon_map = {
         'book': 'book.svg',
         'other materials': 'other.svg',

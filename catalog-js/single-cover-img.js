@@ -1,6 +1,5 @@
 // Don't allow multiple cover images (happens if COCE has one & we added a local
 // image, too). This runs in 2 places, bib detail and search results.
-// we have path var from a script that runs prior
 if (path.match('/cgi-bin/koha/opac-detail.pl') || path.match('/cgi-bin/koha/opac-search.pl')) {
     // run on page load in own scope
     $(function(){

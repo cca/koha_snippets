@@ -2,7 +2,7 @@
 // better home page column layout
 
 // run only on home pg (could be at domain root or its own path)
-if (location.pathname.match('cgi-bin/koha/opac-main.pl') || location.pathname === '/') {
+if (path.match('cgi-bin/koha/opac-main.pl') || path === '/') {
     $('#searchsubmit').remove()
     // padding is magic number to make text input match large input-append btn height
     $('#translControl1').replaceWith(

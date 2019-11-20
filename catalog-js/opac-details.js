@@ -1,5 +1,5 @@
 // all our customizations to the bib details display in one place
-if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
+if (path.match('/cgi-bin/koha/opac-detail.pl')) {
     $(()=>{
         // fix links that are broken due to poor URI encoding
         $('#catalogue_detail_biblio a')
@@ -91,7 +91,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         // add 2 links to the right hand #action list
         // 1) permalink - pull biblionumber from unapi tag
         let biblionumber =  $('.unapi-id').attr('title').split(':')[2]
-        let permalink = location.pathname + '?biblionumber=' + biblionumber
+        let permalink = path + '?biblionumber=' + biblionumber
         $('#action').append('<li><a id="permalink" href="' + permalink + '">Permanent Link</a></li>')
 
         // 2) cite this page

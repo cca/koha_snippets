@@ -1,6 +1,6 @@
 // on specific searches for the Artists' Books collection, show a link to the
 // previews in VAULT
-if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
+if (path.match('/cgi-bin/koha/opac-search.pl')) {
     let qs = new URLSearchParams(location.search)
     let q = qs.get('q') && qs.get('q').toLowerCase()
     let limit = qs.get('limit')

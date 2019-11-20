@@ -1,5 +1,5 @@
 // place a hold page
-if (location.pathname.match('/cgi-bin/koha/opac-reserve.pl')) {
+if (path.match('/cgi-bin/koha/opac-reserve.pl')) {
     // warning when user is about to place a hold on a LUO item
     let itype = $('.itype').text().trim()
     // this test catches a number of item types

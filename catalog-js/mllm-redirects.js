@@ -29,7 +29,7 @@ function redir (path) {
 // Millennium ISBN/ISSN search URLs look like
 // /search~S2/i?SEARCH=9781118903339
 // so we check the path for similar
-if (location.pathname.match(/\/search(~S\d\??)?\/i/)) {
+if (path.match(/\/search(~S\d\??)?\/i/)) {
     let standard_no = getQuery()
     // Redirect to Koha's equivalent URL
     // Koha ISBN search, idx=nb -> ISBN index, q is query param
@@ -66,6 +66,6 @@ if (location.pathname.match(/\/search(~S\d\??)?\/i/)) {
     if (title) redir('/cgi-bin/koha/opac-search.pl?q=(ti:%7B' + title + '%7D)')
 
     // Millennium patron login page
-} else if (location.pathname.match('/patroninfo')) {
+} else if (path.match('/patroninfo')) {
     redir('/cgi-bin/koha/opac-user.pl')
 }

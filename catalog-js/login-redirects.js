@@ -10,7 +10,6 @@
 // <!-- TEMPLATE FILE: opac-auth.tt --> comment which is a child only of the
 // document (not even <html> element)
 var onLoginScreen = !!document.childNodes[1].textContent.match('opac-auth.tt')
-    , path = location.pathname
     , search = location.search
     , storage = window.sessionStorage
     , bibs

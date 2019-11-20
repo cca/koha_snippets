@@ -5,7 +5,7 @@ var storage = window.sessionStorage
 var loggedIn = !!$('.loggedinusername').length
 var s = '#action .addtoshelf'
 
-if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
+if (path.match('/cgi-bin/koha/opac-detail.pl')) {
     if (!loggedIn) {
         // add link, make it store data & go to user sign in
         var biblionumber = new URLSearchParams(location.search).get('biblionumber')
@@ -18,7 +18,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     }
 }
 // check that we're signed in & that there's stored data, then redirect
-if (location.pathname.match('/cgi-bin/koha/opac-user.pl')) {
+if (path.match('/cgi-bin/koha/opac-user.pl')) {
     if (loggedIn && storage.cca_save_to_list) {
         location = '/cgi-bin/koha/opac-detail.pl?biblionumber=' + storage.cca_save_to_list
     }

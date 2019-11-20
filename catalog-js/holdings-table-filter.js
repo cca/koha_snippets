@@ -2,7 +2,7 @@
 // they want more easily, very useful for serials with large numbers of items
 
 // we're on a details page & there are more than 4 rows of holdings (not counting header row)
-if (location.pathname === '/cgi-bin/koha/opac-detail.pl' && $('#holdingst tr').length > 5) {
+if (path === '/cgi-bin/koha/opac-detail.pl' && $('#holdingst tr').length > 5) {
     // run on document load
     $(() => {
         // "aoColumns" passage copied from details page source

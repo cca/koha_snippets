@@ -2,7 +2,7 @@
    This JS was added automatically by installing the CoverFlow plugin
    Please do not modify */
 // only run on the home page, triggers unnecessary HTTP request otherwise
-if (location.pathname.match('/cgi-bin/koha/opac-main.pl') || location.pathname === '/') {
+if (path.match('/cgi-bin/koha/opac-main.pl') || path === '/') {
     $(function() {
         $.getScript(
             "/plugin/Koha/Plugin/Com/ByWaterSolutions/CoverFlow/bower_components/jquery-flipster/dist/jquery.flipster.min.js",

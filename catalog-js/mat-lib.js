@@ -1,5 +1,5 @@
 // custom display for Materials Library samples
-if (location.pathname.match('/cgi-bin/koha/opac-detail.pl') &&
+if (path.match('/cgi-bin/koha/opac-detail.pl') &&
     $('td.itype').eq(0).text().trim() === 'Material Sample') {
     // mat lib labels
     let newLabel = function (selector, label) {
