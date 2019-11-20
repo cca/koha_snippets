@@ -1,5 +1,7 @@
-// all our customizations to the bib details display in one place
-if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
+// Don't allow multiple cover images (happens if COCE has one & we added a local
+// image, too). This runs in 2 places, bib detail and search results.
+// we have path var from a script that runs prior
+if (path.match('/cgi-bin/koha/opac-detail.pl') || path.match('/cgi-bin/koha/opac-search.pl')) {
     // run on page load in own scope
     $(function(){
         // if there are two cover images present, hide the second one
@@ -37,13 +39,16 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                                 $(mydiv).empty().append(img);
                             }
                             $(mydiv).children('.no-image').remove();
-                            // remove the COCE cover image div
+                            // remove the COCE cover image, first line is for
+                            // search & second is for bib detail
+                            $(mydiv).parent().find("span[id^=coce-thumbnail]").remove()
                             $('#coce-thumbnail-preview').remove()
                         }
                     })
             });
         }
         // execute function we just redefined
-        KOHA.LocalCover.GetCoverFromBibnumber(true)
+        // uselink => true on bib detail, false on search
+        KOHA.LocalCover.GetCoverFromBibnumber(!!path.match('/cgi-bin/koha/opac-detail.pl'))
     }) // close $(fn(){})
 }
