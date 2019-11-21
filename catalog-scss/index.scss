@@ -1,4 +1,3 @@
-/*! compiled CSS, see: https://github.com/cca/koha_snippets */
 @import 'colors';
 @import 'header';
 @import 'home';
@@ -33,8 +32,6 @@
 .main {
     border: 0;
     border-radius: 0;
-    // slight visual break between menu/search and main content
-    border-top: 2px solid $input-light-gray;
     box-shadow: none;
 }
 
