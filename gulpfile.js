@@ -1,11 +1,16 @@
 const { src, dest, parallel, watch } = require('gulp')
-const concat = require('gulp-concat');
-const iife = require('gulp-iife');
-const babel = require('gulp-babel')
-const uglify = require('gulp-uglify')
-const insert = require('gulp-insert');
+const concat = require("gulp-concat")
+const iife = require("gulp-iife")
+const babel = require("gulp-babel")
+const uglify = require("gulp-uglify")
+const insert = require("gulp-insert")
+const sass = require("gulp-sass")
+const rename = require("gulp-rename")
 
-// @TODO: similar tasks for CSS
+sass.compiler = require('node-sass')
+const sassOpts = {
+    outputStyle: 'compressed'
+}
 
 function adminJS () {
     return src('admin-js/*.js')
@@ -27,7 +32,28 @@ function catalogJS () {
         .pipe(dest('dist'))
 }
 
-exports['admin-js'] = adminJS
-exports['catalog-js'] = catalogJS
-exports.js = parallel(adminJS, catalogJS)
-exports.default = parallel(adminJS, catalogJS)
+function adminCSS() {
+    return src('admin-scss/index.scss')
+        .pipe(sass.sync(sassOpts).on('error', sass.logError))
+        .pipe(rename('IntranetUserCSS.css'))
+        .pipe(insert.prepend(`/* minified ${Date()} - see https://github.com/cca/koha_snippets */`))
+        .pipe(dest('dist'))
+}
+
+function catalogCSS() {
+    return src('catalog-scss/index.scss')
+        .pipe(sass.sync(sassOpts).on('error', sass.logError))
+        .pipe(rename('OPACUserCSS.css'))
+        .pipe(insert.prepend(`/* minified ${Date()} - see https://github.com/cca/koha_snippets */`))
+        .pipe(dest('dist'))
+}
+
+module.exports = {
+    'admin-js': adminJS,
+    'catalog-js': catalogJS,
+    'admin-css': adminCSS,
+    'catalog-css': catalogCSS,
+    js: parallel(adminJS, catalogJS),
+    css: parallel(catalogCSS, adminCSS),
+    default: parallel(adminJS, catalogJS, adminCSS, catalogCSS)
+}
