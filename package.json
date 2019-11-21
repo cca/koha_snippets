@@ -19,13 +19,11 @@
     "url": "https://github.com/cca/koha_snippets.git"
   },
   "scripts": {
-    "build": "gulp js; npm run admin-scss; npm run catalog-scss",
+    "build": "gulp",
     "ajs": "gulp admin-js; cat dist/IntranetUserJS.js | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=IntranetUserJS'",
-    "acss": "npm run admin-scss; cat dist/IntranetUserCSS.css | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=IntranetUserCSS'",
+    "acss": "gulp admin-css; cat dist/IntranetUserCSS.css | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=IntranetUserCSS'",
     "cjs": "gulp catalog-js; cat dist/OPACUserJS.js | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserJS'",
-    "ccss": "npm run catalog-scss; cat dist/OPACUserCSS.css | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserCSS'",
-    "admin-scss": "sass --style=compressed admin-scss/index.scss > dist/IntranetUserCSS.css",
-    "catalog-scss": "sass --style=compressed catalog-scss/index.scss > dist/OPACUserCSS.css",
+    "ccss": "gulp catalog-css; cat dist/OPACUserCSS.css | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserCSS'",
     "test": "jshint admin-js/*.js; jshint catalog-js/*.js; scss-lint admin-scss/*.scss; scss-lint catalog-scss/*.scss; "
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
