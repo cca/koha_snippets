@@ -5,6 +5,14 @@ if (path.match('/cgi-bin/koha/opac-user.pl')) {
         .css('font-weight', 'bold').text('Item recalled - please return')
         .parent('td').addClass('overdue').css('background-color', '#f8e86c')
 
+    // link to our contact form in these notices
+    $('#warnexpired, #warndeparture').each((idx, el) => {
+        let $el = $(el)
+        let html = $el.html()
+        let replacement = '<a href="https://libraries.cca.edu/about-us/about-us/ask-a-librarian/">contact the library</a>'
+        $el.html(html.replace('contact the library', replacement))
+    })
+
     let showMessage = () => {
         // BUG #23968 OPACMySummaryNote does not display, fixed in 19.11
         if (!$('#opac-my-summary-note').length) {
@@ -24,8 +32,8 @@ if (path.match('/cgi-bin/koha/opac-user.pl')) {
     if (id && fetch) {
         let report = 'https://library.cca.edu/cgi-bin/koha/svc/report?id=353'
         fetch(`${report}&sql_params=${id}`)
-            .then((resp) => resp.json())
-            .then((data) => {
+            .then(resp => resp.json())
+            .then(data => {
                 // response is always an array of arrays: [ [ "ALUMNI" ] ]
                 let category = data[0][0]
                 if (category == 'UNDERGRAD' || category == 'GRAD') showMessage()
