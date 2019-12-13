@@ -5,26 +5,22 @@
     <!-- using <button> here triggers page refresh on click for some reason -->
     <div class="btn btn-danger show-initially js-open"><b>Learn More…</b></div>
 
-    <p style="margin-top: 1em;">
-        <strong>If you have used the library previously but are unable to login with your CCA username, please <a href="https://libraries.cca.edu/contact">contact us</a> so we can assist you.</strong>
-    </p>
     <p>
         Some library users do not have CCA accounts. You might not have a library account if you are a:
     </p>
     <ul>
-        <li>Pre-college student</li>
         <li>Special program faculty member who does not regularly teach at CCA</li>
         <li>Visiting researcher sponsored by a CCA affiliate</li>
         <li>Alumnus who graduated over ten years ago</li>
     </ul>
     <p>
-        If you fall into one of the above categories, please use the form below. Your login is of form "surname.givenname" (e.g. "jones.olivia" for someone named "Olivia Jones") and your password is your library barcode (should look something like "PCAC9876543210X"). As always, <a href="https://libraries.cca.edu/contact">contact us</a> if you experience any problems.
+        If you fall into one of these categories, use the login form below. Your username is of form "surname.givenname" (e.g. "jones.olivia" for someone named "Olivia Jones") and your password is initially set to be your library barcode (something like <code>PCAC9876543210X</code>) but can be changed. Please <a href="https://libraries.cca.edu/contact">contact us</a> if you experience any problems.
     </p>
 
-    <h4>Non-CCA Login</h4>
     <!-- we can't just put a form-within-a-form here so we comment it out
     initially & then, once other form has been removed, uncomment with JS -->
-    <div id="uncomment"><!--<form action="/cgi-bin/koha/opac-user.pl" name="auth" id="auth" method="post">
+    <div id="uncomment"><!--<h4>Non-CCA Login</h4>
+    <form action="/cgi-bin/koha/opac-user.pl" name="auth" id="auth" method="post">
         <input type="hidden" name="koha_login_context" value="opac">
         <fieldset class="brief">
             <label for="userid">Login</label>
@@ -33,5 +29,7 @@
             <input type="password" size="25" id="password" name="password">
         </fieldset>
         <input type="submit" value="Log in" class="btn">
-    </form>--></div>
+    </form>
+    <p><strong>Unable to login?</strong> Try to <a href="/cgi-bin/koha/opac-password-recovery.pl">recover your password</a>. Note that this is only helpful for users that sign in using their Library Catalog password and <strong>not</strong> their CCA password; your CCA password is managed on <a href="https://accounts.cca.edu">the accounts website</a>.</p>
+    --></div>
 </div>
