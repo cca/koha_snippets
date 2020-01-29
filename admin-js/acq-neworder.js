@@ -1,7 +1,7 @@
 // set notforloan = "ordered" for new orders
 // NOTE: the pattern below matches multiple paths
 // e.g. acqui/neworderempty.pl, acqui/neworderbiblio.pl, acqui/newordersuggestion.pl
-if (location.pathname.match('/cgi-bin/koha/acqui/neworder')) {
+if (path.match('/cgi-bin/koha/acqui/neworder')) {
     $(() => {
         var set_defaults = () => {
             var select = $('#subfield7 select')

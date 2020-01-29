@@ -1,5 +1,5 @@
 // modifications to the "main page" — page staff see right after logging in
-if (location.pathname.match('/cgi-bin/koha/mainpage.pl')) {
+if (path.match('/cgi-bin/koha/mainpage.pl')) {
     $(function(){
         let suggestions = $('#suggestions_pending a')
 

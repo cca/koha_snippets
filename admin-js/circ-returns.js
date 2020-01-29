@@ -1,5 +1,5 @@
 // run only on the checkin page
-if (location.pathname.match('/cgi-bin/koha/circ/returns.pl')) {
+if (path.match('/cgi-bin/koha/circ/returns.pl')) {
     // run on document load
     $(function(){
         // loop over each row in the checkin table

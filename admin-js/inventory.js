@@ -1,7 +1,7 @@
 // display a button that fixes the sorting of call numbers of the inventory page
 // this relies on Ray Voelker's js-loc-callnumbers script which is included
 // in a separate file
-if (location.pathname === '/cgi-bin/koha/tools/inventory.pl') {
+if (path === '/cgi-bin/koha/tools/inventory.pl') {
 
 	var fixLCCNsort = function() {
 		let pagination = $('select[name="inventoryt_length"]').val()

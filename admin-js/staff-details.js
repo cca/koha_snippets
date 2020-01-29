@@ -1,5 +1,5 @@
 // changes to staff-side bibliographic record view
-if (location.pathname.match('/cgi-bin/koha/catalogue/detail.pl')) {
+if (path.match('/cgi-bin/koha/catalogue/detail.pl')) {
     // wait for document load
     $(() => {
 
