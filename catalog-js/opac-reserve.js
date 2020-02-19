@@ -7,7 +7,6 @@ if (path.match('/cgi-bin/koha/opac-reserve.pl')) {
         $('.holdrow').append('<div class="alert"><b>Note that this item is for in-library use only.</b></div>')
     }
 
-    // hide "hold not needed after" datepicker
-    // it generates more confusion than it adds utility
-    $('.holddateto').parent().hide()
+    // hide hold dates, generate more confusion than they do good
+    $('.holddateto, .holddatefrom').parent().hide()
 }
