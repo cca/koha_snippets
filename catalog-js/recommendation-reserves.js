@@ -5,6 +5,9 @@ if (location.href.match('cgi-bin/koha/opac-suggestions.pl\\?op=add')) {
     let p2 = 'We prioritize titles used in the curriculum and may need to limit the number of requests accepted due to budget constraints. You will receive an email when we determine whether to acquire your suggestion. If this purchase recommendation is meant for course reserves, remember to <a href="https://libraries.cca.edu/content/course-reserves-request">fill out the Course Reserves Request</a> form, too.'
     $('#usersuggestions p').eq(0).html(p1)
     $('#usersuggestions p').eq(1).html(p2)
+    // COVID-19 closure alert
+    let alert = '<p class="alert">While CCA campuses are closed, purchasing will be on hold and we will be unable to acquire your requested items. You may still submit requests; we will process them when CCA reopens.</p>'
+    $('#usersuggestions p').eq(0).prepend(alert)
     // required field label tooltip
     $('label.required').attr('title', 'This field is required.')
 }
