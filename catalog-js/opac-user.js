@@ -19,7 +19,7 @@ if (path.match('/cgi-bin/koha/opac-user.pl')) {
             let url = 'http://libraries.cca.edu/news/information-regarding-libraries-during-suspension-person-classes'
             // COVID-19 note
             let note = `<h3>Library services during suspension of in-person classes</h3>
-            <p>CCA campuses, including the Libraries, are closed for the remainder of the Spring semester. If you want to return materials by the book drops located outside each library you may, however we do not expect anyone to return materials while campus is closed and no late fees will be charged. Keep an eye on <a onclick="return ga('send', 'event', 'OPACMySummaryNote', 'blog post link', this.href);" href="${url}">the libraries' blog</a> for further information.</p>`
+            <p>CCA campuses, including the Libraries, are closed until further notice. Due dates have been extended for most items, and patrons will not receive late fees during the campus closures. For more information and access to our online teaching and learning resources, please <a onclick="return ga('send', 'event', 'OPACMySummaryNote', 'blog post link', this.href);" href="${url}">see The Libraries' blog</a>.</p>`
             // if there's already an alert, prepend this to it, otherwise create an alert
             if ($('.alert').not('#notesaved').length) {
                 $('.alert').not('#notesaved').eq(0).prepend(note)
