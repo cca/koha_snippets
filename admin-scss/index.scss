@@ -26,3 +26,8 @@
 #amazon-bookcoverimg {
     float: right;
 }
+
+// we don't use Dewey but some imported records may have DDC numbers
+.results_summary.ddc {
+    display: none;
+}
