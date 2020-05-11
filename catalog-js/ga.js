@@ -55,9 +55,9 @@ $('#action a').click(function (ev) {
 // social sharing icons beneath actions
 // if people don't use these we should remove them
 $('#social_networks div').click(function (ev) {
-    let item = $(this).children().first()
-    let category = item.target.id
-    let value = item.target.title
+    let item = $(this).children().first()[0]
+    let category = item.id
+    let value = item.title
     ga('send', 'event', {
       eventCategory: 'Social Network',
       eventAction: category,
