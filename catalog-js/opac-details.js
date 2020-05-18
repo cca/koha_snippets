@@ -42,6 +42,12 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
             })
         }
 
+        // #21 multiple 520 summary tags look awkward
+        // hide the label of all but the first one
+        $('.results_summary.summary').each((i, el) => {
+            if (i > 0) $(el).find('.label').hide()
+        })
+
         // idreambooks link should go to specific page for the title, not home pg
         let $idb = $('.idreambookssummary a')
         if ($('.idreambookssummary a').length == 2) {
