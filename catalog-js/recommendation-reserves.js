@@ -6,7 +6,7 @@ if (location.href.match('cgi-bin/koha/opac-suggestions.pl\\?op=add')) {
     $('#usersuggestions p').eq(0).html(p1)
     $('#usersuggestions p').eq(1).html(p2)
     // COVID-19 closure alert
-    let alert = '<p class="alert">While CCA campuses are closed, purchasing will be on hold and we will be unable to acquire your requested items. You may still submit requests; we will process them when CCA reopens.</p>'
+    let alert = '<p class="alert">CCA Libraries are closed through the summer.  We are currently processing materials requests to support summer courses.  All other requests will be reviewed after July 1st.</p>'
     $('#usersuggestions p').eq(0).prepend(alert)
     // required field label tooltip
     $('label.required').attr('title', 'This field is required.')
