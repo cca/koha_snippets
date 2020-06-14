@@ -3,7 +3,7 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
     $(()=>{
         // fix links that are broken due to poor URI encoding
         $('#catalogue_detail_biblio a')
-            // skip MARCH 856$u & public list links, they should be OK
+            // skip MARC 856$u & public list links, they should be OK
             .not('.results_summary.online_resources a')
             .not('.results_summary.lists a')
             .each(function(){
@@ -13,8 +13,8 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
                     // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=4947
                     // '&' in subject link example:
                     // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=25683
-                    // trailing semicolon breaks link
-                    // example: https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=43354
+                    // trailing semicolon breaks link example:
+                    // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=43354
                     return href.replace(/%20&(amp;)?%20/g, '%20%26%20').replace(/%20;%22/g, '%22')
                 })
         })
@@ -98,7 +98,7 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
         // 1) permalink - pull biblionumber from unapi tag
         let biblionumber =  $('.unapi-id').attr('title').split(':')[2]
         let permalink = path + '?biblionumber=' + biblionumber
-        $('#action').append('<li><a id="permalink" href="' + permalink + '">Permanent Link</a></li>')
+        $('#action').append('<li><a class="btn btn-link btn-lg" id="permalink" href="' + permalink + '"><i class="fa fa-fw fa-link"></i> Permanent Link</a></li>')
 
         // 2) cite this page
         // can't get OCLC number from the page so we use ISBN
@@ -109,12 +109,7 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
             let citeThisUrl = 'https://www.worldcat.org/isbn/' + isbn + '?page=citation'
 
             // add the "cite this" link to the actions menu
-            $('#action').append('<li><a href="#" data-toggle="modal" data-target="#citeModal" id="citethis">Cite this work</a></li>')
-            // icon
-            $('#citethis').css({
-                'background': 'transparent url(/opac-tmpl/bootstrap/images/sprite.png) no-repeat 5px -921px',
-                'padding-left': '35px'
-            })
+            $('#action').append('<li><a class="btn btn-link btn-lg" href="#" data-toggle="modal" data-target="#citeModal" id="citethis"><i class="fa fa-fw fa-code"></i> Cite this work</a></li>')
 
 // add "cite this" modal wrapping Worldcat iframe to the DOM
 // NOTE: do _not_ wrap iframe in div.modal-body as it causes double scrollbars

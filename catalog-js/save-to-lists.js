@@ -9,7 +9,7 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
     if (!loggedIn) {
         // add link, make it store data & go to user sign in
         var biblionumber = new URLSearchParams(location.search).get('biblionumber')
-        $('#action li').eq(0).after('<li><a class="addtoshelf" href="/cgi-bin/koha/opac-user.pl">Save to your lists</a></li>')
+        $('#action li').eq(0).after('<li><a class="addtoshelf btn btn-lg btn-link" href="/cgi-bin/koha/opac-user.pl"><i class="fa fa-fw fa-list"></i> Save to your lists</a></li>')
         $(s).click((e) => storage.cca_save_to_list = biblionumber)
     // if we're signed in & have stored data, click the link then clear data
 } else if (loggedIn && storage.cca_save_to_list) {
