@@ -13,38 +13,20 @@ if (path.match('/cgi-bin/koha/opac-user.pl')) {
         $el.html(html.replace('contact the library', replacement))
     })
 
-    let showMessage = () => {
-        // BUG #23968 OPACMySummaryNote does not display, fixed in 19.11
-        if (!$('#opac-my-summary-note').length) {
-            let url = 'https://libraries.cca.edu/news/summer-services-update/'
-            // COVID-19 note
-            let note = `<h3>Library services during suspension of in-person classes</h3>
-            <p>CCA campuses, including the Libraries, are closed until further notice. Due dates have been extended for most items, and patrons will not receive late fees during the campus closures. For more information and access to our online teaching and learning resources, please <a onclick="return ga('send', 'event', 'OPACMySummaryNote', 'blog post link', this.href);" href="${url}">see The Libraries' blog</a>.</p>`
-            // if there's already an alert, prepend this to it, otherwise create an alert
-            if ($('.alert').not('#notesaved').length) {
-                $('.alert').not('#notesaved').eq(0).prepend(note)
-            } else {
-                $('#notesaved').before(`<div class="alert alert-warning">${note}</div>`)
-            }
-        }
-    }
-    // show for everyone
-    showMessage()
-
-    // // show note only if user is a student, get patron type via public report
+    // // show OPACMySummaryNote _only if user is a student_
+    // // we get their patron type via a public report
     // let id = $('.loggedinusername').data('borrowernumber')
     // if (id && fetch) {
     //     let report = 'https://library.cca.edu/cgi-bin/koha/svc/report?id=353'
     //     fetch(`${report}&sql_params=${id}`)
     //         .then(resp => resp.json())
     //         .then(data => {
-    //             // response is always an array of arrays: [ [ "ALUMNI" ] ]
+    //             // report responses are arrays of arrays: [ [ "ALUMNI" ] ]
     //             let category = data[0][0]
-    //             if (category == 'UNDERGRAD' || category == 'GRAD') showMessage()
+    //             if (category != 'UNDERGRAD' && category != 'GRAD') {
+    //                 return $('#opac-my-summary-note').remove()
+    //             }
     //         })
     //         .catch((e) => console.error(e))
-    // } else {
-    //     // default to showing the message
-    //     showMessage()
     // }
 }
