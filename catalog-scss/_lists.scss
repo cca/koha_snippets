@@ -1,36 +1,11 @@
 // display of a single list
-// /cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=###
+// library.cca.edu/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=435
 #usershelves {
-    position: relative;
-
-    h3 {
-        left: 1em;
-        position: absolute;
-        top: 1.5em;
-    }
-
-    a.send {
-        background: 0;
-        padding: 0;
-    }
-
     .sep {
         display: none;
     }
 
-    #sorting-form {
-        margin-top: 1em;
-    }
-
-    #toolbar {
-        background: 0;
-        border: 0;
-        position: relative;
-
-        .list-actions {
-            bottom: 0;
-            padding-bottom: 2px;
-            position: absolute;
-        }
+    select[name="direction"] {
+        margin-left: 62px;
     }
 }

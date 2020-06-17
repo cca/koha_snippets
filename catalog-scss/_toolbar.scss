@@ -1,10 +1,5 @@
-// these first 3 rules pull results up a bit
-// less useless space at the top of page
+// these first 3 rules pull results up a bit, less useless space at the top of page
 .toolbar {
-    background: 0;
-    border: 0;
-    padding: 0 0 5px;
-
     .highlight_controls {
         display: none;
     }
@@ -19,9 +14,7 @@
     display: none;
 }
 
-#toolbar select,
-#opac-main-search select,
-.toolbar select {
+@mixin select-input() {
     -webkit-appearance: none;
     appearance: none;
     background: $white;
@@ -29,12 +22,19 @@
     border-radius: 0;
     box-sizing: border-box;
     color: $black-font;
-    font: 14px inherit;
-    height: 44px;
     margin-bottom: 0;
     outline: 0;
     padding: 8px 18px;
     text-indent: .01px;
-    text-overflow: '';
+}
+
+#toolbar select {
+    @include select-input;
+}
+
+#opac-main-search select {
+    @include select-input;
+
+    height: 44px;
     width: 100%;
 }
