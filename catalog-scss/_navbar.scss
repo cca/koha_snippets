@@ -42,18 +42,23 @@
     color: $white;
     text-shadow: none;
 }
+
+.navbar-inverse .navbar-inner #members .divider-vertical {
+    border: 0;
+}
 // scss-lint:enable SelectorDepth
 
-// login link on the right-side of navbar
-#members a {
-    color: $white;
+#members {
+    .userlabel {
+        color: $white;
 
-    &:hover {
-        text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
-    &.logout {
-        color: $white;
-        padding: 0 .3em;
+    a .loggedinusername,
+    a.login-link {
+        color: $dark-blue;
     }
 }
