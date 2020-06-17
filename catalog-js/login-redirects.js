@@ -9,9 +9,8 @@
 // this is a little weird: we assume we're on the login screen if we see the
 // <!-- TEMPLATE FILE: opac-auth.tt --> comment which is a child only of the
 // document (not even <html> element)
-var onLoginScreen = !!document.childNodes[1].textContent.match('opac-auth.tt')
+let onLoginScreen = !!document.childNodes[1].textContent.match('opac-auth.tt')
     , search = location.search
-    , storage = window.sessionStorage
     , bibs
     , bib
 
@@ -19,20 +18,20 @@ var onLoginScreen = !!document.childNodes[1].textContent.match('opac-auth.tt')
 if (onLoginScreen && path.match('/cgi-bin/koha/opac-reserve.pl')) {
     // we always clear storage first in case multiple actions build up
     // e.g. first they place hold, sign out, request article in same session
-    storage.clear()
+    sessionStorage.clear()
     bib = search.match(/biblionumber=(\d+)/) && search.match(/biblionumber=(\d+)/)[1]
     // URL structure is slightly different for multiple holds, biblionumbers
     // are listed in one parameter and forward-slash separated
     bibs = search.match(/biblionumbers=([\d/]+)/) && search.match(/biblionumbers=([\d/]+)/)[1]
-    if (bib) storage.setItem('cca_bib_hold', bib)
-    if (bibs) storage.setItem('cca_bib_holds', bibs)
+    if (bib) sessionStorage.setItem('cca_bib_hold', bib)
+    if (bibs) sessionStorage.setItem('cca_bib_holds', bibs)
 }
-else if (path.match('/cgi-bin/koha/opac-user.pl') && (storage.cca_bib_hold || storage.cca_bib_holds)) {
-    bib = storage.cca_bib_hold
-    bibs = storage.cca_bib_holds
+else if (path.match('/cgi-bin/koha/opac-user.pl') && (sessionStorage.cca_bib_hold || sessionStorage.cca_bib_holds)) {
+    bib = sessionStorage.cca_bib_hold
+    bibs = sessionStorage.cca_bib_holds
     // clear storage, go to appropriate reserve page
-    storage.removeItem('cca_bib_hold')
-    storage.removeItem('cca_bib_holds')
+    sessionStorage.removeItem('cca_bib_hold')
+    sessionStorage.removeItem('cca_bib_holds')
     if (bib) location = '/cgi-bin/koha/opac-reserve.pl?biblionumber=' + bib
     if (bibs) location = '/cgi-bin/koha/opac-reserve.pl?biblionumbers=' + bibs
 }
@@ -40,35 +39,35 @@ else if (path.match('/cgi-bin/koha/opac-user.pl') && (storage.cca_bib_hold || st
 // 2) we're trying to make a purchase suggestion but we're not logged in
 // note we need to use location.href because we want to match query string too
 if (onLoginScreen && location.href.match(/\/cgi-bin\/koha\/opac-suggestions.pl\?op=add/)) {
-    storage.clear()
-    storage.setItem('cca_suggestion', true)
+    sessionStorage.clear()
+    sessionStorage.setItem('cca_suggestion', true)
 }
-else if (path.match('/cgi-bin/koha/opac-user.pl') && storage.cca_suggestion) {
+else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.cca_suggestion) {
     // clear storage, go to purchase suggestions form
-    storage.removeItem('cca_suggestion')
+    sessionStorage.removeItem('cca_suggestion')
     location = '/cgi-bin/koha/opac-suggestions.pl?op=add'
 }
 
 // 3) we're trying to make an article request but we're not logged in
 if (onLoginScreen && path.match('/cgi-bin/koha/opac-request-article.pl')) {
-    storage.clear()
+    sessionStorage.clear()
     bib = search.match(/biblionumber=(\d+)/)[1]
-    storage.setItem('cca_article_request', bib)
+    sessionStorage.setItem('cca_article_request', bib)
 }
-else if (path.match('/cgi-bin/koha/opac-user.pl') && storage.cca_article_request) {
-    bib = storage.cca_article_request
+else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.cca_article_request) {
+    bib = sessionStorage.cca_article_request
     // clear storage, go to appropriate article requests page
-    storage.removeItem('cca_article_request')
+    sessionStorage.removeItem('cca_article_request')
     location = '/cgi-bin/koha/opac-request-article.pl?biblionumber=' + bib
 }
 
 // 4) we're trying to access the resticted page
 if (onLoginScreen && path.match('/cgi-bin/koha/opac-restrictedpage.pl')) {
-    storage.clear()
-    storage.setItem('cca_restricted_page', true)
+    sessionStorage.clear()
+    sessionStorage.setItem('cca_restricted_page', true)
 }
-else if (path.match('/cgi-bin/koha/opac-user.pl') && storage.cca_restricted_page) {
+else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.cca_restricted_page) {
     // clear storage, return to restricted page
-    storage.clear()
+    sessionStorage.clear()
     location = '/cgi-bin/koha/opac-restrictedpage.pl'
 }
