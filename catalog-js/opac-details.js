@@ -48,24 +48,6 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
             if (i > 0) $(el).find('.label').hide()
         })
 
-        // idreambooks link should go to specific page for the title, not home pg
-        let $idb = $('.idreambookssummary a')
-        if ($('.idreambookssummary a').length == 2) {
-            // HTML looks like:
-            /*
-            <span class="idreambookssummary results_summary">
-                <a href="https://idreambooks.com/book-title/reviews/5">
-                    <img src="positive-tiny.png">
-                    79%
-                </a>
-                <a href="https://idreambooks.com>rating based on...</a>
-            </span>
-            */
-            // we want to replace 2nd <a> href with 1st <a> href
-            let link = $idb.eq(0).attr('href')
-            $idb.eq(1).attr('href', link)
-        }
-
         // hide "subscription from:" text, confusing, overlaps with "library has"
         $('#subscriptions p:contains("Subscription from:")').hide()
 
