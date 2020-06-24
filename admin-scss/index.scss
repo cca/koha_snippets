@@ -18,13 +18,9 @@
     margin-top: 1em;
 }
 
-// side-by-side layout when we have multiple (local & Amazon) book covers
+// side-by-side layout when we have multiple (local & COCE) book covers
 #local-thumbnail-preview {
     float: left;
-}
-
-#amazon-bookcoverimg {
-    float: right;
 }
 
 // we don't use Dewey but some imported records may have DDC numbers
