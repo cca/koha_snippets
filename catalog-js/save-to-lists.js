@@ -23,7 +23,7 @@ function addSaveToListBtn(target, wrapper) {
 if (!loggedIn) {
     if (path.match('/cgi-bin/koha/opac-detail.pl')) {
         // bib detail page & not logged in, add to right-side Actions menu
-        addSaveToListBtn('#action li:first-child', 'li')
+        addSaveToListBtn('#action > li:first-child', 'li')
     } else if (path.match('/cgi-bin/koha/opac-search.pl')) {
         // search results page, add to each "actions" row at bottom of result
         addSaveToListBtn('.actions-menu span.actions:last-child', 'span')
