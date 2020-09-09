@@ -9,7 +9,7 @@
 // this is a little weird: we assume we're on the login screen if we see the
 // <!-- TEMPLATE FILE: opac-auth.tt --> comment which is a child only of the
 // document (not even <html> element)
-let onLoginScreen = !!document.childNodes[1].textContent.match('opac-auth.tt')
+let onLoginScreen = !!$('#opac-login-page').length
     , search = location.search
     , bibs
     , bib
