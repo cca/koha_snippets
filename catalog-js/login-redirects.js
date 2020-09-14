@@ -5,10 +5,6 @@
 // 2) back to opac-suggestions.pl?op=add when making purchase suggestion
 // 3) back to opac-request-article.pl?biblionumber(s)=N when requesting an article
 // 4) back to opac-restrictedpage.pl (which doesn't require any parameter passing)
-
-// this is a little weird: we assume we're on the login screen if we see the
-// <!-- TEMPLATE FILE: opac-auth.tt --> comment which is a child only of the
-// document (not even <html> element)
 let onLoginScreen = !!$('#opac-login-page').length
     , search = location.search
     , bibs
