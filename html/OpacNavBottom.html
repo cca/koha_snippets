@@ -37,6 +37,7 @@ let gethrs = (library) => {
                 list.outerHTML = `<p class="${library}-hrs">This library is currently closed.</p>`
             }
         })
+        .catch(err => console.error(err))
 }
 
 ['Meyer', 'Simpson', 'Materials'].forEach(gethrs)
