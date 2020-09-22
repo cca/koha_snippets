@@ -12,10 +12,11 @@
 #user_summary {
     margin: 1em 0;
 
-    h3  {
+    h3 {
         background-color: $dark-blue;
         color: $white;
     }
+
     .loggedinusername:hover {
         text-decoration: underline;
     }

@@ -19,17 +19,23 @@
     color: $white;
 }
 
+// scss-lint:disable ImportantRule
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret,
 .navbar-inverse .nav li.dropdown > a:focus .caret,
 .navbar-inverse .nav li.dropdown > a:hover .caret {
     border-bottom-color: $white !important;
     border-top-color: $white !important;
 }
+// scss-lint:enable ImportantRule
 
 .navbar-inverse .navbar-inner {
     background: $cca-teal;
     background-repeat: repeat-x;
     border-color: darken($cca-teal, 5%);
+
+    #members .divider-vertical {
+        border: 0;
+    }
 }
 
 .navbar-inverse .divider-vertical {
@@ -41,10 +47,6 @@
 .navbar-inverse .nav > li > a {
     color: $white;
     text-shadow: none;
-}
-
-.navbar-inverse .navbar-inner #members .divider-vertical {
-    border: 0;
 }
 // scss-lint:enable SelectorDepth
 
