@@ -1,6 +1,8 @@
 // https://github.com/cca/koha_snippets/issues/12
 // "save to my lists" feature for unauthenticated users
 // this feature touches multiple pages & is kept in this one file for sanity
+// @TODO if the Save to List button is clicked on the search results page, then
+// we should return to results page rather than bib detail of the saved item
 let loggedIn = !!$('.loggedinusername').length
 let addToShelfAction = '.addtoshelf'
 
