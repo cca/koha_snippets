@@ -28,8 +28,7 @@ if (onLoginScreen && path.match('/cgi-bin/koha/opac-reserve.pl')) {
     // are listed in one parameter and forward-slash separated
     sessionStorage.setItem('cca_bib_hold', search.get('biblionumber'))
     sessionStorage.setItem('cca_bib_holds', search.get('biblionumbers'))
-}
-else if (path.match('/cgi-bin/koha/opac-user.pl') && (sessionStorage.getItem('cca_bib_hold') || sessionStorage.getItem('cca_bib_holds'))) {
+} else if (path.match('/cgi-bin/koha/opac-user.pl') && (sessionStorage.getItem('cca_bib_hold') || sessionStorage.getItem('cca_bib_holds'))) {
     bib = sessionStorage.getItem('cca_bib_hold')
     bibs = sessionStorage.getItem('cca_bib_holds')
     // clear storage then go to appropriate reserve page
@@ -48,8 +47,7 @@ else if (path.match('/cgi-bin/koha/opac-user.pl') && (sessionStorage.getItem('cc
 if (onLoginScreen && location.href.match(/\/cgi-bin\/koha\/opac-suggestions.pl\?op=add/)) {
     clearCCAStorage()
     sessionStorage.setItem('cca_suggestion', true)
-}
-else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_suggestion')) {
+} else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_suggestion')) {
     // clear storage, go to purchase suggestions form
     sessionStorage.removeItem('cca_suggestion')
     location = '/cgi-bin/koha/opac-suggestions.pl?op=add'
@@ -59,8 +57,7 @@ else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca
 if (onLoginScreen && path.match('/cgi-bin/koha/opac-request-article.pl')) {
     clearCCAStorage()
     sessionStorage.setItem('cca_article_request', search.get('biblionumber'))
-}
-else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_article_request')) {
+} else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_article_request')) {
     bib = sessionStorage.getItem('cca_article_request')
     // clear storage, go to appropriate article requests page
     sessionStorage.removeItem('cca_article_request')
@@ -71,9 +68,18 @@ else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca
 if (onLoginScreen && path.match('/cgi-bin/koha/opac-restrictedpage.pl')) {
     clearCCAStorage()
     sessionStorage.setItem('cca_restricted_page', true)
-}
-else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_restricted_page')) {
+} else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_restricted_page')) {
     // clear storage, return to restricted page
     clearCCAStorage()
     location = '/cgi-bin/koha/opac-restrictedpage.pl'
+}
+
+// 4) we're trying to report a problem
+if (onLoginScreen && path.match('/cgi-bin/koha/opac-reportproblem.pl')) {
+    clearCCAStorage()
+    sessionStorage.setItem('cca_report_problem', true)
+} else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_report_problem')) {
+    // clear storage, return to restricted page
+    clearCCAStorage()
+    location = '/cgi-bin/koha/opac-reportproblem.pl'
 }
