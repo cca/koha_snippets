@@ -45,12 +45,6 @@ input[type='text']:focus {
 // larger search box on home page
 #opac-main {
     .mastheadsearch {
-        text-align: center;
-
-        input[type='text'] {
-            height: 28px;
-        }
-
         // hide other search form elements
         label,
         select {
