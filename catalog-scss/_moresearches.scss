@@ -17,7 +17,7 @@
             height: 55px;
         }
 
-        li:after {
+        li::after {
             content: '';
         }
 

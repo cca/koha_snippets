@@ -14,7 +14,7 @@
 .results_summary.volumes,
 // hide "views" tabs like MARC, ISBD
 // end users don't need to see these
-#catalogue_detail_biblio #views {
+#views {
     display: none;
 }
 

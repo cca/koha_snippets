@@ -6,6 +6,13 @@
     background-image: url('/opac-tmpl/bootstrap/images/koha-logo-navbar.png');
 }
 
+/* stylelint-disable selector-max-compound-selectors */
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+    color: $white;
+    text-shadow: none;
+}
+
 #carticon,
 #listsmenu .fa,
 .cartlabel,
@@ -13,20 +20,25 @@
 .loggedinusername,
 .listslabel:hover,
 .navbar-inverse .nav > li > a:hover,
-.navbar-inverse .nav li.dropdown.open >.dropdown-toggle,
-.navbar-inverse .nav > li > a:focus,
-.navbar-inverse .nav > li > a:hover {
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav > li > a:focus {
     color: $white;
 }
 
-// scss-lint:disable ImportantRule
+/* stylelint-disable declaration-no-important */
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret,
 .navbar-inverse .nav li.dropdown > a:focus .caret,
 .navbar-inverse .nav li.dropdown > a:hover .caret {
     border-bottom-color: $white !important;
     border-top-color: $white !important;
 }
-// scss-lint:enable ImportantRule
+/* stylelint-enable declaration-no-important */
+
+
+.navbar-inverse .divider-vertical {
+    border-left-color: $cca-teal;
+    border-right-color: $cca-teal;
+}
 
 .navbar-inverse .navbar-inner {
     background: $cca-teal;
@@ -36,19 +48,8 @@
     #members .divider-vertical {
         border: 0;
     }
+    /* stylelint-enable selector-max-compound-selectors */
 }
-
-.navbar-inverse .divider-vertical {
-    border-left-color: $cca-teal;
-    border-right-color: $cca-teal;
-}
-
-.navbar-inverse .brand,
-.navbar-inverse .nav > li > a {
-    color: $white;
-    text-shadow: none;
-}
-// scss-lint:enable SelectorDepth
 
 #members {
     .userlabel {

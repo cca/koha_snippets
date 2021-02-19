@@ -13,16 +13,16 @@
 @import 'navbar';
 @import 'font';
 
-.btn-primary:hover {
-    background: $dark-gray;
-}
-
 .btn-primary {
     background: $dark-gray;
     background-repeat: repeat-x;
     border-color: $dark-gray;
     color: $white;
     text-shadow: 0 -1px 0 $btn-text-shadow;
+
+    &:hover {
+        background: $dark-gray;
+    }
 }
 
 .breadcrumb {
@@ -37,5 +37,5 @@
 
 body {
     background: $white;
-    font: 16px 'Raleway';
+    font: 16px Raleway, sans-serif;
 }
