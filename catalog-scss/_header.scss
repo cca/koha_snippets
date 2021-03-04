@@ -5,5 +5,11 @@
 }
 
 .main-logo img {
-    max-width: 400px;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 400px) {
+    .main-logo img {
+        max-width: 400px;
+    }
 }

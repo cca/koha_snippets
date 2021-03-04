@@ -5,7 +5,7 @@ let loggedIn = !!$('.loggedinusername').length
  , addToShelfAction = '.addtoshelf'
 
 function addSaveToListBtn(target, wrapper) {
-    let html = `<${wrapper}><a class="addtoshelf btn btn-lg btn-link" href="/cgi-bin/koha/opac-user.pl"><i class="fa fa-fw fa-list"></i> Save to your lists</a></${wrapper}>`
+    let html = `<${wrapper}><a class="addtoshelf btn btn-link" href="/cgi-bin/koha/opac-user.pl"><i class="fa fa-fw fa-list"></i> Save to your lists</a></${wrapper}>`
 
     // add link, make it store data & go to user sign in
     $(target).after(html)
@@ -26,7 +26,7 @@ if (!loggedIn) {
         addSaveToListBtn('#action > li:first-child', 'li')
     } else if (path.match('/cgi-bin/koha/opac-search.pl')) {
         // search results page, add to each "actions" row at bottom of result
-        addSaveToListBtn('.actions-menu span.actions:last-child', 'span')
+        addSaveToListBtn('.actions-menu span.actions:last-child', 'span class="actions"')
     }
 } else if (sessionStorage.cca_save_to_list) {
     let bib = sessionStorage.cca_save_to_list
