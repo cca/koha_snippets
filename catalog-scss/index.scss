@@ -36,7 +36,9 @@
     box-shadow: none;
 }
 
-body {
+// class needed for specificity
+.no-js body,
+.fonts-loaded body {
     background: $white;
     font: 16px Raleway, sans-serif;
 }
