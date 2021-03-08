@@ -7,7 +7,7 @@ if ($(selector).length && !!MutationObserver) {
     let observer = new MutationObserver((mutations) => {
         for (let mutation of mutations) {
             let covers = $(mutation.target).closest(selector)
-            if (covers.find('[id*="-thumbnail"]').length === 2) {
+            if (covers.find('[id*="-thumbnail"] img').length === 2) {
                 covers.find('[id^="coce-thumbnail"]').remove()
             }
         }
