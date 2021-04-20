@@ -1,11 +1,12 @@
 const { src, dest, parallel, watch } = require('gulp')
-const babel = require("gulp-babel")
-const concat = require("gulp-concat")
-const iife = require("gulp-iife")
-const insert = require("gulp-insert")
-const rename = require("gulp-rename")
-const sass = require("gulp-sass")
-const uglify = require("gulp-uglify")
+const babel = require('gulp-babel')
+const concat = require('gulp-concat')
+const eslint = require('gulp-eslint')
+const iife = require('gulp-iife')
+const insert = require('gulp-insert')
+const rename = require('gulp-rename')
+const sass = require('gulp-sass')
+const uglify = require('gulp-uglify')
 
 sass.compiler = require('node-sass')
 const sassOpts = {
@@ -48,6 +49,11 @@ function catalogCSS() {
         .pipe(dest('dist'))
 }
 
+function lint() {
+    return src(['admin-js/*.js', 'catalog-js/*.js'])
+        .pipe(eslint.format())
+}
+
 module.exports = {
     'admin-js': adminJS,
     'catalog-js': catalogJS,
@@ -55,5 +61,6 @@ module.exports = {
     'catalog-css': catalogCSS,
     js: parallel(adminJS, catalogJS),
     css: parallel(catalogCSS, adminCSS),
-    default: parallel(adminJS, catalogJS, adminCSS, catalogCSS)
+    default: parallel(adminJS, catalogJS, adminCSS, catalogCSS),
+    lint: lint,
 }
