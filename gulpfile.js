@@ -51,6 +51,7 @@ function catalogCSS() {
 
 function lint() {
     return src(['admin-js/*.js', 'catalog-js/*.js'])
+        .pipe(eslint())
         .pipe(eslint.format())
 }
 
