@@ -6,6 +6,7 @@ const iife = require('gulp-iife')
 const insert = require('gulp-insert')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')
+const sasslint = require('gulp-sass-lint');
 const uglify = require('gulp-uglify')
 
 sass.compiler = require('node-sass')
@@ -55,6 +56,12 @@ function lint() {
         .pipe(eslint.format())
 }
 
+function stylelint() {
+    return src(['admin-scss/*.scss', 'catalog-scss/*.scss'])
+        .pipe(sasslint())
+        .pipe(sasslint.format())
+}
+
 module.exports = {
     'admin-js': adminJS,
     'catalog-js': catalogJS,
@@ -64,4 +71,6 @@ module.exports = {
     css: parallel(catalogCSS, adminCSS),
     default: parallel(adminJS, catalogJS, adminCSS, catalogCSS),
     lint: lint,
+    sasslint: stylelint,
+    test: parallel(lint, stylelint),
 }
