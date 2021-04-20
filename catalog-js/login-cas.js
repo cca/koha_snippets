@@ -5,7 +5,7 @@
 $(() => {
     var login = $('#cca-login')
     // only run if the "NoLoginInstructions" HTML is present on the page
-    if (!!login.length) {
+    if (login.length) {
         var uncomment = (id) => {
             $(id).html($(id).html().replace('<!--', '').replace('-->', ''))
         }

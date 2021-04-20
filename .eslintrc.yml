@@ -7,3 +7,6 @@ rules:
     # these just throw too many deceptive errors due to the project's structure
     no-undef: off
     no-unused-vars: off
+ignorePatterns:
+    # ignore this third-party script
+    - admin-js/loc-callnumbers.js
