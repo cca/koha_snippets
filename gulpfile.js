@@ -1,11 +1,11 @@
 const { src, dest, parallel, watch } = require('gulp')
+const babel = require("gulp-babel")
 const concat = require("gulp-concat")
 const iife = require("gulp-iife")
-const babel = require("gulp-babel")
-const uglify = require("gulp-uglify")
 const insert = require("gulp-insert")
-const sass = require("gulp-sass")
 const rename = require("gulp-rename")
+const sass = require("gulp-sass")
+const uglify = require("gulp-uglify")
 
 sass.compiler = require('node-sass')
 const sassOpts = {
