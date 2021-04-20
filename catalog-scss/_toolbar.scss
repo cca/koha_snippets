@@ -14,7 +14,7 @@
     display: none;
 }
 
-@mixin select-input() {
+@mixin select-input {
     appearance: none;
     background: $white;
     border: 1px solid $input-light-gray;
