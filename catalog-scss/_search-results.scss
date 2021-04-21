@@ -1,16 +1,14 @@
 // hide misleading/uninformative fields from search results display
 // scope to search results, fixes accidentally hiding .edition on bib details
 .bibliocol {
+    .author,
+    .byAuthor,
     .edition,
     .publisher,
     .other_title,
     .results_format,
     .results_contents_literary,
     .results_audience {
-        display: none;
-    }
-    // this is the only way to hide the author line
-    > p {
         display: none;
     }
 
@@ -23,14 +21,9 @@
     .results_summary {
         font-size: 18px;
     }
-
-    a.title {
-        display: block;
-        margin-bottom: .5em;
-    }
 }
 
-.results_material_type img.materialtype {
+.results_material_type .materialtype {
     height: 16px;
     width: 16px;
 }
@@ -39,41 +32,7 @@
     text-transform: uppercase;
 }
 
-.actions-menu {
-    margin-top: 1em;
-
-    // need to do each of these separate for specificity
-    a.addtocart {
-        background-position: -5px -265px;
-        padding-left: 35px;
-
-        &:hover {
-            color: $dark-blue;
-        }
-    }
-
-    a.hold {
-        background-position: -2px -453px;
-        padding-left: 35px;
-    }
-
-    a.article_request {
-        background-position: -5px -183px;
-        padding-left: 35px;
-    }
-}
-
-// @TODO checkbox on left side is tiny, easy to miss
-
-.coverimages {
-    float: left;
-    left: 0;
-    min-height: 160px;
-    min-width: 128px;
-    padding-bottom: 20px;
-    padding-right: 30px;
-    top: 0;
-}
+// @TODO .selectcol checkbox on left side of results is tiny, easy to miss
 
 #didyoumean {
     display: none;
