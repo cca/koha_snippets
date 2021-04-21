@@ -5,9 +5,9 @@
     }
 }
 
-.pagination {
-    float: left;
-    margin: 1em 0 0;
+// hide the separator we just orphaned with above rule
+#selections-toolbar .sep:nth-child(2) {
+    display: none;
 }
 
 #numresults {
