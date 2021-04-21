@@ -24,7 +24,7 @@ if (path.match('/cgi-bin/koha/opac-search.pl')) {
 
     // customize Materials Library results
     $('.results_summary.availability .available:contains("Materials Library")').each((idx, el) => {
-        let item = $(el).parent().parent('.bibliocol')
+        let item = $(el).parentsUntil('.bibliocol')
         let mattype = item.find('.results_material_type')
         // label material type as "material sample" with our custom icon
         mattype.html(mattype.html().replace(/visual material/ig, 'Material sample'))
