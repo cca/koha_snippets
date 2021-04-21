@@ -4,8 +4,9 @@
 let loggedIn = !!$('.loggedinusername').length
  , addToShelfAction = '.addtoshelf'
 
-function addSaveToListBtn(target, wrapper) {
-    let html = `<${wrapper}><a class="addtoshelf btn btn-link" href="/cgi-bin/koha/opac-user.pl"><i class="fa fa-fw fa-list"></i> Save to your lists</a></${wrapper}>`
+function addSaveToListBtn(target, wrapper, large=false) {
+    // add btn-lg class, for bib details actions menu
+    let html = `<${wrapper}><a class="addtoshelf btn btn-link ${large ? 'btn-lg' : ''}" href="/cgi-bin/koha/opac-user.pl"><i class="fa fa-fw fa-list"></i> Save to your lists</a></${wrapper}>`
 
     // add link, make it store data & go to user sign in
     $(target).after(html)
@@ -23,7 +24,7 @@ function addSaveToListBtn(target, wrapper) {
 if (!loggedIn) {
     if (path.match('/cgi-bin/koha/opac-detail.pl')) {
         // bib detail page & not logged in, add to right-side Actions menu
-        addSaveToListBtn('#action > li:first-child', 'li')
+        addSaveToListBtn('#action > li:first-child', 'li', true)
     } else if (path.match('/cgi-bin/koha/opac-search.pl')) {
         // search results page, add to each "actions" row at bottom of result
         addSaveToListBtn('.actions-menu span.actions:last-child', 'span class="actions"')
