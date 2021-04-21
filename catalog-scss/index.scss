@@ -14,18 +14,6 @@
 @import 'navbar';
 @import 'font';
 
-.btn-primary {
-    background: $dark-gray;
-    background-repeat: repeat-x;
-    border-color: $dark-gray;
-    color: $white;
-    text-shadow: 0 -1px 0 $btn-text-shadow;
-
-    &:hover {
-        background: $dark-gray;
-    }
-}
-
 .breadcrumb {
     display: none;
 }
