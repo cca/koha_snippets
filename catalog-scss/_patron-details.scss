@@ -1,11 +1,11 @@
 // list of input we want to hide
 // see: http://hugogiraudel.com/2013/07/15/understanding-sass-lists/
 $ids: 'title', // salutation
-'dateofbirth',
-'initials',
-'streetnumber',
-'mobile', // other phone
-'fax';
+    'dateofbirth',
+    'initials',
+    'streetnumber',
+    'mobile', // other phone
+    'fax';
 // initialize selector that we will construct
 $selector: ();
 
