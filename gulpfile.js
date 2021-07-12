@@ -5,7 +5,7 @@ const eslint = require('gulp-eslint')
 const iife = require('gulp-iife')
 const insert = require('gulp-insert')
 const rename = require('gulp-rename')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('node-sass'))
 const sasslint = require('gulp-sass-lint');
 const uglify = require('gulp-uglify')
 
@@ -36,7 +36,7 @@ function catalogJS () {
 
 function adminCSS() {
     return src('admin-scss/index.scss')
-        .pipe(sass.sync(sassOpts).on('error', sass.logError))
+        .pipe(sass(sassOpts).on('error', sass.logError))
         .pipe(rename('IntranetUserCSS.css'))
         .pipe(insert.prepend(`/* minified ${Date()} - see https://github.com/cca/koha_snippets */`))
         .pipe(dest('dist'))
@@ -44,7 +44,7 @@ function adminCSS() {
 
 function catalogCSS() {
     return src('catalog-scss/index.scss')
-        .pipe(sass.sync(sassOpts).on('error', sass.logError))
+        .pipe(sass(sassOpts).on('error', sass.logError))
         .pipe(rename('OPACUserCSS.css'))
         .pipe(insert.prepend(`/* minified ${Date()} - see https://github.com/cca/koha_snippets */`))
         .pipe(dest('dist'))
