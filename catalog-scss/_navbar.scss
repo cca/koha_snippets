@@ -4,13 +4,14 @@
     background-image: url('/opac-tmpl/bootstrap/images/koha-logo-navbar.png');
 }
 
+// stylelint-disable selector-max-compound-selectors
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
     color: $white;
     text-shadow: none;
 }
 
-// sass-lint:disable no-qualifying-elements
+// stylelint-disable no-qualifying-elements
 #carticon,
 #listsmenu .fa,
 .cartlabel,
@@ -29,7 +30,7 @@
     border-bottom-color: $white !important;
     border-top-color: $white !important;
 }
-// sass-lint:enable no-qualifying-elements
+// stylelint-enable no-qualifying-elements
 
 .navbar-inverse .divider-vertical {
     border-left-color: $cca-teal;
@@ -43,6 +44,7 @@
     #members .divider-vertical {
         border: 0;
     }
+    // stylelint-enable selector-max-compound-selectors
 }
 
 #members {
