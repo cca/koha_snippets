@@ -1,8 +1,0 @@
-// main body of /cgi-bin/koha/opac-browse.pl inexplicably uses a full-width
-// .span12 so if you have any content in the .span2 OpacNav or OpacNavBottom
-// the main body is pushed underneath, below the fold
-// we do need .main otherwise we inadvertently break .mastheadsearch
-#opac-browser .main .span12 {
-    // number copied from .row-fluid .span10 class in Koha's Bootstrap CSS
-    width: 82.9%;
-}
