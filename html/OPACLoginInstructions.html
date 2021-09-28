@@ -1,11 +1,11 @@
 <div id="cca-login">
-    <a class="show-initially btn btn-large" href="https://sso.cca.edu/cas/login?service=https%3A%2F%2Flibrary.cca.edu%2Fcgi-bin%2Fkoha%2Fopac-user.pl"><b>Login with your CCA Account</b></a>
+    <p class="show-initially"><a class="btn btn-secondary btn-lg" href="https://sso.cca.edu/cas/login?service=https%3A%2F%2Flibrary.cca.edu%2Fcgi-bin%2Fkoha%2Fopac-user.pl">Login with your CCA Account</a></p>
 
     <h2 class="show-initially">Trouble logging in?</h2>
     <!-- using <button> here triggers page refresh on click for some reason -->
     <div class="btn btn-danger show-initially js-open"><b>Learn More…</b></div>
 
-    <p>
+    <p style="margin-top:1em;">
         Some library users do not have CCA accounts. You might not have a library account if you are a:
     </p>
     <ul>
@@ -14,7 +14,7 @@
         <li>Alumnus who graduated over ten years ago</li>
     </ul>
     <p>
-        If you fall into one of these categories, use the login form below. Your username is of form "surname.givenname" (e.g. "jones.olivia" for someone named "Olivia Jones") and your password is initially set to be your library barcode (something like <code>PCAC9876543210X</code>) but can be changed. Please <a href="https://libraries.cca.edu/contact">contact us</a> if you experience any problems.
+        If you fall into one of these categories, use the login form below. Your username is of the form "surname.givenname" (e.g. "jones.olivia" for someone named "Olivia Jones") and your password is initially set to your library barcode (something like <code>PCAC9876543210X</code>) but can be changed. <a href="https://libraries.cca.edu/contact">Contact us</a> if you experience any problems.
     </p>
 
     <!-- we can't just put a form-within-a-form here so we comment it out
@@ -22,14 +22,14 @@
     <div id="uncomment"><!--<h4>Non-CCA Login</h4>
     <form action="/cgi-bin/koha/opac-user.pl" name="auth" id="auth" method="post">
         <input type="hidden" name="koha_login_context" value="opac">
-        <fieldset class="brief">
+        <fieldset class="form-group">
             <label for="userid">Login</label>
-            <input type="text" size="25" id="userid" name="userid">
+            <input class="form-control" type="text" size="25" id="userid" name="userid">
             <label for="password">Password</label>
-            <input type="password" size="25" id="password" name="password">
+            <input class="form-control" type="password" size="25" id="password" name="password">
         </fieldset>
-        <input type="submit" value="Log in" class="btn">
+        <input type="submit" value="Log in" class="btn btn-secondary">
     </form>
-    <p><strong>Unable to login?</strong> Try to <a href="/cgi-bin/koha/opac-password-recovery.pl">recover your password</a>. Note that this is only helpful for users that sign in using their Library Catalog password and <strong>not</strong> their CCA password; your CCA password is managed on <a href="https://accounts.cca.edu">the accounts website</a>.</p>
+    <p style="margin-top:1em;"><strong>Unable to login?</strong> Try to <a href="/cgi-bin/koha/opac-password-recovery.pl">recover your password</a>. This only works for users that sign in using their Library Catalog password and <strong>not</strong> their CCA password; your CCA password is managed on <a href="https://accounts.cca.edu">the accounts website</a>.</p>
     --></div>
 </div>
