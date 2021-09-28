@@ -6,8 +6,9 @@ if (location.href.match('cgi-bin/koha/opac-suggestions.pl\\?op=add')) {
     $('#usersuggestions p').eq(0).html(p1)
     $('#usersuggestions p').eq(1).html(p2)
     // COVID-19 closure alert
-    let alert = '<p class="alert">We are currently prioritizing the purchase of ebooks to support online courses.</p>'
+    let alert = '<p class="alert alert-warning">We are currently prioritizing the purchase of ebooks to support online courses.</p>'
     $('#usersuggestions p').eq(0).prepend(alert)
     // required field label tooltip
     $('label.required').attr('title', 'This field is required.')
+    $('span.required').css('color', 'maroon')
 }
