@@ -65,19 +65,6 @@ input[type='text']:focus {
     }
 }
 
-// search button on home page, this class is applied via home-search.js
-.btn-primary {
-    background: $dark-gray;
-    border-color: $dark-gray;
-    text-shadow: 0 -1px 0 $btn-text-shadow;
-
-    &:hover {
-        background: $dark-gray;
-        border-color: lighten($dark-gray, 20%);
-        box-shadow: 0 0 0 1px lighten($dark-gray, 30%);
-    }
-}
-
 // search button everywhere else e.g. search results, details pages
 #searchsubmit {
     padding: 12px 32px;
