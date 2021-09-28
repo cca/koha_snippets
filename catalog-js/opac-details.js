@@ -13,8 +13,8 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
                     // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=4947
                     // '&' in subject link example:
                     // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=25683
-                    // trailing semicolon breaks link example:
-                    // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=43354
+                    // @TODO need a new example of a trailing semicolon that
+                    // breaks links, we removed our old one.
                     return href.replace(/%20&(amp;)?%20/g, '%20%26%20').replace(/%20;%22/g, '%22')
                 })
         })
