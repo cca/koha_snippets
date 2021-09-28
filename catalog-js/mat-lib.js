@@ -13,7 +13,7 @@ if (path.match('/cgi-bin/koha/opac-detail.pl') &&
     $('.results_summary.type, .results_summary.isbn').remove()
 
     // swap author field labels
-    $('h5.author').each((index, element) => {
+    $('.h3.author').each((index, element) => {
         let html = $(element).html()
                         .replace('By:', 'Company Name:')
                         .replace('Contributor(s):', 'Company Name:')
