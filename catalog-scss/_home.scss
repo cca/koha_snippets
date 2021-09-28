@@ -5,9 +5,14 @@
 }
 
 #user_summary {
-    h3 {
+    h2 {
         background-color: $dark-blue;
         color: $white;
+    }
+
+    p {
+        // padding the same as `#user_summary ul a` from OPAC styles
+        padding: 0 15px;
     }
 
     .loggedinusername:hover {
