@@ -8,4 +8,6 @@ if (path.match('cgi-bin/koha/opac-main.pl') || path === '/') {
     $('#select_library').parent().remove()
     $('#translControl1').addClass('form-control-lg')
     $('#searchform').find('div').first().addClass('input-group')
+    // unauthenticated layout wastes the empty right column's space
+    $('#notloggedin').find('.col-lg-2').addClass('col-lg-3').removeClass('col-lg-2')
 }
