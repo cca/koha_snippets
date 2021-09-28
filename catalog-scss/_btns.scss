@@ -1,0 +1,45 @@
+// used at least in search button on home page but probably elsewhere, too
+.btn-primary, {
+    background: $dark-gray;
+    border-color: $dark-gray;
+    text-shadow: 0 -1px 0 $btn-text-shadow;
+
+    &:hover {
+        background: $dark-gray;
+        border-color: lighten($dark-gray, 20%);
+        box-shadow: 0 0 0 1px lighten($dark-gray, 30%);
+    }
+
+    &.focus,
+    &:focus {
+        box-shadow: 0 0 0 1px darken($dark-gray, 20%);
+    }
+
+    &.disabled,
+    &:disabled {
+        background-color: $btn-disabled;
+        border-color: $btn-disabled;
+        color: #fff;
+    }
+
+    &.disabled:hover,
+    &[disabled]:hover {
+        box-shadow: none;
+        color: #fff;
+        opacity: .65;
+    }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+    background-color: $btn-disabled;
+    border-color: $btn-disabled;
+    color: #fff;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
