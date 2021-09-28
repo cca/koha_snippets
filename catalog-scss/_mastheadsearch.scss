@@ -68,29 +68,17 @@ input[type='text']:focus {
 // search button on home page, this class is applied via home-search.js
 .btn-primary {
     background: $dark-gray;
-    background-repeat: repeat-x;
     border-color: $dark-gray;
-    color: $white;
     text-shadow: 0 -1px 0 $btn-text-shadow;
 
     &:hover {
         background: $dark-gray;
+        border-color: lighten($dark-gray, 20%);
+        box-shadow: 0 0 0 1px lighten($dark-gray, 30%);
     }
 }
 
 // search button everywhere else e.g. search results, details pages
 #searchsubmit {
-    border-radius: 4px;
-    box-shadow: none;
-    cursor: pointer;
-    display: inline-block;
-    font-family: inherit;
-    line-height: normal;
-    margin-bottom: 0;
-    margin-left: 5px;
     padding: 12px 32px;
-    position: relative;
-    text-align: center;
-    text-shadow: none;
-    text-transform: uppercase;
 }
