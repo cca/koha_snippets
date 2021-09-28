@@ -6,7 +6,7 @@
 }
 
 // hide the separator we just orphaned with above rule
-#selections-toolbar .sep:nth-child(2) {
+.check_control::before {
     display: none;
 }
 
