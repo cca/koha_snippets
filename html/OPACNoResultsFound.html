@@ -1,9 +1,10 @@
 <style>
-/* hide default "no results" warning & "make a purchase suggestion" link */
-.maincontent .span12 > strong,
-.maincontent .span12 > p,
-.suggestion {
-    display: none;
+/* hide the default "no results" text
+no more specific way to target the <p> really
+must be !imp because h1#numresults has an inline display:block style */
+#numresults,
+.main .col p {
+    display: none !important;
 }
 </style>
 <div class="alert alert-error">
