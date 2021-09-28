@@ -13,7 +13,8 @@ if (path.match('/cgi-bin/koha/opac-search.pl')) {
     }
 
     // hide the "sorry no suggestions" warning from recommendation service
-    // recommendations are loaded async so we just keep checking if they're present
+    // recommendations are loaded async so we repeatedly check for them
+    // you can test this by running a nonsense search that yields 0 results
     let id = setInterval(() => {
         let ns = $('.nosuggestions')
         if (ns.length || $('.searchsuggestion').length) {
