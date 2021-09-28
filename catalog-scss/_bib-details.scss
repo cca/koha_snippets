@@ -5,8 +5,14 @@
     overflow: scroll;
 }
 
-.item-status.notforloan {
-    color: $black-font;
+.item-status {
+    &.lost {
+        color: $bs-text-error;
+    }
+
+    &.notforloan {
+        color: $black-font;
+    }
 }
 
 // hide "show analytics" link, useless

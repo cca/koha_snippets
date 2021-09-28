@@ -1,5 +1,6 @@
 // hide misleading/uninformative fields from search results display
 // scope to search results, fixes accidentally hiding .edition on bib details
+#listcontents,
 .bibliocol {
     .author,
     .byAuthor,
@@ -18,6 +19,7 @@
     }
 }
 
+#opac-userlists,
 #results {
     .results_summary {
         font-size: 18px;
