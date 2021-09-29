@@ -1,5 +1,6 @@
-// used at least in search button on home page but probably elsewhere, too
-.btn-primary, {
+// override primary button to be dark gray & not lime green
+// also override its disabled state (seen in search results action menu)
+.btn-primary {
     background: $dark-gray;
     border-color: $dark-gray;
     text-shadow: 0 -1px 0 $btn-text-shadow;
