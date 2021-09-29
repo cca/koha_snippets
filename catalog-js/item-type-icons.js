@@ -17,7 +17,9 @@ if (path.match('/cgi-bin/koha/opac-search.pl')) {
     }
     let replaceIcon = function (img) {
         let type = img.alt.toLowerCase()
-        if (icon_map[type]) return img.src = `https://libraries.cca.edu/media/images/${icon_map[type]}.original.png`
+        if (icon_map[type]) {
+            img.src = `https://libraries.cca.edu/media/images/${icon_map[type]}.original.png`
+        }
     }
 
     Array.from(document.querySelectorAll('.results_material_type img')).forEach(replaceIcon)
