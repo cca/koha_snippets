@@ -29,7 +29,8 @@ if (path.match('/cgi-bin/koha/opac-search.pl')) {
         let mattype = item.find('.results_material_type')
         // label material type as "material sample" with our custom icon
         mattype.html(mattype.html().replace(/visual material/ig, 'Material sample'))
-        mattype.find('img').attr('src', 'https://libraries.cca.edu/media/images/material-40.original.png')
+        // 10/2021 OUTAGE: disable this icon link
+        // mattype.find('img').attr('src', 'https://libraries.cca.edu/media/images/material-40.original.png')
         // remove the empty "type of visual" span
         item.find('.results_typeofvisual').remove()
     })

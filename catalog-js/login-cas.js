@@ -16,7 +16,7 @@ $(() => {
         let failedCAS = $('p:contains("Sorry, the CAS login failed")')
         failedCAS.addClass('alert').html(`Sorry, your CCA login failed. It's likely
         that you don't have a library account yet or have one under a different
-        username. Please <a href="https://libraries.cca.edu/contact">contact us</a>
+        username. Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1-K0wNRPZOCbM3s3iCUiHql8CR4y5E9Cc79qIOS5xDC6XOg/viewform?usp=sf_link">contact us</a>
         for assistance.`)
         let alerts = $('#opac-auth .alert')
         $('#opac-auth').html('')
