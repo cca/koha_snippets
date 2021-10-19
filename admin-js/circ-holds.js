@@ -6,6 +6,7 @@ if (path.match('/cgi-bin/koha/reserve/request.pl')) {
         $('#requestany').prop('checked', false)
         // watch for changes to pickup location
         // & update allowed pickup locations to match
+        // NOTE: we will definitely have to revist this on next upgrade
         if ($('#requestspecific').length && $('.pickup_locations').length) {
             // hide pickup location columns as we'll auto update them
             $('#requestspecific').find('th:last-child, td:last-child').hide()
