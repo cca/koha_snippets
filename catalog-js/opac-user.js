@@ -9,7 +9,7 @@ if (path.match('/cgi-bin/koha/opac-user.pl')) {
     $('#warnexpired, #warndeparture').each((idx, el) => {
         let $el = $(el)
         let html = $el.html()
-        let replacement = '<a href="https://docs.google.com/forms/d/e/1FAIpQLSc1-K0wNRPZOCbM3s3iCUiHql8CR4y5E9Cc79qIOS5xDC6XOg/viewform?usp=sf_link">contact the library</a>'
+        let replacement = '<a href="https://libraries.cca.edu/about-us/about-us/ask-a-librarian/">contact the library</a>'
         $el.html(html.replace('contact the library', replacement))
     })
 
