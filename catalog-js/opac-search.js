@@ -5,11 +5,13 @@ if (path.match('/cgi-bin/koha/opac-search.pl')) {
     let q = qs.get('q') && qs.get('q').toLowerCase()
     let limit = qs.get('limit')
 
-    // there's a link on the main Libraries site that matches this query
+    // @TODO un-comment this section when VAULT is back up
+    // tease artists' books in VAULT for relevant queries & list
+    let abHtml = '<div class="alert alert-error">View previews of the Artists\' Books Collection <a href="https://vault.cca.edu/logon.do?.page=/hierarchy.do?topic=a7b976d5-5316-44da-b06e-7374cd100075">in VAULT</a> (signin required).</div>'
     if (q && q.match(/artists?'? book/) || limit && limit.match('ARTIST')) {
-        // insert an alert about the artists' books in VAULT
-        let html = '<div class="alert alert-error">View previews of the Artists\' Books Collection <a href="https://vault.cca.edu/logon.do?.page=/hierarchy.do?topic=a7b976d5-5316-44da-b06e-7374cd100075">in VAULT</a> (signin required).</div>'
-        $('#numresults').before(html)
+        $('#numresults').before(abHtml)
+    } else if (path.match('opac-shelves.pl') && qs.get('op') == 'view' && qs.get('shelfnumber') == '481') {
+        $('#usershelves').before(abHtml)
     }
 
     // hide the "sorry no suggestions" warning from recommendation service
