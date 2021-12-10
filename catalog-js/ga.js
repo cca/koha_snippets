@@ -1,19 +1,19 @@
-// analytics boilerplate with our tracking code
-/* jshint ignore:start */
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-/* jshint ignore:end */
-ga('create', 'UA-18459158-7', 'auto')
-ga('send', 'pageview')
+// load google tags analytics library
+let d = document
+    , s = d.createElement('script')
+    , ga = d.getElementsByTagName('script')[0];
+s.async = 1
+s.src = 'https://www.googletagmanager.com/gtag/js?id=UA-18459158-7'
+ga.parentNode.insertBefore(s, ga)
+window.dataLayer = window.dataLayer || []
+function gtag(){ dataLayer.push(arguments) }
+gtag('js', new Date())
+gtag('config', 'UA-18459158-7', { 'anonymize_ip': true, 'forceSSL': true })
 
-function trackEvent (category, action, label) {
-    ga('send', 'event', {
-      eventCategory: category,
-      eventAction: action,
-      eventLabel: label,
-      transport: 'beacon'
+function trackEvent (cat, act, label) {
+    gtag('event', act, {
+      'event_category': cat,
+      'event_label': label
     })
 }
 
@@ -30,10 +30,10 @@ $('#search-facets .menu-collapse a').click(function (ev) {
     // go up a couple lists to facet-level list item with ID like "au_id"
     let id = $target.parents('li[id]').attr('id')
     // get the _topic_ of the facet like au, location, su-geo
-    let category = id.replace('_id', '').replace('_facet', '')
+    let topic = id.replace('_id', '').replace('_facet', '')
     // actual facet being used, e.g. a name, location, place
     let value = $target.text()
-    trackEvent('Search Facet', category, value)
+    trackEvent('Search Facet', topic, value)
 })
 
 // right-side actions menu on bib detail pages
