@@ -36,6 +36,6 @@
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
   "license": "ECL-2.0",
   "dependencies": {
-    "node-sass": "^6.0.1"
+    "node-sass": "^7.0.0"
   }
 }
