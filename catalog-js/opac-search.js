@@ -35,4 +35,26 @@ if (path.match('/cgi-bin/koha/opac-search.pl')) {
         // remove the empty "type of visual" span
         item.find('.results_typeofvisual').remove()
     })
+
+    // fix mis-encoded word for Dutch in advanced search language dropdown
+    // https://github.com/cca/koha_snippets/issues/34
+    let isEnglish = () => {
+        let n = navigator
+        let lang = n.userLanguage || n.language
+
+        if (lang && lang.substring(0, 2) === 'en') return true
+
+        if (n.languages && Array.isArray(n.languages)) {
+            return navigator.languages.some(l => l.substring(0, 2) === 'en')
+        }
+
+        // default to true as that is a safe assumption with our audience
+        return true
+    }
+
+    let langLimit = $('#language-limit')
+
+    if (isEnglish() && langLimit.length) {
+        $('option[value="ln,rtrn:dut"]').text('nedərlɑns (Dutch)')
+    }
 }
