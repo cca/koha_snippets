@@ -1,14 +1,2 @@
 <!-- only show this right after upgrades -->
 <p class="text-danger"><strong>NOTE:</strong> Koha has been upgraded recently. You should <a href="https://www.google.com/search?q=how+do+I+clear+my+browser+cache">clear your browser's cache</a> before logging in.</p>
-
-<p>Password is not your CCA password but a unique one for Koha. If you have forgotten it, <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1-K0wNRPZOCbM3s3iCUiHql8CR4y5E9Cc79qIOS5xDC6XOg/viewform">contact a librarian</a> to have it reset.</p>
-
-<script>
-// runs before jQuery is on page
-window.addEventListener("DOMContentLoaded", () => {
-    // hide CAS login below Koha login, it's a <h4> & a <p> with no hooks for selectors
-    let form = document.getElementById('loginform')
-    form.nextElementSibling.remove()
-    form.nextElementSibling.remove()
-})
-</script>
