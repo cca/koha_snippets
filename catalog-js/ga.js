@@ -37,12 +37,12 @@ $('#search-facets .menu-collapse a').click(function (ev) {
 })
 
 // right-side actions menu on bib detail pages
-$('#action a').click(function (ev) {
+$('#action').on('click', 'a', function (ev) {
     // classes/IDs of <a>s are slightly more generic than their text
     // so we prefer ID for category but take 1st class otherwise
     let category = ev.target.id || ev.target.classList[0]
     // text of action is also informative
-    let value = ev.target.textContent
+    let value = ev.target.textContent.trim()
     trackEvent('Action', category, value)
 })
 
