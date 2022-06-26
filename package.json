@@ -35,5 +35,8 @@
     "test": "jshint admin-js/*.js; jshint catalog-js/*.js; stylelint --cache --fix **/*.scss 2>/dev/null; "
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
-  "license": "ECL-2.0"
+  "license": "ECL-2.0",
+  "dependencies": {
+    "postcss": ">=8.3.3 <9.0.0"
+  }
 }
