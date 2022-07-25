@@ -1,3 +1,9 @@
+// new (as of 21.11) cover image carousel
+// 1) remove outline
+// 2) remove "hint" about where each image came from
+#biblio-cover-slider {
+    border: 0;
+}
 .cover-slider .hint {
     display: none;
 }
