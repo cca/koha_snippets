@@ -1,8 +1,7 @@
 // if you have a local & COCE cover image, both are displayed
-// we observe the .coverimages (search results) or #bookcover (detail) <div>
+// we observe the .coverimages elmenet on search results pages
 // and if there are ever 2 thumbnail images, remove the COCE one
-// See: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
-let selector = $('.coverimages').length ? '.coverimages' : '#bookcover'
+let selector = '.coverimages'
 if ($(selector).length && !!MutationObserver) {
     let observer = new MutationObserver((mutations) => {
         for (let mutation of mutations) {
