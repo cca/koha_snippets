@@ -1,24 +1,6 @@
 // all our customizations to the bib details display in one place
 if (path.match('/cgi-bin/koha/opac-detail.pl')) {
     $(()=>{
-        // fix links that are broken due to poor URI encoding
-        $('#catalogue_detail_biblio a')
-            // skip MARC 856$u & public list links, they should be OK
-            .not('.results_summary.online_resources a')
-            .not('.results_summary.lists a')
-            .each(function(){
-                $(this).attr('href', function (i, href) {
-                    // '&' in series link examples:
-                    // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=70359
-                    // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=4947
-                    // '&' in subject link example:
-                    // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=25683
-                    // @TODO need a new example of a trailing semicolon that
-                    // breaks links, we removed our old one.
-                    return href.replace(/%20&(amp;)?%20/g, '%20%26%20').replace(/%20;%22/g, '%22')
-                })
-        })
-
         // extra commas in 700 "contributor" field display
         // like MARC of 700 __ ‡a Brundige, James, ‡e director, ‡e editor.
         // => "Brundige, James [director,, editor.]"
