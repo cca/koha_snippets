@@ -4,7 +4,7 @@
 <ul class="Simpson-hrs">Loading hours data...</ul>
 
 <h2 class="libraryname">Meyer Library (Oakland)</h2>
-<ul class="Meyer-hrs"><li>Loading hours data...</li></ul>
+<p>Closed permanently.</p>
 
 <h2 class="libraryname">Materials Library (SF)</h2>
 <ul class="Materials-hrs"><li>Loading hours data...</li></ul>
@@ -40,5 +40,5 @@ let gethrs = (library) => {
         .catch(err => console.error(err))
 }
 
-['Meyer', 'Simpson', 'Materials'].forEach(gethrs)
+['Simpson', 'Materials'].forEach(gethrs)
 </script>
