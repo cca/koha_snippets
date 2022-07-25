@@ -4,6 +4,7 @@
 #biblio-cover-slider {
     border: 0;
 }
+
 .cover-nav,
 .cover-slider .hint {
     display: none;
@@ -37,8 +38,8 @@
 }
 
 // override "→" before & after 505 contents notes
-.contentblock :first-child:not(.term):before,
-.contents .newline:after {
+.contentblock :first-child:not(.term)::before,
+.contents .newline::after {
     content: '';
 }
 

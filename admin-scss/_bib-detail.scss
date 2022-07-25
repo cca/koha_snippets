@@ -1,4 +1,4 @@
-.contentblock :first-child:before,
-.contents .newline:after {
+.contentblock :first-child::before,
+.contents .newline::after {
     content: '';
 }

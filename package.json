@@ -15,7 +15,6 @@
     "gulp-sass": "^5.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-uglify": "^3.0.2",
-    "jshint": "^2.13.5",
     "node-sass": "^7.0.1",
     "postcss": "^8.4.14",
     "stylelint": "^14.9.1",
@@ -33,7 +32,7 @@
     "acss": "gulp admin-css; cat dist/IntranetUserCSS.css | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=IntranetUserCSS'",
     "cjs": "gulp catalog-js; cat dist/OPACUserJS.js | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserJS'",
     "ccss": "gulp catalog-css; cat dist/OPACUserCSS.css | pbcopy; open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserCSS'",
-    "test": "jshint admin-js/*.js; jshint catalog-js/*.js; stylelint --cache --fix **/*.scss 2>/dev/null; "
+    "test": "gulp lint; stylelint --cache --fix **/*.scss 2>/dev/null; "
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
   "license": "ECL-2.0"
