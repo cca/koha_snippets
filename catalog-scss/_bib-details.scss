@@ -36,6 +36,12 @@
     display: none;
 }
 
+// override "→" before & after 505 contents notes
+.contentblock :first-child:not(.term):before,
+.contents .newline:after {
+    content: '';
+}
+
 // fix subscription issues icon positioning
 #Briefhistory,
 #Fullhistory {

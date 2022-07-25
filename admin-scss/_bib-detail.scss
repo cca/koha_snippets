@@ -1,0 +1,4 @@
+.contentblock :first-child:before,
+.contents .newline:after {
+    content: '';
+}
