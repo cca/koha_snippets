@@ -22,33 +22,5 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
         let biblionumber =  $('.unapi-id').attr('title').split(':')[2]
         let permalink = path + '?biblionumber=' + biblionumber
         $('#action').append('<li><a class="btn btn-link btn-lg" id="permalink" href="' + permalink + '"><i class="fa fa-fw fa-link"></i> Permanent Link</a></li>')
-
-        // 2) cite this page
-        // can't get OCLC number from the page so we use ISBN
-        let isbn = $('.isbn:last').text().split(' ')[1];
-        if (isbn) {
-            isbn = isbn.replace(/\W*$/, '').replace(/-/, '')
-            // construct Worldcat URL we'll embed
-            let citeThisUrl = 'https://www.worldcat.org/isbn/' + isbn + '?page=citation'
-
-            // add the "cite this" link to the actions menu
-            $('#action').append('<li><a class="btn btn-link btn-lg" href="#" data-toggle="modal" data-target="#citeModal" id="citethis"><i class="fa fa-fw fa-code"></i> Cite this work</a></li>')
-
-            // add "cite this" modal wrapping Worldcat iframe to the DOM
-            // NOTE: do _not_ wrap iframe in div.modal-body as it causes double scrollbars
-            let citeThisModal = `<div id="citeModal" aria-modal="true" aria-labelledby="citethis_label" class="modal hide" role="dialog" tabindex="-1"><div class="modal-dialog"><div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="closebtn" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="citethis_label">Cite this work</h3>
-            </div>
-            <div class="modal-body">
-                <iframe height="400" frameborder="0" src="${citeThisUrl}" style="width:100%;"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-            </div></div></div>`
-            $('body').prepend(citeThisModal)
-        }
     })
 }
