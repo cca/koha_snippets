@@ -1,12 +1,9 @@
 <h1 class="text-center">Hours</h1>
 
-<h2 class="libraryname">Simpson Library (SF)</h2>
+<h2 class="libraryname">Simpson Library</h2>
 <ul class="Simpson-hrs">Loading hours data...</ul>
 
-<h2 class="libraryname">Meyer Library (Oakland)</h2>
-<p>Closed permanently.</p>
-
-<h2 class="libraryname">Materials Library (SF)</h2>
+<h2 class="libraryname">Materials Library</h2>
 <ul class="Materials-hrs"><li>Loading hours data...</li></ul>
 
 <script>
@@ -20,8 +17,7 @@ let format = (day, hrs) => {
     return `<li>${day} ${hrs}`
 }
 let gethrs = (library) => {
-    let root = 'https://libraries.cca.edu/hours/?format=json'
-    fetch(`${root}&library=${library}`)
+    fetch(`https://libraries.cca.edu/hours/?format=json&library=${library}`)
         .then(r => r.json())
         .then(data => {
             let list = document.querySelector(`.${library}-hrs`)
