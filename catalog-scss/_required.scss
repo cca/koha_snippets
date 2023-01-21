@@ -5,6 +5,6 @@ input:required:invalid {
 }
 
 label.required::after {
-    content: "*";
     color: $bs-text-error;
+    content: '*';
 }
