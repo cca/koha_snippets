@@ -5,11 +5,10 @@ const eslint = require('gulp-eslint')
 const iife = require('gulp-iife')
 const insert = require('gulp-insert')
 const rename = require('gulp-rename')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const sasslint = require('gulp-sass-lint');
 const uglify = require('gulp-uglify')
 
-sass.compiler = require('sass')
 const sassOpts = {
     outputStyle: 'compressed'
 }
