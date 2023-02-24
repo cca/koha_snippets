@@ -22,7 +22,7 @@ $selector: ();
 #{$selector},
 #memberentry_identity .lradio, // "gender" radio button list
 #memberentry_identity .cleardate,
-#memberentry_identity .ui-datepicker-trigger,
+#memberentry_identity .flatpickr_wrapper,
 #memberentry_alternateaddress,
 #memberentry_alternatecontact {
     display: none;
