@@ -8,7 +8,7 @@ ga.parentNode.insertBefore(s, ga)
 window.dataLayer = window.dataLayer || []
 function gtag(){ dataLayer.push(arguments) }
 gtag('js', new Date())
-gtag('config', 'UA-18459158-7', { 'anonymize_ip': true, 'forceSSL': true })
+gtag('config', 'UA-18459158-7', { 'anonymize_ip': true, 'forceSSL': true, 'transport': 'beacon' })
 
 function trackEvent (cat, act, label) {
     gtag('event', act, {
