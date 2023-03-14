@@ -10,10 +10,12 @@ function gtag(){ dataLayer.push(arguments) }
 gtag('js', new Date())
 gtag('config', 'UA-18459158-7', { 'anonymize_ip': true, 'forceSSL': true, 'transport': 'beacon' })
 
-function trackEvent (cat, act, label) {
-    gtag('event', act, {
-      'event_category': cat,
-      'event_label': label
+function trackEvent (category, label, value) {
+    gtag('event', category, {
+        // under gtag must configure these as custom dimensions
+        // https://support.google.com/analytics/answer/10075209
+        'cca_label': label,
+        'cca_value': value
     })
 }
 
@@ -30,36 +32,36 @@ $('#search-facets .menu-collapse a').click(function (ev) {
     // go up a couple lists to facet-level list item with ID like "au_id"
     let id = $target.parents('li[id]').attr('id')
     // get the _topic_ of the facet like au, location, su-geo
-    let topic = id.replace('_id', '').replace('_facet', '')
+    let facet = id.replace('_id', '').replace('_facet', '')
     // actual facet being used, e.g. a name, location, place
     let value = $target.text()
-    trackEvent('Search Facet', topic, value)
+    trackEvent('Search Facet', facet, value)
 })
 
 // right-side actions menu on bib detail pages
 $('#action').on('click', 'a', function (ev) {
     // classes/IDs of <a>s are slightly more generic than their text
     // so we prefer ID for category but take 1st class otherwise
-    let category = ev.target.id || ev.target.classList[0]
+    let action = ev.target.id || ev.target.classList[0]
     // text of action is also informative
-    let value = ev.target.textContent.trim()
-    trackEvent('Action', category, value)
+    let label = ev.target.textContent.trim()
+    trackEvent('Action', action, label)
 })
 
 // social sharing icons beneath actions
 // if people don't use these we should remove them
 $('#social_networks div').click(function (ev) {
     let item = $(this).children().first()[0]
-    let category = item.id
-    let value = item.title
-    trackEvent('Social Network', category, value)
+    let network = item.id
+    let label = item.title
+    trackEvent('Social Media Share', network, label)
 })
 
 // interactions with the "toolbar" above search results, below pagination
-$('#selections-toolbar a, #selections-toolbar input').click(function (ev) {
-    let category = ev.target.id || ev.target.className || (ev.parentElement ? ev.parentElement.id : 'none')
+$('#toolbar a, #toolbar input').click(function (ev) {
+    let action = ev.target.id || ev.target.className || (ev.parentElement ? ev.parentElement.id : 'none')
     let value = ev.textContent || ev.value
-    trackEvent('Toolbar', category, value)
+    trackEvent('Toolbar', action, value)
 })
 
 // clicking on "did you mean" search suggestions, they load async
@@ -69,9 +71,9 @@ let interval = setInterval(()=>{
     if ($('.dym-loaded').length || !$('#didyoumean').length) {
         clearInterval(interval)
         $('.searchsuggestion a').click(function (ev) {
-            let category = $(this).text().trim()
-            let value = $(this).href
-            trackEvent('Suggestion', category, value)
+            let term = $(this).text().trim()
+            let term_link = $(this).href
+            trackEvent('Suggestion', term, term_link)
         })
     }
 }, 500)
