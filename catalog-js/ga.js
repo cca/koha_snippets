@@ -58,9 +58,15 @@ $('#social_networks div').click(function (ev) {
 })
 
 // interactions with the "toolbar" above search results, below pagination
-$('#toolbar a, #toolbar input').click(function (ev) {
-    let action = ev.target.id || ev.target.className || (ev.parentElement ? ev.parentElement.id : 'none')
-    let value = ev.textContent || ev.value
+$('#toolbar a').click(function (ev) {
+    let el = ev.target
+    let action = el.id || el.className || (el.parentElement ? el.parentElement.id : 'unidentified anchor')
+    let value = el.textContent || el.value
+    trackEvent('Toolbar', action, value)
+})
+$('#toolbar select').change(function (ev) {
+    let action = ev.target.id || ev.target.className || 'unidentified select'
+    let value = $(this).find('option:selected').val() || 'unknown value'
     trackEvent('Toolbar', action, value)
 })
 
