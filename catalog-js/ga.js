@@ -72,7 +72,7 @@ let interval = setInterval(()=>{
         clearInterval(interval)
         $('.searchsuggestion a').click(function (ev) {
             let term = $(this).text().trim()
-            let term_link = $(this).href
+            let term_link = this.href
             trackEvent('Suggestion', term, term_link)
         })
     }
