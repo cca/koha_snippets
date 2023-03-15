@@ -20,11 +20,6 @@ function trackEvent (category, label, value) {
 }
 
 // our custom event tracking
-// outbound links, see https://developers.google.com/analytics/devguides/collection/analyticsjs/events#outbound_link_and_form_tracking
-// track only on HTTP... links
-$('a[href^=http]').click(function (ev) {
-    trackEvent('Outbound Link', ev.target.textContent, ev.target.href)
-})
 
 // search facet usage
 $('#search-facets .menu-collapse a').click(function (ev) {
