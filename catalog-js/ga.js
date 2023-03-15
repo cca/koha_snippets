@@ -3,12 +3,12 @@ let d = document
     , s = d.createElement('script')
     , ga = d.getElementsByTagName('script')[0];
 s.async = 1
-s.src = 'https://www.googletagmanager.com/gtag/js?id=UA-18459158-7'
+s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SCTY0C2C98'
 ga.parentNode.insertBefore(s, ga)
 window.dataLayer = window.dataLayer || []
 function gtag(){ dataLayer.push(arguments) }
 gtag('js', new Date())
-gtag('config', 'UA-18459158-7', { 'anonymize_ip': true, 'forceSSL': true, 'transport': 'beacon' })
+gtag('config', 'G-SCTY0C2C98', { 'anonymize_ip': true, 'forceSSL': true, 'transport': 'beacon' })
 
 function trackEvent (category, label, value) {
     gtag('event', category, {
