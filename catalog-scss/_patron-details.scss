@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "sass:string";
+
 // list of input we want to hide
 // see: http://hugogiraudel.com/2013/07/15/understanding-sass-lists/
 $ids: 'title', // salutation
@@ -14,8 +17,8 @@ $selector: ();
 // #borrower_initials, label[for="borrower_initials"]
 @each $id in $ids {
     // all the IDs are prefixed with the "borrower_"
-    $selector: append($selector, unquote('#borrower_#{$id}'), 'comma');
-    $selector: append($selector, unquote('label[for="borrower_#{$id}"]'), 'comma');
+    $selector: list.append($selector, string.unquote('#borrower_#{$id}'), 'comma');
+    $selector: list.append($selector, string.unquote('label[for="borrower_#{$id}"]'), 'comma');
 }
 
 // use our selector & hide "gender" radio button list plus 2 full form sections

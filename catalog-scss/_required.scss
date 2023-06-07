@@ -1,6 +1,8 @@
+@use "sass:color";
+
 // styles for required inputs
 input:required:invalid {
-    border: 1px solid lighten($bs-text-error, 20%);
+    border: 1px solid color.adjust($bs-text-error, $lightness: 20%);
     box-shadow: $bs-text-error 1px 1px 4px;
 }
 

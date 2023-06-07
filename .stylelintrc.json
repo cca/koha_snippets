@@ -4,7 +4,6 @@
     "rules": {
         "at-rule-no-unknown": null,
         "declaration-no-important": true,
-        "indentation": 4,
         "number-leading-zero": null,
         "max-nesting-depth": 2,
         "selector-class-pattern": null,

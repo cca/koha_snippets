@@ -1,21 +1,24 @@
+@use "sass:color";
+
 // override primary button to be dark gray & not lime green
 // also override its disabled state (seen in search results action menu)
-.btn-primary {
+// html is for specificity
+html .btn-primary {
     background: $dark-gray;
     border-color: $dark-gray;
     text-shadow: 0 -1px 0 $btn-text-shadow;
 
     &:hover {
         background: $dark-gray;
-        border-color: lighten($dark-gray, 20%);
-        box-shadow: 0 0 0 1px lighten($dark-gray, 30%);
+        border-color: color.adjust($dark-gray, $lightness: 20%);
+        box-shadow: 0 0 0 1px color.adjust($dark-gray, $lightness: 30%);
     }
 
-    &.focus,
-    &:focus {
-        background: darken($dark-gray, 60%);
-        border-color: darken($dark-gray, 60%);
-        box-shadow: 0 0 0 1px darken($dark-gray, 40%);
+    &:not(:disabled):not(.disabled).focus,
+    &:not(:disabled):not(.disabled):focus {
+        background: color.adjust($dark-gray, $lightness: -60%);
+        border-color: color.adjust($dark-gray, $lightness: -60%);
+        box-shadow: 0 0 0 1px color.adjust($dark-gray, $lightness: -40%);
     }
 
     &.disabled,
