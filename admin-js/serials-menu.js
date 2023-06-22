@@ -3,9 +3,9 @@
 if (path.match('/cgi-bin/koha/serials/')) {
     // execute once document has loaded
     $(() => {
-        var menu_list = $('#navmenulist ul').eq(0)
+        let menu_list = $('#navmenulist ul').eq(0)
         // format is: [ link text, URL ]
-        var links = [
+        let links = [
             ['SF at bindery',
             '/cgi-bin/koha/reports/guided_reports.pl?reports=68&phase=Run%20this%20report']
             , ['Item Search for Bindery Items',
@@ -20,10 +20,9 @@ if (path.match('/cgi-bin/koha/serials/')) {
             '/cgi-bin/koha/acqui/ordered.pl?fund=2&fund_code=SER-SF']
         ]
 
-        var html = links.reduce((html, link) => {
+        let html = links.reduce((html, link) => {
             return html + `<li><a href="${link[1]}" target="_blank">${link[0]}</a></li>`
         }, '')
-
-        menu_list.prepend(html + '<br>')
+        menu_list.prepend(html)
     })
 }
