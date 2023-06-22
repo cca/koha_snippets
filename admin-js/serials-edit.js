@@ -27,7 +27,7 @@ if (path.match('/cgi-bin/koha/serials/serials-edit.pl')) {
         }
 
         // when a new issue is about to be received, fill in values
-        $('a:contains("Click to add item")').on('click', fixForm)
+        $('a:contains("Add item")').on('click', fixForm)
         // staff tend to use "Status" <select> menu, not "add item" link
         // can't use arrow function bc we need "this" to refer to event target
         $('select[name="status"]').on('change', function () {
