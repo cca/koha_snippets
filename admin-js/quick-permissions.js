@@ -12,7 +12,7 @@ if (path.match('/cgi-bin/koha/members/member-flags.pl')) {
       $('#pat_member-flags').find('a.togglechildren_off:visible').click()
     })
 
-    let modal_html = '<div id="CopyPermissionsModal" class="modal fade" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><form method="post" action="submit"><input type="hidden" name="" value=""><div class="modal-header"><h3>Copy Permissions</h3></div><div id="CardNumberInfo" class="modal-body"><label for="usrBorrowerNumber">Borrowernumber (Target User): </label><input id="usrBorrowerNumber" type="text" size="10"></div><div class="modal-footer"><button id="btnCopySave" type="button" class="btn btn-success"><i class="fa fa-clone"></i> Copy & Save Permissions</button><button id="btnCopyCancel" data-dismiss="modal" aria-hidden="true" class="btn"><i class="fa fa-times"></i> Cancel</button></div></div>'
+    let modal_html = '<div id="CopyPermissionsModal" class="modal fade" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><form method="post" action="submit"><input type="hidden" name="" value=""><div class="modal-header"><h3>Copy Permissions</h3></div><div id="CardNumberInfo" class="modal-body"><label for="usrBorrowerNumber">Borrowernumber (Target User): </label><input id="usrBorrowerNumber" type="text" size="10"></div><div class="modal-footer"><button id="btnCopySave" type="button" class="btn btn-primary"><i class="fa fa-clone"></i> Copy & Save Permissions</button><button id="btnCopyCancel" data-dismiss="modal" aria-hidden="true" class="btn"><i class="fa fa-times"></i> Cancel</button></div></div>'
 
     // Copy Permissions Button Modal and Settings
     $('#pat_member-flags').append(modal_html)
