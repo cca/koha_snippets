@@ -15,7 +15,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-uglify": "^3.0.2",
-    "postcss": "^8.4.26",
+    "postcss": "^8.4.31",
     "stylelint": "^15.10.2",
     "stylelint-config-sass-guidelines": "^10.0.0",
     "stylelint-order": "^6.0.3",
