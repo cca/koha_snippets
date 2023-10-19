@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "code to be pasted into Koha's admin side",
   "devDependencies": {
-    "@babel/core": "^7.23.0",
-    "@babel/preset-env": "^7.22.20",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
@@ -16,7 +16,7 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-uglify": "^3.0.2",
     "postcss": "^8.4.31",
-    "stylelint": "^15.10.3",
+    "stylelint": "^15.11.0",
     "stylelint-config-sass-guidelines": "^10.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^5.2.1"
@@ -36,6 +36,6 @@
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
   "license": "ECL-2.0",
   "dependencies": {
-    "sass": "^1.69.0"
+    "sass": "^1.69.4"
   }
 }
