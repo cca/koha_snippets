@@ -19,7 +19,7 @@
     "stylelint": "^15.11.0",
     "stylelint-config-sass-guidelines": "^10.0.0",
     "stylelint-order": "^6.0.3",
-    "stylelint-scss": "^5.2.1"
+    "stylelint-scss": "^5.3.1"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,6 @@
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
   "license": "ECL-2.0",
   "dependencies": {
-    "sass": "^1.69.4"
+    "sass": "^1.69.5"
   }
 }
