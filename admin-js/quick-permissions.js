@@ -36,8 +36,9 @@ if (path.match('/cgi-bin/koha/members/member-flags.pl')) {
       let usrBorrowerNumber = $('#usrBorrowerNumber').val()
       $('#pat_member-flags #borrowernumber').val(usrBorrowerNumber)
       $('#btnCopyCancel').click()
-      $('#pat_member-flags #permissions_toolbar button.btn-default').click()
+      $('#pat_member-flags #permissions_toolbar button.btn-primary').click()
     })
+
 } else if (path.match('/cgi-bin/koha/members/moremember.pl')) {
     // Create alert to display after permissions are copied.
     // Display alert next to patron info showing permissions have been copied.
