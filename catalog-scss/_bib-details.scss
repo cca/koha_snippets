@@ -79,6 +79,11 @@
     }
 }
 
+// hide Twitter share button, outdated branding, need 2 IDs for specificity
+#social_networks #twitter {
+    display: none;
+}
+
 #bibliodescriptions {
     font-size: 16px;
 }
