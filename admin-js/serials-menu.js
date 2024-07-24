@@ -7,11 +7,11 @@ if (path.match('/cgi-bin/koha/serials/')) {
         // format is: [ link text, URL ]
         let links = [
             ['SF at bindery',
-            '/cgi-bin/koha/reports/guided_reports.pl?reports=68&phase=Run%20this%20report']
+            '/cgi-bin/koha/reports/guided_reports.pl?id=68&op=run']
             , ['Item Search for Bindery Items',
             '/cgi-bin/koha/catalogue/itemsearch.pl']
             , ['SF Late for Claiming',
-            '/cgi-bin/koha/reports/guided_reports.pl?reports=64&phase=Run%20this%20report']
+            '/cgi-bin/koha/reports/guided_reports.pl?id=64&op=run']
             , ['Serials Solutions',
             'https://clientcenter.serialssolutions.com/CC/Login/Default.aspx']
             , ['EBSCONET',
