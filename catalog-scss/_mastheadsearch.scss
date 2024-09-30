@@ -1,40 +1,40 @@
 #opac-main-search {
-    background: $white;
+  background: $white;
 }
 
 // fix green outline on main search box
 .mastheadsearch {
-    input.transl1:focus {
-        border-color: $input-light-gray;
-        box-shadow: inset 0 1px 1px $input-text-shadow, 0 0 8px $input-text-shadow;
-    }
+  input.transl1:focus {
+    border-color: $input-light-gray;
+    box-shadow: inset 0 1px 1px $input-text-shadow, 0 0 8px $input-text-shadow;
+  }
 }
 
 // larger search box on home page
 #opac-main {
+  .mastheadsearch {
+    // hide other search form elements
+    label,
+    select {
+      display: none;
+    }
+  }
+
+  // on larger screens, give a lot more breathing room
+  @media screen and (min-width: 940px) {
+    // stylelint-disable selector-max-id
+    #opacheader {
+      margin-top: 2em;
+    }
+    // stylelint-enable selector-max-id
+
     .mastheadsearch {
-        // hide other search form elements
-        label,
-        select {
-            display: none;
-        }
+      margin: 3em auto;
     }
-
-    // on larger screens, give a lot more breathing room
-    @media screen and (min-width: 940px) {
-        // stylelint-disable selector-max-id
-        #opacheader {
-            margin-top: 2em;
-        }
-        // stylelint-enable selector-max-id
-
-        .mastheadsearch {
-            margin: 3em auto;
-        }
-    }
+  }
 }
 
 // search button everywhere
 #searchsubmit {
-    padding: 12px 32px;
+  padding: 12px 32px;
 }

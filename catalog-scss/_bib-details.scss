@@ -2,12 +2,12 @@
 // 1) remove outline
 // 2) remove "hint" about where each image came from
 #biblio-cover-slider {
-    border: 0;
+  border: 0;
 }
 
 .cover-nav,
 .cover-slider .hint {
-    display: none;
+  display: none;
 }
 
 // long holdings block can overstep its bounds
@@ -16,17 +16,17 @@
 // UPDATE 2022-12-20: change to `auto` to avoid scrollbar appearing
 // when it's not needed
 #holdings {
-    overflow: auto;
+  overflow: auto;
 }
 
 .item-status {
-    &.lost {
-        color: $bs-text-error;
-    }
+  &.lost {
+    color: $bs-text-error;
+  }
 
-    &.notforloan {
-        color: $black-font;
-    }
+  &.notforloan {
+    color: $black-font;
+  }
 }
 
 // hide "show analytics" link, useless
@@ -36,54 +36,54 @@
 // hide "views" tabs like MARC, ISBD
 // end users don't need to see these
 #views {
-    display: none;
+  display: none;
 }
 
 // override "→" before & after 505 contents notes
 .contentblock :first-child:not(.term)::before,
 .contents .newline::after {
-    content: '';
+  content: '';
 }
 
 // fix subscription issues icon positioning
 #Briefhistory,
 #Fullhistory {
-    background-position: -8px 3px;
+  background-position: -8px 3px;
 }
 
 // the "more searches" dropdown has class pull-right
 // when it really should be pull-left (see on large screen for instance)
 #moresearches_menu .dropdown-menu.pull-right {
-    left: 0;
-    right: auto;
+  left: 0;
+  right: auto;
 }
 
 // for "more searches" dropdown specifically but also fixes "Lists" etc. too
 .dropdown-menu > li > a {
-    &:hover,
-    &:focus {
-        background: $cca-teal none;
-    }
+  &:hover,
+  &:focus {
+    background: $cca-teal none;
+  }
 }
 
 #catalogue_detail_biblio {
+  font-size: 18px;
+
+  .label {
     font-size: 18px;
+  }
 
-    .label {
-        font-size: 18px;
-    }
-
-    .author {
-        color: $details-label-black;
-        font-size: 18px;
-    }
+  .author {
+    color: $details-label-black;
+    font-size: 18px;
+  }
 }
 
 // hide Twitter share button, outdated branding, need 2 IDs for specificity
 #social_networks #twitter {
-    display: none;
+  display: none;
 }
 
 #bibliodescriptions {
-    font-size: 16px;
+  font-size: 16px;
 }

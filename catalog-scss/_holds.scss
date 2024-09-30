@@ -2,11 +2,11 @@
 // items that are checked out or already waiting to be picked up
 .waiting,
 .checkedout {
-    color: $bs-text-error;
-    font-weight: bold;
+  color: $bs-text-error;
+  font-weight: bold;
 }
 
 .holdrow {
-    border: 0;
-    margin-bottom: 0;
+  border: 0;
+  margin-bottom: 0;
 }

@@ -1,17 +1,17 @@
 #opacheader {
-    background-color: $white;
-    text-align: center;
+  background-color: $white;
+  text-align: center;
 }
 
 .main-logo img {
-    // needed for non-home pages where there's no margin otherwise
-    margin-top: 1.3em;
-    // for phones
-    max-width: 100%;
+  // needed for non-home pages where there's no margin otherwise
+  margin-top: 1.3em;
+  // for phones
+  max-width: 100%;
 }
 
 @media screen and (min-width: 400px) {
-    .main-logo img {
-        max-width: 400px;
-    }
+  .main-logo img {
+    max-width: 400px;
+  }
 }

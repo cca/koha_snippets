@@ -2,5 +2,5 @@
 // without this the Koha CSS injects, I kid you not, "â†’ " as content ¯\_(ツ)_/¯
 .contentblock :first-child::before,
 .contents .newline::after {
-    content: '';
+  content: '';
 }

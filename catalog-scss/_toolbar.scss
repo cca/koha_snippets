@@ -1,38 +1,38 @@
 // these first 3 rules pull results up a bit, less useless space at the top of page
 .toolbar {
-    .highlight_controls {
-        display: none;
-    }
+  .highlight_controls {
+    display: none;
+  }
 }
 
 // hide the separator we just orphaned with above rule
 .check_control::before {
-    display: none;
+  display: none;
 }
 
 #numresults {
-    display: none;
+  display: none;
 }
 
 @mixin select-input {
-    appearance: none;
-    background: $white;
-    border: 1px solid $input-light-gray;
-    border-radius: 0;
-    box-sizing: border-box;
-    color: $black-font;
-    margin-bottom: 0;
-    outline: 0;
-    text-indent: .01px;
+  appearance: none;
+  background: $white;
+  border: 1px solid $input-light-gray;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: $black-font;
+  margin-bottom: 0;
+  outline: 0;
+  text-indent: 0.01px;
 }
 
 #toolbar select {
-    @include select-input;
+  @include select-input;
 }
 
 #opac-main-search select {
-    @include select-input;
+  @include select-input;
 
-    height: 44px;
-    width: 100%;
+  height: 44px;
+  width: 100%;
 }

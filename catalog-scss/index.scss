@@ -16,16 +16,16 @@
 @import 'required';
 
 .breadcrumb {
-    display: none;
+  display: none;
 }
 
 .main {
-    border: 0;
+  border: 0;
 }
 
 // class needed for specificity
 .no-js body,
 .fonts-loaded body {
-    background: $white;
-    font: 16px Raleway, sans-serif;
+  background: $white;
+  font: 16px Raleway, sans-serif;
 }

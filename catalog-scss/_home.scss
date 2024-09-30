@@ -1,21 +1,21 @@
 .libraryname {
-    color: $dark-gray;
-    text-align: center;
-    text-transform: uppercase;
+  color: $dark-gray;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #user_summary {
-    h2 {
-        background-color: $dark-blue;
-        color: $white;
-    }
+  h2 {
+    background-color: $dark-blue;
+    color: $white;
+  }
 
-    p {
-        // padding the same as `#user_summary ul a` from OPAC styles
-        padding: 0 15px;
-    }
+  p {
+    // padding the same as `#user_summary ul a` from OPAC styles
+    padding: 0 15px;
+  }
 
-    .loggedinusername:hover {
-        text-decoration: underline;
-    }
+  .loggedinusername:hover {
+    text-decoration: underline;
+  }
 }

@@ -2,57 +2,57 @@
 // scope to search results, fixes accidentally hiding .edition on bib details
 #listcontents,
 .bibliocol {
-    .author,
-    .byAuthor,
-    .edition,
-    .publisher,
-    .other_title,
-    .rda264,
-    .results_format,
-    .results_contents_literary,
-    .results_audience {
-        display: none;
-    }
+  .author,
+  .byAuthor,
+  .edition,
+  .publisher,
+  .other_title,
+  .rda264,
+  .results_format,
+  .results_contents_literary,
+  .results_audience {
+    display: none;
+  }
 
-    .label {
-        font: 400 18px/1.53 Raleway, sans-serif;
-    }
+  .label {
+    font: 400 18px/1.53 Raleway, sans-serif;
+  }
 }
 
 #opac-userlists,
 #results {
-    .results_summary {
-        font-size: 18px;
-    }
+  .results_summary {
+    font-size: 18px;
+  }
 }
 
 .results_material_type .materialtype {
-    height: 16px;
-    width: 16px;
+  height: 16px;
+  width: 16px;
 }
 
 .available {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 // @TODO .selectcol checkbox on left side of results is tiny, easy to miss
 
 #didyoumean {
-    display: none;
+  display: none;
 
-    &.dym-loaded {
-        display: inherit;
-    }
+  &.dym-loaded {
+    display: inherit;
+  }
 }
 
 .no-image {
-    display: none;
+  display: none;
 }
 
 .suggestion {
-    background: 0;
-    border: 0;
-    color: $black;
-    padding: 0;
-    width: 320px;
+  background: 0;
+  border: 0;
+  color: $black;
+  padding: 0;
+  width: 320px;
 }

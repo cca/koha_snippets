@@ -1,12 +1,12 @@
-@use "sass:color";
+@use 'sass:color';
 
 // styles for required inputs
 input:required:invalid {
-    border: 1px solid color.adjust($bs-text-error, $lightness: 20%);
-    box-shadow: $bs-text-error 1px 1px 4px;
+  border: 1px solid color.adjust($bs-text-error, $lightness: 20%);
+  box-shadow: $bs-text-error 1px 1px 4px;
 }
 
 label.required::after {
-    color: $bs-text-error;
-    content: '*';
+  color: $bs-text-error;
+  content: '*';
 }

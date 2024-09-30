@@ -8,11 +8,11 @@
 .no-renew-too-late,
 .auto-renew-fines,
 .auto-renew-expired {
-    color: $maroon;
+  color: $maroon;
 }
 
 // .no-renewal-before is kind of the default state, no style for it
 
 .automatic-renewal {
-    color: $bs-text-success;
+  color: $bs-text-success;
 }
