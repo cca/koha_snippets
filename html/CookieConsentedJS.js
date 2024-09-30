@@ -1,3 +1,5 @@
+// This file is added to Patrons Preferences > Privacy > CookieConsentedJS
+// as our "Google Analytics" cookie, string=_ga | domain=cca.edu | path=/
 // load google tags analytics library
 let d = document
     , s = d.createElement('script')

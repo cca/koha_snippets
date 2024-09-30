@@ -33,6 +33,16 @@ function catalogJS () {
         .pipe(dest('dist'))
 }
 
+function cookieConsentedJS() {
+    return src('html/CookieConsentedJS.js')
+        .pipe(concat('CookieConsentedJS.js'))
+        .pipe(iife())
+        .pipe(babel({ presets: ['@babel/preset-env'] }))
+        .pipe(uglify())
+        .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
+        .pipe(dest('dist'))
+}
+
 function adminCSS() {
     return src('admin-scss/index.scss')
         .pipe(sass(sassOpts).on('error', sass.logError))
@@ -50,7 +60,7 @@ function catalogCSS() {
 }
 
 function lint() {
-    return src(['admin-js/*.js', 'catalog-js/*.js'])
+    return src(['admin-js/*.js', 'catalog-js/*.js', 'html/*.js'])
         .pipe(eslint())
         .pipe(eslint.format())
 }
@@ -64,9 +74,10 @@ function stylelint() {
 module.exports = {
     'admin-js': adminJS,
     'catalog-js': catalogJS,
+    'cookie-js': cookieConsentedJS,
     'admin-css': adminCSS,
     'catalog-css': catalogCSS,
-    js: parallel(adminJS, catalogJS),
+    js: parallel(adminJS, catalogJS, cookieConsentedJS),
     css: parallel(catalogCSS, adminCSS),
     default: parallel(adminJS, catalogJS, adminCSS, catalogCSS),
     lint: lint,

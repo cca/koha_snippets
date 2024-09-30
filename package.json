@@ -31,6 +31,7 @@
     "acss": "gulp admin-css && cat dist/IntranetUserCSS.css | pbcopy && open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=IntranetUserCSS'",
     "cjs": "gulp catalog-js && cat dist/OPACUserJS.js | pbcopy && open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserJS'",
     "ccss": "gulp catalog-css && cat dist/OPACUserCSS.css | pbcopy && open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserCSS'",
+    "cookiejs": "gulp cookie-js && cat dist/CookieConsentedJS.js | pbcopy && open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=CookieConsentedJS'",
     "test": "gulp lint; stylelint --cache --fix **/*.scss 2>/dev/null; "
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
