@@ -5,7 +5,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^6.0.0",
@@ -17,7 +17,7 @@
     "gulp-uglify": "^3.0.2",
     "postcss": "^8.4.47",
     "stylelint": "^16.9.0",
-    "stylelint-config-sass-guidelines": "^11.1.0",
+    "stylelint-config-sass-guidelines": "^12.1.0",
     "stylelint-order": "^6.0.4",
     "stylelint-scss": "^6.7.0"
   },
