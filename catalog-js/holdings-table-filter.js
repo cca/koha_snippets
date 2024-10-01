@@ -1,6 +1,6 @@
 // add a filter to large holdings tables so users can find the issue/volume
 // they want more easily, very useful for serials with large numbers of items
-// ex: https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=2806
+// ex: https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=55280&viewallitems=1
 
 // we're on a details page & there are more than 4 rows of holdings (not counting header row)
 if (path === '/cgi-bin/koha/opac-detail.pl' && $('#holdingst tr').length > 5) {
