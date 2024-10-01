@@ -22,13 +22,5 @@ if (path.match('/cgi-bin/koha/opac-detail.pl')) {
         let biblionumber =  $('.unapi-id').attr('title').split(':')[2]
         let permalink = path + '?biblionumber=' + biblionumber
         $('#action').append('<li><a class="btn btn-link btn-lg" id="permalink" href="' + permalink + '"><i class="fa fa-fw fa-link"></i> Permanent Link</a></li>')
-
-        // if 1) Place Hold not present & 2) at least one item is not a type that doesn't allow holds
-        // show the Place Hold action. Fixes bug https://bugs.koha-community.org/bugzilla3/show_bug.cgi?id=34886
-        const noHoldTypes = ['Equipment', 'Ebook', 'Object']
-        let hasHoldableItem = itypes.some(itype => !noHoldTypes.includes(itype))
-        if (!$('#action .reserve').length && hasHoldableItem) {
-            $('#action').prepend('<li><a class="btn btn-link btn-lg reserve" href="/cgi-bin/koha/opac-reserve.pl?biblionumber=' + biblionumber + '"><i class="fa fa-fw fa-bookmark" aria-hidden="true"></i> Place Hold</a></li>')
-        }
     })
 }
