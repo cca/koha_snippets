@@ -11,7 +11,8 @@ if (path.match('/cgi-bin/koha/opac-reserve.pl')) {
         let int = setInterval(() => {
             if ($('.toggle-hold-options').length) {
                 $('.toggle-hold-options').eq(0).click()
-                // select the only holdable item (bug in 24.05)
+                // select only holdable item (bug with DisplayMultiItemHolds & forced item-level holds)
+                // https://bugs.koha-community.org/bugzilla3/show_bug.cgi?id=38054
                 $('.itemstable input[type="checkbox"]').eq(0).click()
                 clearInterval(int)
             }
