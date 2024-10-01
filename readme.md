@@ -11,6 +11,7 @@ Snippets of code to be inserted into the administrative settings of Koha.
 - `cjs` - minify all public **c**atalog JavaScript
 - `acss` - compile & minify staff-side styles
 - `ccss` - compile & minify public catalog styles
+- `cookiejs` - minify `CookieConsentJS` for the public catalog
 
 Each of these tasks are compile/minify code for a specific Koha setting, copy the output to the Mac OS clipboard, and open the setting's URL in Koha's administration module. The first letter of the task stands for either "admin" or "catalog". CCA's intranet domain is hard-coded into them. All output also goes in the "dist" directory.
 
