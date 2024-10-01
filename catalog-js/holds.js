@@ -11,6 +11,8 @@ if (path.match('/cgi-bin/koha/opac-reserve.pl')) {
         let int = setInterval(() => {
             if ($('.toggle-hold-options').length) {
                 $('.toggle-hold-options').eq(0).click()
+                // select the only holdable item (bug in 24.05)
+                $('.itemstable input[type="checkbox"]').eq(0).click()
                 clearInterval(int)
             }
         }, 500)
