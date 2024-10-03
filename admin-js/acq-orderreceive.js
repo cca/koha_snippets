@@ -1,6 +1,6 @@
 // on the Acquisitions "receive items" page
 // check the "Received?" box by default & fill in actual price
-if (path === '/cgi-bin/koha/acqui/orderreceive.pl') {
+if (location.pathname === '/cgi-bin/koha/acqui/orderreceive.pl') {
     // run after document load
     $(()=>{
         // almost no classees or other good selector hooks on this page

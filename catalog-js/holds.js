@@ -1,4 +1,4 @@
-if (path.match('/cgi-bin/koha/opac-reserve.pl')) {
+if (location.pathname.match('/cgi-bin/koha/opac-reserve.pl')) {
     // changes per Paul's request on 2022-09-07
     // https://ccaweb.slack.com/archives/C01V8JTGRD2/p1662570492099079
 

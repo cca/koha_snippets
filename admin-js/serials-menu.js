@@ -1,6 +1,6 @@
 // modify the links listed in the main menu of the Serials module
 // on all pages beginning with path /cgi-bin/koha/serials/
-if (path.match('/cgi-bin/koha/serials/')) {
+if (location.pathname.match('/cgi-bin/koha/serials/')) {
     // execute once document has loaded
     $(() => {
         let menu_list = $('#navmenulist ul').eq(0)

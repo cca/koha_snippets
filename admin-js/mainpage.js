@@ -1,5 +1,5 @@
 // modifications to the "main page" — page staff see right after logging in
-if (path.match('/cgi-bin/koha/mainpage.pl')) {
+if (location.pathname.match('/cgi-bin/koha/mainpage.pl')) {
     $(()=>{
         // add new module buttons for pending article/purchase requests
         let $menu = $('.biglinks-list')

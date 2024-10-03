@@ -4,7 +4,7 @@
 // - African arts (0001-9933) several holdings including print
 // - ARTMargins (2162-2574) one online holding & print
 // - Art & artists (0004-3001) has only a print holding
-if (path.match('/cgi-bin/koha/opac-detail.pl')) {
+if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     // do we have an ISSN? use 360 Link API to see if we have online holdings
     let issn = $('.results_summary.issn').find('span[property="issn"]')
 

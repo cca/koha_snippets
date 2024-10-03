@@ -22,10 +22,10 @@ function addSaveToListBtn(target, wrapper, large=false) {
 }
 
 if (!loggedIn) {
-    if (path.match('/cgi-bin/koha/opac-detail.pl')) {
+    if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
         // bib detail page & not logged in, add to right-side Actions menu
         addSaveToListBtn('#action > li:first-child', 'li', true)
-    } else if (path.match('/cgi-bin/koha/opac-search.pl')) {
+    } else if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
         // search results page, add to each "actions" row at bottom of result
         addSaveToListBtn('.actions-menu span.actions:nth-last-child(2)', 'span class="actions"')
     }
@@ -34,10 +34,10 @@ if (!loggedIn) {
     // we are logged in _and_ have data but were we on a search or details page?
     if (sessionStorage.cca_search_url) {
         // we started on a search page
-        if (path.match('/cgi-bin/koha/opac-user.pl')) {
+        if (location.pathname.match('/cgi-bin/koha/opac-user.pl')) {
             // step 1) user page, so we just signed in, redirect to saved search
             location = sessionStorage.cca_search_url
-        } else if (path.match('/cgi-bin/koha/opac-search.pl')) {
+        } else if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
             // step 2) find bib, click "save to lists" action then clear data
             $('#title_summary_' + bib).find('.actions [href^="/cgi-bin/koha/opac-addbybiblionumber.pl"]').click()
             sessionStorage.removeItem('cca_save_to_list')
@@ -45,10 +45,10 @@ if (!loggedIn) {
         }
     } else {
         // we start on a details page, simpler process
-        if (path.match('/cgi-bin/koha/opac-user.pl')) {
+        if (location.pathname.match('/cgi-bin/koha/opac-user.pl')) {
             // step 1) user page, so we just signed in, redirect to bib
             location = '/cgi-bin/koha/opac-detail.pl?biblionumber=' + bib
-        } else if (path.match('/cgi-bin/koha/opac-detail.pl')) {
+        } else if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             // step 2) click the "save to lists" link then clear data
             $(addToShelfAction).click()
             sessionStorage.removeItem('cca_save_to_list')

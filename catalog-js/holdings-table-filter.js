@@ -3,7 +3,7 @@
 // ex: https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=55280&viewallitems=1
 
 // we're on a details page & there are more than 4 rows of holdings (not counting header row)
-if (path === '/cgi-bin/koha/opac-detail.pl' && $('#holdingst tr').length > 5) {
+if (location.pathname === '/cgi-bin/koha/opac-detail.pl' && $('#holdingst tr').length > 5) {
     // Rolling our own search input is easier than trying to destory and rebuild the datatable
     // to change its config and add one, which has some kind of race condition that can break
     // the table entirely.

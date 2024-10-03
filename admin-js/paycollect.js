@@ -1,4 +1,4 @@
-if (path.match('/cgi-bin/koha/members/paycollect.pl')) {
+if (location.pathname.match('/cgi-bin/koha/members/paycollect.pl')) {
     // append payment type to notes field, see https://github.com/cca/koha_snippets/issues/20
     // and https://bugs.koha-community.org/bugzilla3/show_bug.cgi?id=21791
     let $note = $('#selected_accts_notes')

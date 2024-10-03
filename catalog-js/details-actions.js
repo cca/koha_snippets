@@ -1,5 +1,5 @@
 // changes to the right-side #action menu of bib detail page
-if (path.match('/cgi-bin/koha/opac-detail.pl')) {
+if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     $(()=>{
         // Customizations to the right-side "Actions" menu
         // remove "print", "suggest for purchase", & "save record" links

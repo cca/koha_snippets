@@ -1,5 +1,5 @@
 // scrape the book cover image URL from the 856$u field  and add it as a Koha cover image
-if (path.match('/cgi-bin/koha/opac-detail.pl')) {
+if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     let hasCover = () => !!$('.cover-image').length
 
     const addCPCover = function () {

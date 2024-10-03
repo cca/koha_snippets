@@ -1,5 +1,5 @@
 // serials receive default values & form simplification
-if (path.match('/cgi-bin/koha/serials/serials-edit.pl')) {
+if (location.pathname.match('/cgi-bin/koha/serials/serials-edit.pl')) {
     // run on document load
     $(() => {
         function fixForm() {

@@ -1,6 +1,6 @@
 // on specific searches for the Artists' Books collection, show a link to the
 // previews in VAULT
-if (path.match('/cgi-bin/koha/opac-search.pl')) {
+if (location.pathname.match('/cgi-bin/koha/opac-search.pl')) {
     let qs = new URLSearchParams(location.search)
     let q = qs.get('q') && qs.get('q').toLowerCase()
     let limit = qs.get('limit')
@@ -9,7 +9,7 @@ if (path.match('/cgi-bin/koha/opac-search.pl')) {
     let abHtml = '<div class="alert alert-error">View previews of the Artists\' Books Collection <a href="https://vault.cca.edu/logon.do?.page=/hierarchy.do?topic=a7b976d5-5316-44da-b06e-7374cd100075">in VAULT</a> (login required).</div>'
     if (q && q.match(/artists?'? book/) || limit && limit.match('ARTIST')) {
         $('#numresults').before(abHtml)
-    } else if (path.match('opac-shelves.pl') && qs.get('op') == 'view' && qs.get('shelfnumber') == '481') {
+    } else if (location.pathname.match('opac-shelves.pl') && qs.get('op') == 'view' && qs.get('shelfnumber') == '481') {
         $('#usershelves').before(abHtml)
     }
 

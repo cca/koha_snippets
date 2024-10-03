@@ -20,7 +20,7 @@ let onLoginScreen = !!$('#opac-login-page').length
     }
 
 // 1) record bib number when we're trying to place a hold but not logged in
-if (onLoginScreen && path.match('/cgi-bin/koha/opac-reserve.pl')) {
+if (onLoginScreen && location.pathname.match('/cgi-bin/koha/opac-reserve.pl')) {
     // we always clear storage first in case multiple actions build up
     // e.g. first they place hold, sign out, request article in same session
     clearCCAStorage()
@@ -28,7 +28,7 @@ if (onLoginScreen && path.match('/cgi-bin/koha/opac-reserve.pl')) {
     // are listed in one parameter and forward-slash separated
     sessionStorage.setItem('cca_bib_hold', search.get('biblionumber'))
     sessionStorage.setItem('cca_bib_holds', search.get('biblionumbers'))
-} else if (path.match('/cgi-bin/koha/opac-user.pl') && (sessionStorage.getItem('cca_bib_hold') || sessionStorage.getItem('cca_bib_holds'))) {
+} else if (location.pathname.match('/cgi-bin/koha/opac-user.pl') && (sessionStorage.getItem('cca_bib_hold') || sessionStorage.getItem('cca_bib_holds'))) {
     bib = sessionStorage.getItem('cca_bib_hold')
     bibs = sessionStorage.getItem('cca_bib_holds')
     // clear storage then go to appropriate reserve page
@@ -47,17 +47,17 @@ if (onLoginScreen && path.match('/cgi-bin/koha/opac-reserve.pl')) {
 if (onLoginScreen && location.href.match(/\/cgi-bin\/koha\/opac-suggestions.pl\?op=add/)) {
     clearCCAStorage()
     sessionStorage.setItem('cca_suggestion', true)
-} else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_suggestion')) {
+} else if (location.pathname.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_suggestion')) {
     // clear storage, go to purchase suggestions form
     sessionStorage.removeItem('cca_suggestion')
     location = '/cgi-bin/koha/opac-suggestions.pl?op=add'
 }
 
 // 3) we're trying to make an article request but we're not logged in
-if (onLoginScreen && path.match('/cgi-bin/koha/opac-request-article.pl')) {
+if (onLoginScreen && location.pathname.match('/cgi-bin/koha/opac-request-article.pl')) {
     clearCCAStorage()
     sessionStorage.setItem('cca_article_request', search.get('biblionumber'))
-} else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_article_request')) {
+} else if (location.pathname.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_article_request')) {
     bib = sessionStorage.getItem('cca_article_request')
     // clear storage, go to appropriate article requests page
     sessionStorage.removeItem('cca_article_request')
@@ -65,20 +65,20 @@ if (onLoginScreen && path.match('/cgi-bin/koha/opac-request-article.pl')) {
 }
 
 // 4) we're trying to access the resticted page
-if (onLoginScreen && path.match('/cgi-bin/koha/opac-restrictedpage.pl')) {
+if (onLoginScreen && location.pathname.match('/cgi-bin/koha/opac-restrictedpage.pl')) {
     clearCCAStorage()
     sessionStorage.setItem('cca_restricted_page', true)
-} else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_restricted_page')) {
+} else if (location.pathname.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_restricted_page')) {
     // clear storage, return to restricted page
     clearCCAStorage()
     location = '/cgi-bin/koha/opac-restrictedpage.pl'
 }
 
 // 4) we're trying to report a problem
-if (onLoginScreen && path.match('/cgi-bin/koha/opac-reportproblem.pl')) {
+if (onLoginScreen && location.pathname.match('/cgi-bin/koha/opac-reportproblem.pl')) {
     clearCCAStorage()
     sessionStorage.setItem('cca_report_problem', true)
-} else if (path.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_report_problem')) {
+} else if (location.pathname.match('/cgi-bin/koha/opac-user.pl') && sessionStorage.getItem('cca_report_problem')) {
     // clear storage, return to restricted page
     clearCCAStorage()
     location = '/cgi-bin/koha/opac-reportproblem.pl'

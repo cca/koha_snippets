@@ -1,5 +1,5 @@
 // all our customizations to the bib details display in one place
-if (path.match('/cgi-bin/koha/opac-detail.pl')) {
+if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     // extra commas in 700 "contributor" field display
     // like MARC of 700 __ ‡a Brundige, James, ‡e director, ‡e editor.
     // => "Brundige, James [director,, editor.]"

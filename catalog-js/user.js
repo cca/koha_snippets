@@ -1,5 +1,5 @@
 // user's "summary" page immediately after logging in
-if (path.match('/cgi-bin/koha/opac-user.pl')) {
+if (location.pathname.match('/cgi-bin/koha/opac-user.pl')) {
     // edit (On hold) text in the "Renew" column to indicate a recall & make more prominent
     $('.renew .renewals:contains("(On hold)")')
         .css('font-weight', 'bold').text('Item recalled - please return')

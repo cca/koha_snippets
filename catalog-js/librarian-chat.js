@@ -11,7 +11,7 @@ let paths = [
     '/cgi-bin/koha/opac-messaging.pl',
     '/cgi-bin/koha/opac-shelves.pl?op=list&category=1'
 ]
-if (paths.some(page => path.match(page))) {
+if (paths.some(page => location.pathname.match(page))) {
     // use libraryh3lp Presence API https://dev.libraryh3lp.com/presence.html
     fetch('https://libraryh3lp.com/presence/jid/cca-libraries-queue/chat.libraryh3lp.com/text')
         .then(resp => resp.text())
