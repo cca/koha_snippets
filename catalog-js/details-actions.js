@@ -20,7 +20,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 
         // add permalink - pull biblionumber from unapi tag
         let biblionumber =  $('.unapi-id').attr('title').split(':')[2]
-        let permalink = path + '?biblionumber=' + biblionumber
+        let permalink = location.pathname + '?biblionumber=' + biblionumber
         $('#action').append('<li><a class="btn btn-link btn-lg" id="permalink" href="' + permalink + '"><i class="fa fa-fw fa-link"></i> Permanent Link</a></li>')
     })
 }
