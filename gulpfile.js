@@ -10,7 +10,7 @@ const sasslint = require('gulp-sass-lint');
 const uglify = require('gulp-uglify')
 
 const sassOpts = {
-    outputStyle: 'compressed'
+    style: 'compressed'
 }
 
 function adminJS () {

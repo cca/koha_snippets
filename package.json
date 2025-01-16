@@ -12,10 +12,11 @@
     "gulp-iife": "^0.4.0",
     "gulp-insert": "^0.5.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
+    "gulp-sass": "^6.0.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-uglify": "^3.0.2",
     "postcss": "^8.5.1",
+    "sass": "^1.83.4",
     "stylelint": "^16.13.2",
     "stylelint-config-sass-guidelines": "^12.1.0",
     "stylelint-order": "^6.0.4",
@@ -35,8 +36,5 @@
     "test": "gulp lint; stylelint --cache --fix **/*.scss 2>/dev/null; "
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
-  "license": "ECL-2.0",
-  "dependencies": {
-    "sass": "^1.83.4"
-  }
+  "license": "ECL-2.0"
 }
