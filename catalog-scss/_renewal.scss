@@ -1,3 +1,5 @@
+@use "colors";
+
 // CSS classes for the patron overview
 // these all apply when an item cannot be renewed for some reason
 // https://bugs.koha-community.org/bugzilla3/show_bug.cgi?id=28876
@@ -8,11 +10,11 @@
 .no-renew-too-late,
 .auto-renew-fines,
 .auto-renew-expired {
-  color: $maroon;
+  color: colors.$maroon;
 }
 
 // .no-renewal-before is kind of the default state, no style for it
 
 .automatic-renewal {
-  color: $bs-text-success;
+  color: colors.$bs-text-success;
 }

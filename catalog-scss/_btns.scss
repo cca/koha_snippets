@@ -1,30 +1,32 @@
+@use "colors";
+
 @use 'sass:color';
 
 // override primary button to be dark gray & not lime green
 // also override its disabled state (seen in search results action menu)
 // html is for specificity
 html .btn-primary {
-  background: $dark-gray;
-  border-color: $dark-gray;
-  text-shadow: 0 -1px 0 $btn-text-shadow;
+  background: colors.$dark-gray;
+  border-color: colors.$dark-gray;
+  text-shadow: 0 -1px 0 colors.$btn-text-shadow;
 
   &:hover {
-    background: $dark-gray;
-    border-color: color.adjust($dark-gray, $lightness: 20%);
-    box-shadow: 0 0 0 1px color.adjust($dark-gray, $lightness: 30%);
+    background: colors.$dark-gray;
+    border-color: color.adjust(colors.$dark-gray, $lightness: 20%);
+    box-shadow: 0 0 0 1px color.adjust(colors.$dark-gray, $lightness: 30%);
   }
 
   &:not(:disabled):not(.disabled).focus,
   &:not(:disabled):not(.disabled):focus {
-    background: color.adjust($dark-gray, $lightness: -60%);
-    border-color: color.adjust($dark-gray, $lightness: -60%);
-    box-shadow: 0 0 0 1px color.adjust($dark-gray, $lightness: -40%);
+    background: color.adjust(colors.$dark-gray, $lightness: -60%);
+    border-color: color.adjust(colors.$dark-gray, $lightness: -60%);
+    box-shadow: 0 0 0 1px color.adjust(colors.$dark-gray, $lightness: -40%);
   }
 
   &.disabled,
   &:disabled {
-    background-color: $btn-disabled;
-    border-color: $btn-disabled;
+    background-color: colors.$btn-disabled;
+    border-color: colors.$btn-disabled;
     color: #fff;
   }
 
@@ -39,8 +41,8 @@ html .btn-primary {
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show > .btn-primary.dropdown-toggle {
-  background-color: $btn-disabled;
-  border-color: $btn-disabled;
+  background-color: colors.$btn-disabled;
+  border-color: colors.$btn-disabled;
   color: #fff;
 }
 

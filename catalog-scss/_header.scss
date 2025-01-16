@@ -1,5 +1,7 @@
+@use "colors";
+
 #opacheader {
-  background-color: $white;
+  background-color: colors.$white;
   text-align: center;
 }
 

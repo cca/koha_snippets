@@ -1,8 +1,10 @@
+@use "colors";
+
 // better visual clue that patrons generally don't want to place holds on
 // items that are checked out or already waiting to be picked up
 .waiting,
 .checkedout {
-  color: $bs-text-error;
+  color: colors.$bs-text-error;
   font-weight: bold;
 }
 

@@ -1,3 +1,5 @@
+@use "colors";
+
 // hide misleading/uninformative fields from search results display
 // scope to search results, fixes accidentally hiding .edition on bib details
 #listcontents,
@@ -52,7 +54,7 @@
 .suggestion {
   background: 0;
   border: 0;
-  color: $black;
+  color: colors.$black;
   padding: 0;
   width: 320px;
 }

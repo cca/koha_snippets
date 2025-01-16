@@ -1,3 +1,5 @@
+@use "colors";
+
 // these first 3 rules pull results up a bit, less useless space at the top of page
 .toolbar {
   .highlight_controls {
@@ -16,11 +18,11 @@
 
 @mixin select-input {
   appearance: none;
-  background: $white;
-  border: 1px solid $input-light-gray;
+  background: colors.$white;
+  border: 1px solid colors.$input-light-gray;
   border-radius: 0;
   box-sizing: border-box;
-  color: $black-font;
+  color: colors.$black-font;
   margin-bottom: 0;
   outline: 0;
   text-indent: 0.01px;

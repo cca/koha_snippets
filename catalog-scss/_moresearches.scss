@@ -1,3 +1,5 @@
+@use "colors";
+
 // make the main links menu beneath the search box mirror Libraries site style
 #moresearches {
   border-radius: 0;
@@ -19,7 +21,7 @@
   }
 
   li:hover {
-    border-bottom-color: $dark-blue;
+    border-bottom-color: colors.$dark-blue;
   }
 
   a {

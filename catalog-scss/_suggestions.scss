@@ -1,5 +1,7 @@
+@use "colors";
+
 // purchase suggestions form
 // https://library.cca.edu/cgi-bin/koha/opac-suggestions.pl?op=add
 #add_suggestion_form .required {
-  color: $maroon;
+  color: colors.$maroon;
 }

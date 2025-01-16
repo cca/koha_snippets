@@ -1,3 +1,5 @@
+@use "colors";
+
 // new (as of 21.11) cover image carousel
 // 1) remove outline
 // 2) remove "hint" about where each image came from
@@ -21,11 +23,11 @@
 
 .item-status {
   &.lost {
-    color: $bs-text-error;
+    color: colors.$bs-text-error;
   }
 
   &.notforloan {
-    color: $black-font;
+    color: colors.$black-font;
   }
 }
 
@@ -64,7 +66,7 @@
 .dropdown-menu > li > a {
   &:hover,
   &:focus {
-    background: $cca-teal none;
+    background: colors.$cca-teal none;
   }
 }
 
@@ -76,7 +78,7 @@
   }
 
   .author {
-    color: $details-label-black;
+    color: colors.$details-label-black;
     font-size: 18px;
   }
 }

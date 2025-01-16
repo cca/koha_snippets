@@ -1,12 +1,14 @@
+@use "colors";
+
 #opac-main-search {
-  background: $white;
+  background: colors.$white;
 }
 
 // fix green outline on main search box
 .mastheadsearch {
   input.transl1:focus {
-    border-color: $input-light-gray;
-    box-shadow: inset 0 1px 1px $input-text-shadow, 0 0 8px $input-text-shadow;
+    border-color: colors.$input-light-gray;
+    box-shadow: inset 0 1px 1px colors.$input-text-shadow, 0 0 8px colors.$input-text-shadow;
   }
 }
 

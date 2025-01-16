@@ -1,19 +1,19 @@
-@import 'colors';
-@import 'btns';
-@import 'header';
-@import 'home';
-@import 'mastheadsearch';
-@import 'memberentry';
-@import 'moresearches';
-@import 'toolbar';
-@import 'search-results';
-@import 'bib-details';
-@import 'lists';
-@import 'holds';
-@import 'renewal';
-@import 'suggestions';
-@import 'font';
-@import 'required';
+@use 'colors';
+@use 'btns';
+@use 'header';
+@use 'home';
+@use 'mastheadsearch';
+@use 'memberentry';
+@use 'moresearches';
+@use 'toolbar';
+@use 'search-results';
+@use 'bib-details';
+@use 'lists';
+@use 'holds';
+@use 'renewal';
+@use 'suggestions';
+@use 'font';
+@use 'required';
 
 .breadcrumb {
   display: none;
@@ -26,6 +26,6 @@
 // class needed for specificity
 .no-js body,
 .fonts-loaded body {
-  background: $white;
+  background: colors.$white;
   font: 16px Raleway, sans-serif;
 }
