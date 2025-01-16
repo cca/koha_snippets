@@ -1,9 +1,9 @@
-@import 'colors';
-@import 'bib-detail';
-@import 'patrons';
+@use 'colors';
+@use 'bib-detail';
+@use 'patrons';
 
 // *** Circ checkin/out page
-// *** https: //library-staff.cca.edu/cgi-bin/koha/circ/circulation.pl?borrowernumber=14831
+// *** https://library-staff.cca.edu/cgi-bin/koha/circ/circulation.pl?borrowernumber=14831
 // 2 unused options under "checkout settings" expando
 #set-automatic-renewal,
 #set_high_holds_overrride {
@@ -18,7 +18,7 @@
 }
 
 // *** Bib summary page
-// *** https: //library-staff.cca.edu/cgi-bin/koha/catalogue/detail.pl?biblionumber=66476
+// *** https://library-staff.cca.edu/cgi-bin/koha/catalogue/detail.pl?biblionumber=66476
 // we don't use Dewey but some imported records may have DDC numbers
 .results_summary.ddc {
   display: none;
