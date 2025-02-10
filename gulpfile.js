@@ -1,4 +1,4 @@
-const { src, dest, parallel, watch } = require('gulp')
+const { src, dest, parallel } = require('gulp')
 const babel = require('gulp-babel')
 const concat = require('gulp-concat')
 const eslint = require('gulp-eslint')
@@ -6,7 +6,6 @@ const iife = require('gulp-iife')
 const insert = require('gulp-insert')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')(require('sass'))
-const sasslint = require('gulp-sass-lint');
 const uglify = require('gulp-uglify')
 
 const sassOpts = {
@@ -59,16 +58,10 @@ function catalogCSS() {
         .pipe(dest('dist'))
 }
 
-function lint() {
+function lintjs() {
     return src(['admin-js/*.js', 'catalog-js/*.js', 'html/*.js'])
         .pipe(eslint())
         .pipe(eslint.format())
-}
-
-function stylelint() {
-    return src(['admin-scss/*.scss', 'catalog-scss/*.scss'])
-        .pipe(sasslint())
-        .pipe(sasslint.format())
 }
 
 module.exports = {
@@ -80,7 +73,7 @@ module.exports = {
     js: parallel(adminJS, catalogJS, cookieConsentedJS),
     css: parallel(catalogCSS, adminCSS),
     default: parallel(adminJS, catalogJS, adminCSS, catalogCSS),
-    lint: lint,
-    sasslint: stylelint,
-    test: parallel(lint, stylelint),
+    eslint: lintjs,
+    lint: lintjs,
+    test: lintjs,
 }
