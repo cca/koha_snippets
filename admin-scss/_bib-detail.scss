@@ -1,5 +1,6 @@
-// get rid of garbled characters before/after table of contents on staff side
-// without this the Koha CSS injects, I kid you not, "â†’ " as content ¯\_(ツ)_/¯
+// Remove characters before/after table of contents on staff side
+// without this the Koha CSS injects an arrow → that looks awkward
+// https://library-staff.cca.edu/cgi-bin/koha/catalogue/detail.pl?biblionumber=66476
 .contentblock :first-child::before,
 .contents .newline::after {
   content: '';

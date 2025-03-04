@@ -1,5 +1,7 @@
 // we don't use gaurantors, reclaim this space
+// https://library-staff.cca.edu/cgi-bin/koha/members/moremember.pl?borrowernumber=4658
+#addchild,
 #patron-privacyguarantor,
 #patron-privacy_guarantor_fines {
-  display: none;
+  display: none !important;
 }
