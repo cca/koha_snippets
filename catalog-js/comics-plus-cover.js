@@ -12,7 +12,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
             let link = $(this)
             let url = link.attr('href')
             // example URL: https://uniapi.librarypass.com/index.php/images/cover/md/6880002490009385420231110.png
-            if (url.match(/^https?:\/\/uniapi\.librarypass\.com/) && !hasCover()) {
+            if (url.match(/^https?:\/\/uniapi\.librarypass\.com\//) && !hasCover()) {
                 // html adapted from Koha local cover image
                 $('.bookcover').first().html(
 `<div class="bookcover">
