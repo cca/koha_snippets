@@ -1,0 +1,10 @@
+// the slim green line between Search and its related dropdown menu is awkward & unnecessary
+@media(min-width: 767px) {
+    #catalog-search-link {
+        border-right: 0;
+    }
+}
+
+#catalog-search-dropdown > a {
+    border-left: 0;
+}
