@@ -4,22 +4,25 @@
 // or addMARCfield('Responsibility statment', 245, 'c')
 function addMARCfield (label, field, subfield) {
     // extract bib ID from HTML
-    var biblionumber = $('.unapi-id').attr('title').split(':')[2]
+    const biblionumber = $('.unapi-id').attr('title').split(':')[2]
     // use the record export URL
-    var url = 'https://library.cca.edu/cgi-bin/koha/opac-export.pl?op=export&format=marcxml&bib=' + biblionumber
+    const url = 'https://library.cca.edu/cgi-bin/koha/opac-export.pl?op=export&format=marcxml&bib=' + biblionumber
 
-    // pull data from record export
-    // $.get always seems to request the wrong URL somehow, use $.ajax
+    // Pull data from record export. $.get requests the wrong URL somehow, use $.ajax
     $.ajax({
         url: url,
         dataType: 'xml'
-    }).done(function (xml, xhr) {
-        // parse field/subfield from XML
-        var value = $('datafield[tag="' + field + '"]' + (subfield ? ' subfield[code="' + subfield + '"]' : ''), xml).text()
-        // construct HTML to insert into the DOM
-        var html = '<span class="results_summary marc' + field + '"><span class="label">' + label + ': </span>'
-        html += value + '</span>'
+    }).done(function (xml) {
+        // parse field/subfield from MARCXML
+        const value = $(`datafield[tag="${field}"]` + (subfield ? ` subfield[code="${subfield}"]` : ''), xml).text().trim()
         if (value) {
+            // construct HTML to insert into the DOM
+            let html = document.createElement('span')
+            html.classList.add('results_summary', `marc${field}`)
+            let child = document.createElement('span')
+            child.classList.add('label')
+            child.textContent = `${label}: ${value}`
+            html.appendChild(child)
             $('.results_summary').last().after(html)
         }
     })
