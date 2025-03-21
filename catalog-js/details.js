@@ -33,7 +33,15 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     $('#subscriptions p:contains("Subscription from:")').hide()
 
     // If we have no Holdings items (e.g. ebook), show the Title notes by default
-    if ($('#noitems').length) $('#descriptions-tab span').click()
+    if ($('#noitems').length) {
+        // wait for a tab to become active then switch
+        const interval = setInterval(() => {
+            if ($('#bibliodescriptions .nav-link.active').length) {
+                $('#descriptions-tab span').click()
+                clearInterval(interval)
+            }
+        }, 200)
+    }
 
     // course reserves: separate course name & semester with a pipe
     if ($('#item_coursereserves').length) {
