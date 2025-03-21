@@ -32,6 +32,9 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     // hide "subscription from:" text, confusing, overlaps with "library has"
     $('#subscriptions p:contains("Subscription from:")').hide()
 
+    // If we have no Holdings items (e.g. ebook), show the Title notes by default
+    if ($('#noitems').length) $('#descriptions-tab span').click()
+
     // course reserves: separate course name & semester with a pipe
     if ($('#item_coursereserves').length) {
         // course reserves cell is always last in row
