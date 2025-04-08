@@ -19,8 +19,11 @@ $(() => {
 
         // CAS login failed, example:
         // https://library.cca.edu/cgi-bin/koha/opac-user.pl?ticket=faketicket
+        const contactUrl = "https://libraries.cca.edu/about-us/about-us/ask-a-librarian/"
         $('.cas_invalid').parent().removeClass('alert-info').addClass('alert-danger')
         $('.cas_invalid').before('<h2>Login Failed</h2>')
-        $('.cas_invalid').html(`The most common reason for this is that you are not a current CCA student or employee. If you are a CCA student or employee, please <a href="https://libraries.cca.edu/about-us/about-us/ask-a-librarian/">contact us</a>. If you are an alumnus, you might have a local account specific to the library catalog, which uses the form below.`)
+        $('.cas_invalid').html(`The most common reason for this is that you are not a current CCA student or employee. If you are a CCA student or employee, please <a href="${contactUrl}">contact us</a>. If you are an alumnus, you might have a local account specific to the library catalog, which uses the form below.`).addClass('mb-0')
+        // Wrong local username or password
+        $('p:contains("You entered an incorrect username or password.")').html(`You entered an incorrect username or password. Please try again! Note that current CCA students and staff should use the green login button above. <a href="${contactUrl}">Contact us</a> if you continue to have problems.`).addClass('mb-0').parent().removeClass('alert-info').addClass('alert-danger')
     }
 })
