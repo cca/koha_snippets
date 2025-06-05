@@ -14,7 +14,8 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
 
         // remove "Request article" link for non-periodical item types
         let itypes = $('#holdingst .itype img').map((i, el) => $(el).attr('title')).toArray()
-        if (!itypes.some(itype => itype.match(/Periodical/))) {
+        let type = $('.results_summary.type').text().toLowerCase()
+        if (itypes.length && !itypes.some(itype => itype.match(/Periodical/)) || !type.match("continuing resource")) {
             $('.article_request').parent('li').remove()
         }
 
