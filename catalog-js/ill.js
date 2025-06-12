@@ -18,7 +18,6 @@ if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
         , 'article_title'
         , 'author'
         , 'chapter'
-        , 'chapter_author'
         , 'paper_author'
         , 'paper_title'
         , 'title']
