@@ -21,3 +21,10 @@
     text-decoration: underline;
   }
 }
+
+// Coverflow "no image available" is larger than our average book cover which causes awkward whitespace
+// https: //github.com/cca/koha_snippets/issues/49
+img[src="https://raw.githubusercontent.com/bywatersolutions/web-assets/master/NoImage.png"] {
+  height: 500px !important;
+  width: 333px !important;
+}
