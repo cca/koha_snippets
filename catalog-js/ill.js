@@ -7,8 +7,9 @@ if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
         $('#branchcode').attr('disabled', true)
     }
 
-    // Remove "Other" from the Type dropdown b/c it has no fields
-    $('#type').find('option[value="other"]').remove()
+    // We do not fulfill "Journal", "Conference", or "Other" (has no fields)
+    // type requests so we remove them all from the dropdown menu
+    $('#type').find('option[value="conference"], option[value="journal"], option[value="other"]').remove()
 
     // Hide Custom Fields (no class on parent <fieldset>)
     $('#add-new-fields').parent().hide();
@@ -25,6 +26,4 @@ if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
             $(`label[for="${field}"]`).addClass('required')
             $(`input[name="${field}"]`).attr('required', true).addClass('required')
         })
-
-    // TODO hide unneeded metadata fields for different request types
 }
