@@ -26,4 +26,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
             $(`label[for="${field}"]`).addClass('required')
             $(`input[name="${field}"]`).attr('required', true).addClass('required')
         })
+
+    // change DOI label to "DOI / Link
+    $('label:contains(DOI:)').text("DOI / Link:")
 }
