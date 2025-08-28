@@ -1,5 +1,5 @@
 // Hide whole "Patron Options" <fieldset> which only contains
 // a library branch input which we do not use (is always SF)
 #illrequests form fieldset:first-of-type {
-    display: none;
+  display: none;
 }
