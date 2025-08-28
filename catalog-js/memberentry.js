@@ -8,4 +8,6 @@ if (location.pathname.match('/cgi-bin/koha/opac-memberentry.pl')) {
     $('#borrower_primary_contact_method').find('option[value="mobile"], option[value="fax"]').remove()
     // patron names come from Workday, so we don't want them to be editable
     $('#borrower_surname, #borrower_firstname').prop('disabled', true).prop('title', 'Update your preferred name in Workday.')
+    // English is the only language available for notices
+    $('#borrower_lang').parent().hide()
 }
