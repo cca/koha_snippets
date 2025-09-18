@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "code to be pasted into Koha's admin side",
   "devDependencies": {
-    "@babel/core": "^7.28.3",
+    "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
     "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
@@ -15,8 +15,8 @@
     "gulp-sass": "^6.0.1",
     "gulp-uglify": "^3.0.2",
     "postcss": "^8.5.6",
-    "sass": "^1.91.0",
-    "stylelint": "^16.23.1",
+    "sass": "^1.92.1",
+    "stylelint": "^16.24.0",
     "stylelint-config-sass-guidelines": "^12.1.0",
     "stylelint-order": "^7.0.0",
     "stylelint-scss": "^6.12.1"
@@ -32,8 +32,8 @@
     "cjs": "gulp catalog-js && cat dist/OPACUserJS.js | pbcopy && open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserJS'",
     "ccss": "gulp catalog-css && cat dist/OPACUserCSS.css | pbcopy && open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=OPACUserCSS'",
     "cookiejs": "gulp cookie-js && cat dist/CookieConsentedJS.js | pbcopy && open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=CookieConsentedJS'",
-    "lint": "gulp lint; stylelint --cache --fix **/*.scss 2>/dev/null; ",
-    "test": "gulp lint; stylelint --cache --fix **/*.scss 2>/dev/null; "
+    "lint": "gulp lint; stylelint --cache --fix **/*.scss; ",
+    "test": "gulp lint; stylelint --cache --fix **/*.scss; "
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
   "license": "ECL-2.0"
