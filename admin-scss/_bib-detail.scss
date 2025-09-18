@@ -5,3 +5,11 @@
 .contents .newline::after {
   content: '';
 }
+
+// https://bugs.koha-community.org/bugzilla3/show_bug.cgi?id=37024
+// fix holdings table scroll bug, see Artforum International for example:
+// https://library-staff.cca.edu/cgi-bin/koha/catalogue/detail.pl?biblionumber=55280
+.dataTable thead {
+  position: sticky !important;
+  top: 0 !important;
+}
