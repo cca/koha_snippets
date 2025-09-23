@@ -3,7 +3,7 @@
 if (location.pathname.match('/cgi-bin/koha/serials/')) {
     // execute once document has loaded
     $(() => {
-        let menu_list = $('#navmenulist ul').eq(0)
+        let menu_list = $('#serials-menu ul').eq(0)
         // format is: [ link text, URL ]
         let links = [
             ['SF at bindery',
