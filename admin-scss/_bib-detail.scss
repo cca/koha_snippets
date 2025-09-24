@@ -13,3 +13,14 @@
   position: sticky !important;
   top: 0 !important;
 }
+
+// no need for these "no cover image available" notices
+.no-image {
+  display: none;
+}
+
+// *** https://library-staff.cca.edu/cgi-bin/koha/catalogue/detail.pl?biblionumber=66476
+// we don't use Dewey but some imported records may have DDC numbers
+.results_summary.ddc {
+  display: none;
+}

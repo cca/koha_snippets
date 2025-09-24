@@ -1,31 +1,5 @@
 @use 'bib-detail';
+@use 'circulation';
 @use 'main_menu';
 @use 'patrons';
 @use 'serials_edit';
-
-// *** Circ checkin/out page
-// *** https://library-staff.cca.edu/cgi-bin/koha/circ/circulation.pl?borrowernumber=14831
-// 2 unused options under "checkout settings" expando
-#set-automatic-renewal,
-#set_high_holds_overrride {
-  display: none;
-}
-
-// avoid confusion with "checkin" column next to renewal column on circ pages
-#issues-table .checkin::after {
-  content: 'check in';
-  display: block;
-  margin-top: 1em;
-}
-
-// *** Bib summary page
-// *** https://library-staff.cca.edu/cgi-bin/koha/catalogue/detail.pl?biblionumber=66476
-// we don't use Dewey but some imported records may have DDC numbers
-.results_summary.ddc {
-  display: none;
-}
-
-// no need for these "no cover image available" notices
-.no-image {
-  display: none;
-}
