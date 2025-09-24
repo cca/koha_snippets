@@ -3,7 +3,7 @@
 if (location.pathname === '/cgi-bin/koha/acqui/orderreceive.pl') {
     // run after document load
     $(()=>{
-        // almost no classees or other good selector hooks on this page
+        // almost no classes or other good selector hooks on this page
         $('table input[type="checkbox"]').prop('checked', true)
         // copy RRP into "Actual cost" field. The RRP HTML looks like:
         //   <li><label for="rrp">Retail price: </label>

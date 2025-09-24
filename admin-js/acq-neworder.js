@@ -5,8 +5,6 @@ if (location.pathname.match('/cgi-bin/koha/acqui/neworder')) {
     $(() => {
         function set_defaults () {
             let select = $('#subfield7 select')
-            // highlight field, @TODO remove this once we know it's working
-            select.css('box-shadow', '0 0 4px 5px #f5f55f')
             // default to "ordered" value (-1)
             if (!select.val()) select.val(-1)
         }
