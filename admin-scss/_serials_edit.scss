@@ -1,0 +1,13 @@
+#serials_edit {
+    .subfield_line .buttonDot[data-plugin="dateaccessioned.pl"] {
+        display: none;
+    }
+
+    .subfield_line .buttonDot[data-plugin="cn_browser.pl"] {
+        float: left;
+    }
+
+    fieldset.rows li {
+        padding-bottom: 0;
+    }
+}
