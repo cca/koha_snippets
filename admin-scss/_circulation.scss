@@ -4,12 +4,12 @@
 // 2 unused options under "checkout settings" expando
 #set-automatic-renewal,
 #set_high_holds_overrride {
-    display: none;
+  display: none;
 }
 
 // avoid confusion with "checkin" column next to renewal column on circ pages
 #issues-table .checkin::after {
-    content: 'check in';
-    display: block;
-    margin-top: 1em;
+  content: 'check in';
+  display: block;
+  margin-top: 1em;
 }
