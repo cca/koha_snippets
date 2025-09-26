@@ -7,6 +7,8 @@ on:
 jobs:
   lint:
     name: Run lint
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
 
     steps:
@@ -15,14 +17,13 @@ jobs:
 
       # must come before setup-node
       - name: Setup PNPM
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v4.1.0
         with:
           version: latest
 
       - name: Use Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '22'
           cache: 'pnpm'
 
       - name: Install dependencies
