@@ -3,13 +3,6 @@ if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
     const params = new URLSearchParams(location.search)
 
     if (params.get('op') === 'add_form') {
-        // Ensure SF branch is the only option for ILL requests
-        let branchInput = $('#branchcode')
-        if (branchInput.length) {
-            $('#branchcode').val('SF')
-            $('#branchcode').attr('disabled', true)
-        }
-
         // We do not fulfill "Journal", "Conference", or "Other" (has no fields)
         // type requests so we remove them all from the dropdown menu
         $('#type').find('option[value="conference"], option[value="journal"], option[value="other"]').remove()
