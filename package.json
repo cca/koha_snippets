@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "code to be pasted into Koha's admin side",
   "devDependencies": {
-    "@babel/core": "^7.28.4",
-    "@babel/preset-env": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
     "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
