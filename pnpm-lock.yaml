@@ -42,8 +42,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
       postcss:
-        specifier: ^8.5.6
-        version: 8.5.6
+        specifier: ^8.5.8
+        version: 8.5.8
       sass:
         specifier: ^1.97.3
         version: 1.97.3
@@ -52,7 +52,7 @@ importers:
         version: 17.1.1
       stylelint-config-sass-guidelines:
         specifier: ^13.0.0
-        version: 13.0.0(postcss@8.5.6)(stylelint@17.1.1)
+        version: 13.0.0(postcss@8.5.8)(stylelint@17.1.1)
       stylelint-order:
         specifier: ^7.0.1
         version: 7.0.1(stylelint@17.1.1)
@@ -665,42 +665,36 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-arm-musl@2.5.6':
     resolution: {integrity: sha512-Ve3gUCG57nuUUSyjBq/MAM0CzArtuIOxsBdQ+ftz6ho8n7s1i9E1Nmk/xmP323r2YL0SONs1EuwqBp2u1k5fxg==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-linux-arm64-glibc@2.5.6':
     resolution: {integrity: sha512-f2g/DT3NhGPdBmMWYoxixqYr3v/UXcmLOYy16Bx0TM20Tchduwr4EaCbmxh1321TABqPGDpS8D/ggOTaljijOA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-arm64-musl@2.5.6':
     resolution: {integrity: sha512-qb6naMDGlbCwdhLj6hgoVKJl2odL34z2sqkC7Z6kzir8b5W65WYDpLB6R06KabvZdgoHI/zxke4b3zR0wAbDTA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-linux-x64-glibc@2.5.6':
     resolution: {integrity: sha512-kbT5wvNQlx7NaGjzPFu8nVIW1rWqV780O7ZtkjuWaPUgpv2NMFpjYERVi0UYj1msZNyCzGlaCWEtzc+exjMGbQ==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-x64-musl@2.5.6':
     resolution: {integrity: sha512-1JRFeC+h7RdXwldHzTsmdtYR/Ku8SylLgTU/reMuqdVD7CtLwf0VR1FqeprZ0eHQkO0vqsbvFLXUmYm/uNKJBg==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-win32-arm64@2.5.6':
     resolution: {integrity: sha512-3ukyebjc6eGlw9yRt678DxVF7rjXatWiHvTXqphZLvo7aC5NdEgFufVwjFfY51ijYEWpXbqF5jtrK275z52D4Q==}
@@ -1793,8 +1787,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.6:
-    resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
+  postcss@8.5.8:
+    resolution: {integrity: sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.1.2:
@@ -3085,7 +3079,7 @@ snapshots:
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-tokenizer': 4.0.0
       '@csstools/media-query-list-parser': 5.0.0(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
-      postcss: 8.5.6
+      postcss: 8.5.8
       postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
       style-search: 0.1.0
@@ -4139,26 +4133,26 @@ snapshots:
 
   postcss-resolve-nested-selector@0.1.6: {}
 
-  postcss-safe-parser@7.0.1(postcss@8.5.6):
+  postcss-safe-parser@7.0.1(postcss@8.5.8):
     dependencies:
-      postcss: 8.5.6
+      postcss: 8.5.8
 
-  postcss-scss@4.0.9(postcss@8.5.6):
+  postcss-scss@4.0.9(postcss@8.5.8):
     dependencies:
-      postcss: 8.5.6
+      postcss: 8.5.8
 
   postcss-selector-parser@7.1.1:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-sorting@9.1.0(postcss@8.5.6):
+  postcss-sorting@9.1.0(postcss@8.5.8):
     dependencies:
-      postcss: 8.5.6
+      postcss: 8.5.8
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.6:
+  postcss@8.5.8:
     dependencies:
       nanoid: 3.3.11
       picocolors: 1.1.1
@@ -4407,18 +4401,18 @@ snapshots:
 
   style-search@0.1.0: {}
 
-  stylelint-config-sass-guidelines@13.0.0(postcss@8.5.6)(stylelint@17.1.1):
+  stylelint-config-sass-guidelines@13.0.0(postcss@8.5.8)(stylelint@17.1.1):
     dependencies:
       '@stylistic/stylelint-plugin': 5.0.1(stylelint@17.1.1)
-      postcss: 8.5.6
-      postcss-scss: 4.0.9(postcss@8.5.6)
+      postcss: 8.5.8
+      postcss-scss: 4.0.9(postcss@8.5.8)
       stylelint: 17.1.1
       stylelint-scss: 7.0.0(stylelint@17.1.1)
 
   stylelint-order@7.0.1(stylelint@17.1.1):
     dependencies:
-      postcss: 8.5.6
-      postcss-sorting: 9.1.0(postcss@8.5.6)
+      postcss: 8.5.8
+      postcss-sorting: 9.1.0(postcss@8.5.8)
       stylelint: 17.1.1
 
   stylelint-scss@7.0.0(stylelint@17.1.1):
@@ -4464,8 +4458,8 @@ snapshots:
       micromatch: 4.0.8
       normalize-path: 3.0.0
       picocolors: 1.1.1
-      postcss: 8.5.6
-      postcss-safe-parser: 7.0.1(postcss@8.5.6)
+      postcss: 8.5.8
+      postcss-safe-parser: 7.0.1(postcss@8.5.8)
       postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
       string-width: 8.1.1
