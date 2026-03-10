@@ -31,6 +31,11 @@
   }
 }
 
+// Images in branch descriptions overflow the "i"nfo modal dialog from holdings table
+.library-description img {
+  max-width: 100%;
+}
+
 // hide "show analytics" link, useless
 .results_summary.analytics,
 // we don't use Dewey
