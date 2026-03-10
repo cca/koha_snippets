@@ -14,9 +14,9 @@
     "gulp-rename": "^2.1.0",
     "gulp-sass": "^6.0.1",
     "gulp-uglify": "^3.0.2",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.8",
     "sass": "^1.97.3",
-    "stylelint": "^17.1.1",
+    "stylelint": "^17.4.0",
     "stylelint-config-sass-guidelines": "^13.0.0",
     "stylelint-order": "^7.0.1",
     "stylelint-scss": "^7.0.0"
