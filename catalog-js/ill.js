@@ -3,6 +3,9 @@ if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
     const params = new URLSearchParams(location.search)
 
     if (params.get('op') === 'add_form') {
+        // Auto-select SF branch, do not disable <select> or the value won't submit with the form
+        $('#branchcode option[value="SF"]').attr('selected', true)
+
         // We do not fulfill "Journal", "Conference", or "Other" (has no fields)
         // type requests so we remove them all from the dropdown menu
         $('#type').find('option[value="conference"], option[value="journal"], option[value="other"]').remove()
