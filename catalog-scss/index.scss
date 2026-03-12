@@ -30,3 +30,7 @@
   background: colors.$white;
   font: 16px Raleway, sans-serif;
 }
+
+::placeholder {
+  text-align: start;
+}

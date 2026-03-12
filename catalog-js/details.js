@@ -14,7 +14,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
     // 260 ‡aLondon : ‡bPhaidon, ‡c2016.
     // => New York, NY : New Museum ; ; London : Phaidon, 2016
     let pub = $('.results_summary.publisher')
-    // if there are two consecutive semicolons separated by 2 or more spaces
+    // if there are two consecutive semicolons separated by 1 or more spaces
     if (pub.text().match(/;\s*;/)) {
         pub.find('span[property="name"] a').each(function(){
             let el = $(this)
