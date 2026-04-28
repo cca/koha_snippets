@@ -20,7 +20,7 @@ jobs:
 
       # must come before setup-node
       - name: Setup PNPM
-        uses: pnpm/action-setup@v6.0.0
+        uses: pnpm/action-setup@v6.0.3
         with:
           version: latest
 
