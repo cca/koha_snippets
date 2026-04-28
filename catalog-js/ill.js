@@ -2,6 +2,15 @@
 if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
     const params = new URLSearchParams(location.search)
 
+    // ! Disable ILL during Paul's paternity leave 2026-04-28 to Fall 2026
+    $("#ill-new, #ill-submit").prop("disabled", true).addClass("disabled")
+    $(".maincontent h1")
+      .eq(0)
+      .after(
+        "<div class='alert alert-warning'><h2 class='alert-heading'>ILL Temporarily Unavailable</h2><p>Due to staffing shortages, we will be unable to offer inter-library loan until Fall 2026. We recommend using your local public library's inter-library loan facilities instead. If you need help locating a resource, <a class='alert-link' href='https://libraries.cca.edu/about-us/about-us/ask-a-librarian/'>the librarians are still here to help</a>.</p></div>"
+    )
+    // ! END disable ILL, remove this when it returns
+
     if (params.get('op') === 'add_form') {
         // Auto-select SF branch, do not disable <select> or the value won't submit with the form
         $('#branchcode option[value="SF"]').attr('selected', true)
