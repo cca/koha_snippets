@@ -1,0 +1,4 @@
+# sass dependeny which does not appear to be needed
+# probably for `sass --watch` but we do not use that
+allowBuilds:
+  '@parcel/watcher': false
