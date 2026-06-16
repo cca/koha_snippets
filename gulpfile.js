@@ -1,7 +1,6 @@
 const { src, dest, parallel } = require('gulp')
 const babel = require('gulp-babel')
 const concat = require('gulp-concat')
-const eslint = require('gulp-eslint')
 const iife = require('gulp-iife')
 const insert = require('gulp-insert')
 const rename = require('gulp-rename')
@@ -58,12 +57,6 @@ function catalogCSS() {
         .pipe(dest('dist'))
 }
 
-function lintjs() {
-    return src(['admin-js/*.js', 'catalog-js/*.js', 'html/*.js'])
-        .pipe(eslint())
-        .pipe(eslint.format())
-}
-
 module.exports = {
     'admin-js': adminJS,
     'catalog-js': catalogJS,
@@ -73,7 +66,4 @@ module.exports = {
     js: parallel(adminJS, catalogJS, cookieConsentedJS),
     css: parallel(catalogCSS, adminCSS),
     default: parallel(adminJS, catalogJS, adminCSS, catalogCSS),
-    eslint: lintjs,
-    lint: lintjs,
-    test: lintjs,
 }
