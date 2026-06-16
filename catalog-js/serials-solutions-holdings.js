@@ -50,13 +50,13 @@ if (location.pathname.match('/cgi-bin/koha/opac-detail.pl')) {
                         // Ex. Object (ARTMargins): https://libraries.cca.edu/sersol/?issn=2162-2574
                         // Ex. Array (Nat Geo): https://libraries.cca.edu/sersol/?issn=0027-9358
                         const lg = result.linkGroups.linkGroup
-                        Array.isArray(lg) ? lg.forEach(formatEntry) : formatEntry(lg);
+                        Array.isArray(lg) ? lg.forEach(formatEntry) : formatEntry(lg)
                     }
                 }
 
                 // data.results.result can be an object or array (same examples above work)
                 const result = data.results.result
-                Array.isArray(result) ? result.forEach(formatLinkGroup) : formatLinkGroup(result);
+                Array.isArray(result) ? result.forEach(formatLinkGroup) : formatLinkGroup(result)
 
                 // truncate htmllist to 5 entries, example (Nat Geo):
                 // https://library.cca.edu/cgi-bin/koha/opac-detail.pl?biblionumber=22116

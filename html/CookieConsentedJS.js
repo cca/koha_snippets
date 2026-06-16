@@ -3,7 +3,7 @@
 // load google tags analytics library
 let d = document
     , s = d.createElement('script')
-    , ga = d.getElementsByTagName('script')[0];
+    , ga = d.getElementsByTagName('script')[0]
 s.async = 1
 s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SCTY0C2C98'
 ga.parentNode.insertBefore(s, ga)
