@@ -36,8 +36,8 @@
     "cookiejs": "gulp cookie-js && cat dist/CookieConsentedJS.js | pbcopy && open 'https://library-staff.cca.edu/cgi-bin/koha/admin/preferences.pl?op=search&searchfield=CookieConsentedJS'",
     "eslint": "eslint admin-js catalog-js html --ext .js --fix",
     "stylelint": "stylelint --cache --fix **/*.scss",
-    "lint": "npm run eslint && npm run stylelint",
-    "test": "npm run eslint && npm run stylelint"
+    "lint": "npm run eslint; npm run stylelint",
+    "test": "npm run eslint; npm run stylelint"
   },
   "author": "phette23 <phette23@gmail.com> (http://phette.net)",
   "license": "ECL-2.0"
