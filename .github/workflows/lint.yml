@@ -6,6 +6,8 @@ on:
     paths:
       - '**/*.js'
       - '**/*.scss'
+      - .github/workflows/lint.yml
+  workflow_call:
 
 jobs:
   lint:
@@ -33,7 +35,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: JS Lint
-        run: npx gulp lint
+        run: npm run eslint
 
       - name: Style Lint
-        run: npx stylelint **/*.scss
+        # Run stylelint even if eslint fails, we always want a full report
+        if: ${{ always() }}
+        run: npm run stylelint
