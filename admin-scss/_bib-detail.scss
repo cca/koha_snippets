@@ -1,3 +1,9 @@
+// https://bugs.koha-community.org/bugzilla3/show_bug.cgi?id=38912
+// Elasticsearch record is a 404, hide broken feature
+#catalogue_detail_elastic_record {
+  display: none;
+}
+
 // Remove characters before/after table of contents on staff side
 // without this the Koha CSS injects an arrow → that looks awkward
 // https://library-staff.cca.edu/cgi-bin/koha/catalogue/detail.pl?biblionumber=66476
