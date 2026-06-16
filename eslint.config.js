@@ -12,7 +12,6 @@ module.exports = [
     },
     {
         languageOptions: {
-            ecmaVersion: 2015,
             sourceType: 'script',
             globals: {
                 ...globals.browser,
