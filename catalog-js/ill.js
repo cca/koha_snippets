@@ -7,7 +7,7 @@ if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
     $(".maincontent h1")
       .eq(0)
       .after(
-        "<div class='alert alert-warning'><h2 class='alert-heading'>ILL Temporarily Unavailable</h2><p>Due to staffing shortages, we will be unable to offer inter-library loan until Fall 2026. We recommend using your local public library's inter-library loan facilities instead. If you need help locating a resource, <a class='alert-link' href='https://libraries.cca.edu/about-us/about-us/ask-a-librarian/'>the librarians are still here to help</a>.</p></div>"
+        "<div class='alert alert-warning'><h2 class='alert-heading'>ILL Temporarily Unavailable</h2><p>Due to staffing shortages, we will be unable to offer inter-library loan until Fall 2026. We recommend using your local public library's inter-library loan facilities instead. If you need help locating a resource, <a class='alert-link' href='https://libraries.cca.edu/about-us/about-us/ask-a-librarian/'>the librarians are here to help</a>.</p></div>"
     )
     // ! END disable ILL, remove this when it returns
 
