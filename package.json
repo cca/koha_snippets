@@ -7,7 +7,7 @@
     "@babel/preset-env": "^7.29.7",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.4.1",
-    "globals": "^17.6.0",
+    "globals": "^17.7.0",
     "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
