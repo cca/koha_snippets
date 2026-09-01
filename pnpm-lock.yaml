@@ -21,8 +21,8 @@ importers:
         specifier: ^10.8.0
         version: 10.8.0(supports-color@10.2.2)
       globals:
-        specifier: ^17.8.0
-        version: 17.8.0
+        specifier: ^17.11.0
+        version: 17.11.0
       gulp:
         specifier: ^5.0.1
         version: 5.0.1
@@ -1278,8 +1278,8 @@ packages:
     resolution: {integrity: sha512-awConJSVCHVGND6x3tmMaKcQvwXLhjdkmomy2W+Goaui8YPgYgXJZewhg3fWC+DlfqqQuWg8AwqjGTD2nAPVWg==}
     engines: {node: '>=6'}
 
-  globals@17.8.0:
-    resolution: {integrity: sha512-Zz/LMDZScFmkakeL2cTHzf+PbWKdpU3uclqkZT7TjDG58j5WPt0PpA+n9uPI24fZtlw07q0OtEi84K+umsRzqQ==}
+  globals@17.11.0:
+    resolution: {integrity: sha512-Z2I8hM+PbJDXQDq3Icgpzv+mPdwr68iZUU9d5WW4FuXfDUQfkZaZuvjMv42/5crNyw154+9+VWXbYrUgDXbxNw==}
     engines: {node: '>=18'}
 
   globby@16.2.2:
@@ -3434,7 +3434,7 @@ snapshots:
       kind-of: 6.0.3
       which: 1.3.1
 
-  globals@17.8.0: {}
+  globals@17.11.0: {}
 
   globby@16.2.2:
     dependencies:
