@@ -10,8 +10,9 @@ if (location.pathname.match('/cgi-bin/koha/opac-illrequests.pl')) {
         // type requests so we remove them all from the dropdown menu
         $('#type').find('option[value="conference"], option[value="journal"], option[value="other"]').remove()
 
-        // Hide Custom Fields (no class on parent <fieldset>)
-        $('#add-new-fields').parent().hide();
+        // Hide Custom Fields (no good selector hooks)
+        $('#add-new-fields').parent().hide()
+        $('legend:contains(Additional information)').hide(); // semicolon needed for array stmt below
 
         // Required fields
         ['article_author'
