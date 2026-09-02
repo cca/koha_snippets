@@ -5,7 +5,6 @@ const iife = require('gulp-iife')
 const insert = require('gulp-insert')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')(require('sass'))
-const uglify = require('gulp-uglify')
 
 const sassOpts = {
     style: 'compressed'
@@ -16,8 +15,7 @@ function adminJS () {
         .pipe(concat('IntranetUserJS.js'))
         .pipe(iife())
         .pipe(babel({ presets: ['@babel/preset-env'] }))
-        .pipe(uglify())
-        .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
+        .pipe(insert.prepend(`// Built ${Date()} - see https://github.com/cca/koha_snippets\n`))
         .pipe(dest('dist'))
 }
 
@@ -26,8 +24,7 @@ function catalogJS () {
         .pipe(concat('OPACUserJS.js'))
         .pipe(iife())
         .pipe(babel({ presets: ['@babel/preset-env'] }))
-        .pipe(uglify())
-        .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
+        .pipe(insert.prepend(`// Built ${Date()} - see https://github.com/cca/koha_snippets\n`))
         .pipe(dest('dist'))
 }
 
@@ -36,8 +33,7 @@ function cookieConsentedJS() {
         .pipe(concat('CookieConsentedJS.js'))
         .pipe(iife())
         .pipe(babel({ presets: ['@babel/preset-env'] }))
-        .pipe(uglify())
-        .pipe(insert.prepend(`// minified ${Date()} - see https://github.com/cca/koha_snippets\n`))
+        .pipe(insert.prepend(`// Built ${Date()} - see https://github.com/cca/koha_snippets\n`))
         .pipe(dest('dist'))
 }
 
